@@ -1,0 +1,1 @@
+<div class="spacer" style="--content-spacer:<?php the_sub_field('spacer'); ?>rem;"></div>

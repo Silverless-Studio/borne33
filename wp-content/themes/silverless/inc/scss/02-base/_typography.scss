@@ -1,0 +1,123 @@
+%heading {
+  color: $color-primary;
+  font-family: $font-header;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.heading-1,
+h1 {
+  @extend %heading;
+  font-size: 3.4rem;
+  @media only screen and (min-width: $bp-large) {
+    font-size: 3.4rem;
+    line-height: 1.1;
+  }
+}
+
+.heading-2,
+h2 {
+  @extend %heading;
+  font-size: 2.4rem;
+  // line-height: 1;
+
+  @media only screen and (min-width: $bp-large) {
+    font-size: 2.4rem;
+  }
+}
+
+.heading-3,
+h3 {
+  @extend %heading;
+  font-size: 1.4rem;
+  @media only screen and (min-width: $bp-large) {
+    font-size: 1.6rem;
+  }
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.2rem;
+
+  @media only screen and (min-width: $bp-large) {
+    font-size: 1.4rem;
+  }
+}
+
+.heading-5 {
+  @extend %heading;
+  font-size: 1rem;
+  line-height: 1.2;
+
+  @media only screen and (min-width: $bp-large) {
+    font-size: 1.2rem;
+  }
+}
+
+.heading-6 {
+  @extend %heading;
+  font-size: 1.8rem;
+  line-height: 1.2;
+
+  @media only screen and (min-width: $bp-large) {
+    font-size: 2.4rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.font {
+  &__color {
+    &__primary {
+      color: $color-primary;
+    }
+
+    &__secondary {
+      color: $color-secondary;
+    }
+
+    &__tertiary {
+      color: $color-tertiary;
+    }
+
+    &__white {
+      color: $color-white;
+    }
+
+    &__grey {
+      color: $color-grey;
+    }
+  }
+
+  &__transform {
+    &__uppercase {
+      text-transform: uppercase;
+    }
+  }
+
+  &__style {
+    &__normal {
+      font-style: normal;
+    }
+
+    &__italic {
+      font-style: italic;
+    }
+  }
+
+  &__weight {
+    &__light {
+      font-weight: 300;
+    }
+
+    &__regular {
+      font-weight: 400;
+    }
+  }
+}

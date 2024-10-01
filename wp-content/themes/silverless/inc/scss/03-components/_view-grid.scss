@@ -1,0 +1,50 @@
+// sass-lint:disable-all
+
+.view-grid {
+  background: #000000;
+  bottom: 0;
+  color: #ffffff;
+  cursor: pointer;
+  left: 0;
+  padding: 0.25rem 0.5rem;
+  position: fixed;
+  z-index: 9999;
+}
+
+.grid-guides {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: -1;
+
+  .site.show-grid & {
+    visibility: visible;
+  }
+
+  > div {
+    background: #80808012;
+    height: 100vh;
+
+    &:first-of-type,
+    &:last-of-type {
+      background: none;
+    }
+  }
+}
+
+.site {
+  &.show-grid {
+    background-color: transparent;
+
+    section {
+      background-color: transparent;
+    }
+
+    .background__color__supporting_2 {
+      background-color: transparent;
+    }
+  }
+}

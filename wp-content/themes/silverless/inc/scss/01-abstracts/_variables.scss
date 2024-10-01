@@ -1,0 +1,46 @@
+$color-primary: #390739;
+$color-secondary: #310027;
+$color-tertiary: #808080;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: #707070;
+$color-grey-light: #cccccc;
+$color-supporting-1: #00c426;
+$color-supporting-2: #e6e2de;
+$color-supporting-3: #f8f0eb;
+$color-form-inputs: #ded8d3;
+$color-error: $color-secondary;
+
+$rem-scale: 100%;
+
+$font-primary: 'lato', sans-serif;
+$font-secondary: 'goudy-old-style', serif;
+$font-header: 'goudy-old-style', serif;
+
+$gutter-width: 2rem;
+$container-margin: 5.9375rem;
+$grid-width: 73.5rem;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 54em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+$page-border-size: 0.5rem;
+$page-border-color: $color-white;
+
+$background-color: $color-supporting-3;
+$font-color: $color-grey;
+
+$color-footer: $color-primary;
+$color-footer-dark: darken($color-primary, 10);
+
+$default-font-size: 1rem;
+$paragraph-spacing: 1.5rem;
+
+$nav-menu-height: 6rem;
+
+$default-padding: 6rem;
+$large-padding: 8rem;
+$small-padding: 4rem;

@@ -1,0 +1,90 @@
+.image-element {
+  display: grid;
+
+  @media only screen and (min-width: $bp-large) {
+    &.grid-one {
+      grid-template-columns: 1fr;
+    }
+
+    &.grid-two {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .img {
+    // &.square {
+    //   aspect-ratio: 1;
+    // }
+
+    // &.landscape {
+    //   aspect-ratio: 16 / 9;
+    // }
+
+    // &.portrait {
+    //   aspect-ratio: 9 / 16;
+    // }
+  }
+
+  .award {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    grid-gap: 2rem;
+  }
+
+  .cards {
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      height: 20rem;
+    }
+
+    .card-content {
+      background: $color-secondary;
+      border-bottom: 4px solid $color-primary;
+      border-radius: 0 0 0 0.5rem;
+      color: $color-white;
+      flex: 1;
+      padding: 2rem 4rem 10rem 4rem;
+      position: relative;
+      .button--cross .text {
+        color: $color-primary;
+        text-transform: uppercase;
+      }
+      .heading-3 {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+
+  &.grid-two {
+    .cards {
+      img {
+        height: 37rem;
+      }
+    }
+    .card-content .button--cross .text {
+      display: none;
+    }
+  }
+  &.grid-three {
+    .cards {
+      img {
+        height: 24rem;
+      }
+    }
+  }
+  &.grid-rows {
+    .award {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+}
