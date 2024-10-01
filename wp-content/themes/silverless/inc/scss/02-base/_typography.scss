@@ -1,5 +1,5 @@
 %heading {
-  color: $color-primary;
+  color: $color-white;
   font-family: $font-header;
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -8,9 +8,9 @@
 .heading-1,
 h1 {
   @extend %heading;
-  font-size: 3.4rem;
+  font-size: 6.4rem;
   @media only screen and (min-width: $bp-large) {
-    font-size: 3.4rem;
+    font-size: 11.3rem;
     line-height: 1.1;
   }
 }
@@ -65,7 +65,7 @@ h3 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.6rem;
 
   &:not(:last-of-type) {
     margin-bottom: 1.2rem;
@@ -76,25 +76,17 @@ p {
 }
 
 .font {
-  &__color {
-    &__primary {
+  &--color {
+    &-primary {
       color: $color-primary;
     }
 
-    &__secondary {
+    &-secondary {
       color: $color-secondary;
     }
 
-    &__tertiary {
+    &-tertiary {
       color: $color-tertiary;
-    }
-
-    &__white {
-      color: $color-white;
-    }
-
-    &__grey {
-      color: $color-grey;
     }
   }
 

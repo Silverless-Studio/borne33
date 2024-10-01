@@ -1,0 +1,36 @@
+.section--two {
+  align-items: center;
+  min-height: 100vh;
+  .heading-1 {
+    padding: 0 0 2rem;
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    grid-gap: 7rem;
+
+    li {
+      align-items: center;
+      display: flex;
+      p {
+        font-family: $font-secondary;
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
+.section--three {
+  align-items: center;
+  min-height: 100vh;
+  .background-image {
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    img {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

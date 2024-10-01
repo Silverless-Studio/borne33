@@ -96,13 +96,14 @@
       }
     }
   }
-  &.flex-between {
-    align-items: center;
-    display: flex;
-    grid-column: 2/-1;
-    justify-content: space-between;
+  &.col-half {
     @media only screen and (min-width: $bp-large) {
-      grid-column: center-start/center-end;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 7rem;
     }
   }
+}
+.relative {
+  position: relative;
 }

@@ -11,13 +11,18 @@ section.hero {
 }
 .hero {
   &--text {
+    .logo {
+      padding: 2.5rem 0 12rem;
+    }
     &-buttons {
       display: flex;
+      padding: 4rem 0 0;
       grid-gap: 3rem;
       width: 100%;
-      div,
+
       .button {
-        width: 100%;
+        flex: 1;
+        min-width: fit-content;
       }
       .link-two {
         svg {
