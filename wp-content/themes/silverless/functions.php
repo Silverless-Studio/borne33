@@ -41,6 +41,8 @@ function silverless_setup()
 	 */
 	add_theme_support('title-tag');
 
+	add_theme_support('woocommerce');
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *

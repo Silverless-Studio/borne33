@@ -16,5 +16,6 @@ if (have_rows('flex_content')):
 endif;
 
 ?>
+<?php the_content();?>
 
 <?php get_footer(); ?>
