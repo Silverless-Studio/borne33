@@ -206,12 +206,12 @@ function silverless_dashboard_help()
 add_action('wp_dashboard_setup', 'silverless_dashboard_widget');
 
 /* Dashboard Style */
-add_action('admin_head', 'silverless_custom_fonts');
+// add_action('admin_head', 'silverless_custom_fonts');
 
-function silverless_custom_fonts()
-{
-	echo '<style type="text/css">' . file_get_contents(__DIR__ . "/inc/assets/css/admin.css") . '</style>';
-}
+// function silverless_custom_fonts()
+// {
+// 	echo '<style type="text/css">' . file_get_contents(__DIR__ . "/inc/assets/css/admin.css") . '</style>';
+// }
 
 // Function to change "posts" to "news" in the admin side menu
 function change_post_menu_label()

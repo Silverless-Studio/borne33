@@ -1,0 +1,29 @@
+section.hero {
+  .row {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    @media only screen and (min-width: $bp-large) {
+      grid-column: 8/12;
+    }
+  }
+}
+.hero {
+  &--text {
+    &-buttons {
+      display: flex;
+      grid-gap: 3rem;
+      width: 100%;
+      div,
+      .button {
+        width: 100%;
+      }
+      .link-two {
+        svg {
+          rotate: 90deg;
+        }
+      }
+    }
+  }
+}

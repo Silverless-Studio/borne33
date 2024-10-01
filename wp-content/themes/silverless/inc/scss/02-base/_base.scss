@@ -1,69 +1,126 @@
-body {
-  background-color: $page-border-color;
-}
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
 
-.site {
-  //background-color: $background-color;
-  background-color: transparent;
-  overflow: clip;
-  position: relative;
-
-  &::before {
-    background-image: var(--background-image);
-    background-position: top center;
-    background-repeat: repeat;
-    content: '';
-    display: block;
-    inset: 0;
-    opacity: var(--background-image-opacity);
-    pointer-events: none;
-    position: absolute;
-    z-index: 0;
-  }
-}
-
-section {
-  // sass-lint:disable-block indentation shorthand-values
-  background-color: var(--background-color);
-  margin: var(--margin_t, 0) var(--margin_r, 0) var(--margin_b, 4rem)
-    var(--margin_l, 0);
-  padding: var(--padding_t, 4rem) var(--padding_r, 0) var(--padding_b, 4rem)
-    var(--padding_l, 0);
-  scroll-margin-top: 10rem;
-}
-
-.fade-target {
-  img,
-  video {
-    &.fade {
-      opacity: 1;
-      transition: all 0.5s ease-in-out;
-    }
-  }
-
-  &:hover {
-    img,
-    video {
-      &.fade {
-        opacity: 1;
-      }
-    }
-  }
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  // background-color: rgba(red, 0.2);
+  box-sizing: border-box;
+  // outline: 1px solid red;
 }
 
 :root {
-  @include css-var(--grid-gap, $gutter-width);
-  @include css-var(--container-margin, $container-margin);
+  // --red: $red;
+  // --dblue: $dblue;
+  // --lblue: $lblue;
+  // --green: $green;
+}
 
-  @include respond(tab-port) {
-    @include css-var(--grid-gap, 2rem);
-    @include css-var(--container-margin, 2rem);
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+// html,
+// body {
+//   overflow-x: hidden;
+// }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  background-color: $background-color;
+  font-family: $font-primary;
+  line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+// .page-layout {
+//   overflow: hidden;
+// }
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul:not([class]) {
+  font-size: 1.6rem;
+  padding-left: 1rem;
+  li {
+    padding-bottom: 0.5rem;
+  }
+  li::marker {
+    color: var(--default-color);
+    content: '- ';
+  }
+}
+
+a[class] {
+  text-decoration: none;
+}
+a:not([class]) {
+  color: $color-primary;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 
-  @include respond(phone) {
-    @include css-var(--grid-gap, 1rem);
-    @include css-var(--container-margin, 1rem);
+  html {
+    scroll-behavior: initial;
   }
+}
+.skip-to-content-link {
+  align-items: center;
+  background: $color-primary;
+  color: $color-black !important;
+  display: flex;
+  font-weight: bold;
+  height: 3rem;
+  left: 50%;
+  padding: 1rem;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translate(-50%, -10rem);
+  transition: transform 0.3s;
+  z-index: 100;
+}
 
-  @include css-var(--background-color, transparent);
+.skip-to-content-link:focus {
+  transform: translate(-50%, 1rem);
 }
