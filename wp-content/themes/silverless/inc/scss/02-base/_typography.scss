@@ -13,6 +13,12 @@ h1 {
     font-size: 11.3rem;
     line-height: 1.1;
   }
+  &--xl {
+    font-size: 11rem;
+    @media only screen and (min-width: $bp-large) {
+      font-size: 13.4rem;
+    }
+  }
 }
 
 .heading-2,

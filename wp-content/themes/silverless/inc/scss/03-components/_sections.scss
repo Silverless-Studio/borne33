@@ -144,3 +144,15 @@
     }
   }
 }
+.section--nine {
+  align-items: center;
+  min-height: 100vh;
+  .recipe {
+    background-color: $color-supporting-1;
+    margin: 0 5rem;
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+}

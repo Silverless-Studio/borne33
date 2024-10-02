@@ -45,154 +45,14 @@ jQuery(document).ready(function ($) {
     $(this).addClass('active');
   });
 
-
   /* INITIATE SLIDERS */
-  $('.hero__slider').slick({
+  $('.recipe-slider').slick({
     infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear',
+    centerMode: true,
+    slidesToShow: 1,
+    centerPadding: '10rem',
     prevArrow: $('.hero__navigation__previous'),
     nextArrow: $('.hero__navigation__next')
-  });
-
-  $('.card__slider__slick').each(function (index, slider) {
-    var prev = $(slider)
-      .closest('.card__slider')
-      .find('.card__navigation__previous');
-    var next = $(slider)
-      .closest('.card__slider')
-      .find('.card__navigation__next');
-    $(slider).slick({
-      infinite: true,
-      speed: 500,
-      fade: true,
-      cssEase: 'linear',
-      prevArrow: $(prev),
-      nextArrow: $(next)
-    });
-  });
-
-  $('.section-carousel .carousel__slider.carousel__card').each(
-    function (index, slider) {
-      var prev = $(slider)
-        .closest('.section-carousel')
-        .find('.carousel__navigation__previous');
-      var next = $(slider)
-        .closest('.section-carousel')
-        .find('.carousel__navigation__next');
-      var args = {
-        infinite: true,
-        speed: 500,
-        fade: false,
-        slidesToShow: 3,
-        cssEase: 'linear',
-        prevArrow: $(prev),
-        nextArrow: $(next),
-        responsive: [
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 900,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      };
-
-      $(slider).slick(args);
-    }
-  );
-
-  $(
-    '.section-carousel:not(.sidebar__content__extended) .carousel__slider.carousel__images'
-  ).each(function (index, slider) {
-    var prev = $(slider)
-      .closest('.section-carousel')
-      .find('.carousel__navigation__previous');
-    var next = $(slider)
-      .closest('.section-carousel')
-      .find('.carousel__navigation__next');
-    var args = {
-      infinite: true,
-      speed: 500,
-      fade: false,
-      centerMode: true,
-      centerPadding: 'calc((100vw - 73.5rem) / 2 )',
-      slidesToShow: 1,
-      cssEase: 'linear',
-      prevArrow: $(prev),
-      nextArrow: $(next),
-      responsive: [
-        {
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 900,
-          settings: {
-            slidesToShow: 1,
-            centerPadding: '0'
-          }
-        }
-      ]
-    };
-
-    $(slider).slick(args);
-  });
-
-  $(
-    '.section-carousel.sidebar__content__extended .carousel__slider.carousel__images'
-  ).each(function (index, slider) {
-    var prev = $(slider)
-      .closest('.section-carousel')
-      .find('.carousel__navigation__previous');
-    var next = $(slider)
-      .closest('.section-carousel')
-      .find('.carousel__navigation__next');
-    var args = {
-      infinite: false,
-      speed: 500,
-      fade: false,
-      slidesToShow: 1.5,
-      cssEase: 'linear',
-      prevArrow: $(prev),
-      nextArrow: $(next),
-      responsive: [
-        {
-          breakpoint: 900,
-          settings: {
-            slidesToShow: 1
-          }
-        }
-      ]
-    };
-
-    $(slider).slick(args);
-  });
-
-  $('.testimonials__slider').each(function (index, slider) {
-    var prev = $(slider)
-      .closest('.section-testimonials')
-      .find('.testimonials__navigation__previous');
-    var next = $(slider)
-      .closest('.section-testimonials')
-      .find('.testimonials__navigation__next');
-    $(slider).slick({
-      infinite: true,
-      speed: 500,
-      fade: true,
-      cssEase: 'linear',
-      prevArrow: $(prev),
-      nextArrow: $(next)
-    });
   });
 
   /* READ MORE BLOCKS */
@@ -228,16 +88,16 @@ jQuery(document).ready(function ($) {
 
   $('.hero .play-container > *').on('click', function (e) {
     e.preventDefault();
-    $('.hero .hero-video-modal').addClass("show");
+    $('.hero .hero-video-modal').addClass('show');
     $('.hero .hero-video-modal > video').trigger('play');
-  })
+  });
 
   $('.hero .hero-video-modal .close').on('click', function (e) {
     e.preventDefault();
-    $('.hero .hero-video-modal').removeClass("show");
+    $('.hero .hero-video-modal').removeClass('show');
     $('.hero .hero-video-modal > video').trigger('pause');
     $('.hero .hero-video-modal > video').get(0).currentTime = 0;
-  })
+  });
 
   /* SCROLL TO NEXT SECTION */
   $('body').on('click', '.js_scroll-next-section', function (e) {
@@ -319,7 +179,6 @@ jQuery(document).ready(function ($) {
       $(self).toggleClass('expanded');
       $(self).next().slideToggle();
     }
-
   });
 
   /* TABBED CONTENT */
@@ -400,7 +259,7 @@ jQuery(document).ready(function ($) {
 
   /* SIDEBAR FILTERS */
 
-  var containerEl = document.querySelector(".card__posts");
+  var containerEl = document.querySelector('.card__posts');
 
   if (containerEl) {
     var checkboxGroup = document.querySelector('.sidebar__filter');
@@ -408,18 +267,20 @@ jQuery(document).ready(function ($) {
 
     var paginationData = containerEl.dataset.pagination;
 
-    var settings = {}
+    var settings = {};
 
     if (paginationData) {
       settings = {
         pagination: {
-          limit: paginationData,
+          limit: paginationData
         },
         templates: {
-          pagerPrev: '<button type="button" class="${classNames}" data-page="prev">Prev</button>',
-          pagerNext: '<button type="button" class="${classNames}" data-page="next">Next</button>'
+          pagerPrev:
+            '<button type="button" class="${classNames}" data-page="prev">Prev</button>',
+          pagerNext:
+            '<button type="button" class="${classNames}" data-page="next">Next</button>'
         }
-      }
+      };
     }
 
     // eslint-disable-next-line no-undef
@@ -444,9 +305,18 @@ jQuery(document).ready(function ($) {
     const now = new Date();
     const diff = targetDate - now;
 
-    const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-    const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
-    const minutes = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, '0');
+    const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(
+      2,
+      '0'
+    );
+    const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(
+      2,
+      '0'
+    );
+    const minutes = String(Math.floor((diff / 1000 / 60) % 60)).padStart(
+      2,
+      '0'
+    );
 
     return {
       diff,
@@ -459,15 +329,15 @@ jQuery(document).ready(function ($) {
   function initializeClock(targetDate, display) {
     function updateClock() {
       const t = getTimeRemaining(targetDate);
-      $(display).find('.countdown__display__days .value').html(t.days)
-      $(display).find('.countdown__display__hours .value').html(t.hours)
-      $(display).find('.countdown__display__minutes .value').html(t.minutes)
+      $(display).find('.countdown__display__days .value').html(t.days);
+      $(display).find('.countdown__display__hours .value').html(t.hours);
+      $(display).find('.countdown__display__minutes .value').html(t.minutes);
 
       if (t.diff <= 0 && timeinterval) {
         clearInterval(timeinterval);
-        $(display).find('.countdown__display__days .value').html("00")
-        $(display).find('.countdown__display__hours .value').html("00")
-        $(display).find('.countdown__display__minutes .value').html("00")
+        $(display).find('.countdown__display__days .value').html('00');
+        $(display).find('.countdown__display__hours .value').html('00');
+        $(display).find('.countdown__display__minutes .value').html('00');
       }
     }
 
@@ -478,13 +348,13 @@ jQuery(document).ready(function ($) {
   /* COUNTDOWN */
   $('.section-countdown').each(function () {
     var section = $(this);
-    var display = $(section).find('.countdown__display')
+    var display = $(section).find('.countdown__display');
     if (display) {
       var target = $(display).data('target');
       var targetDate = new Date(target);
       initializeClock(targetDate, display);
     }
-  })
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -569,4 +439,3 @@ const observer = new IntersectionObserver(handleIntersection, {
 headings.forEach((heading) => {
   observer.observe(heading);
 });
-
