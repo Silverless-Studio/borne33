@@ -34,3 +34,15 @@
     }
   }
 }
+.section--four {
+  align-items: center;
+  min-height: 100vh;
+}
+
+.section--five {
+  align-items: center;
+  min-height: 100vh;
+  .row {
+    text-align: center;
+  }
+}

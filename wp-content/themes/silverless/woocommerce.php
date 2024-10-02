@@ -7,7 +7,7 @@ get_header();
 
 <section class="container">
 	<div class="row col-10">
-<?php the_content();?>
+<?php woocommerce_content(); ?>
 	</div>
 </section>
 
