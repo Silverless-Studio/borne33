@@ -116,3 +116,12 @@ p {
     }
   }
 }
+.underscores {
+  &::after {
+    border-bottom: 1px solid $color-white;
+    content: '';
+    display: block;
+    padding-top: 2rem;
+    width: 4rem;
+  }
+}

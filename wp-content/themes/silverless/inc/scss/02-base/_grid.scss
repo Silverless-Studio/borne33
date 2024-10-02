@@ -107,3 +107,10 @@
 .relative {
   position: relative;
 }
+.col-half {
+  @media only screen and (min-width: $bp-large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 7rem;
+  }
+}

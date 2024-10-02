@@ -46,3 +46,101 @@
     text-align: center;
   }
 }
+
+.section--six {
+  align-items: center;
+  min-height: 100vh;
+}
+.image--text {
+  &-scroll {
+    @media only screen and (min-width: $bp-large) {
+      padding-right: 11rem;
+    }
+    p {
+      margin-bottom: 26rem;
+      //   &:last-of-type {
+      //     margin-bottom: 0;
+      //   }
+    }
+    .underscores {
+      margin-bottom: 4rem;
+      text-transform: uppercase;
+    }
+    .heading-4 {
+      padding-bottom: 2rem;
+    }
+  }
+  &-image {
+    @media only screen and (min-width: $bp-large) {
+      padding-right: 11rem;
+    }
+    img {
+      height: auto;
+      position: sticky;
+      top: 0;
+    }
+  }
+}
+.section--seven {
+  align-items: center;
+  min-height: 100vh;
+  .row {
+    text-align: center;
+  }
+}
+.section--eight {
+  align-items: center;
+  min-height: 100vh;
+  .image--box {
+    @media only screen and (min-width: $bp-large) {
+      display: grid;
+      grid-template-columns: 1fr 2.5rem 1fr 2.5rem 1fr 2.5rem 1fr;
+    }
+    &-outer {
+      display: grid;
+      grid-template-columns: 4rem 1fr 4rem;
+      .content {
+        align-items: center;
+        border-bottom: 1px solid $color-tertiary;
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+        img {
+          max-height: 24rem;
+        }
+        p {
+          align-self: flex-start;
+          padding: 2rem 0;
+        }
+      }
+      .spacer {
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        .top {
+          border-bottom: 1px solid $color-tertiary;
+        }
+        &.left {
+          .bottom {
+            border-bottom: 1px solid $color-tertiary;
+            border-left: 1px solid $color-tertiary;
+          }
+        }
+        &.right {
+          .bottom {
+            border-bottom: 1px solid $color-tertiary;
+            border-right: 1px solid $color-tertiary;
+          }
+        }
+      }
+    }
+    .filler {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      .top {
+        border-bottom: 1px solid $color-tertiary;
+      }
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+}

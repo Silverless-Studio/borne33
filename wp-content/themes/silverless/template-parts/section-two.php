@@ -1,4 +1,4 @@
-<section class="section--two container">
+<section class="section--two container" id="content">
    
     <div class="row col-10">
     <h2 class="heading-1">

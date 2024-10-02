@@ -17,7 +17,7 @@ if( $buttonOne ): ?>
 $buttontwo = get_field('button_two');
 if( $buttontwo ): ?>
        
-            <a class="button button--<?php echo esc_html( $buttontwo['button_type'] ); ?>" href="<?php echo esc_url( $buttontwo['link']['url'] ); ?>"><?php echo esc_html( $buttontwo['link']['title'] ); ?><?php get_template_part('inc/img/arrow'); ?></a>
+            <a class="button button--<?php echo esc_html( $buttontwo['button_type'] ); ?> link-two" href="<?php echo esc_url( $buttontwo['link']['url'] ); ?>"><?php echo esc_html( $buttontwo['link']['title'] ); ?><?php get_template_part('inc/img/arrow'); ?></a>
 <?php endif; ?>
                
             </div>
