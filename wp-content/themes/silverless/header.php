@@ -40,10 +40,10 @@
         <header id="site-header" class="site-header container">
             <div class="row">
                 <?php get_template_part('inc/img/fish'); ?>  <?php
-$buttontwo = get_field('button_two');
+$buttontwo = get_field('button_one');
 if( $buttontwo ): ?>
        
-            <a class="button button--outline-header link-two" href="<?php echo esc_url( $buttontwo['link']['url'] ); ?>"><?php echo esc_html( $buttontwo['link']['title'] ); ?><?php get_template_part('inc/img/arrow'); ?></a>
+            <a class="button button--primary" href="<?php echo esc_url( $buttontwo['link']['url'] ); ?>"><?php echo esc_html( $buttontwo['link']['title'] ); ?><?php get_template_part('inc/img/glass'); ?></a>
 <?php endif; ?>
             </div>
            

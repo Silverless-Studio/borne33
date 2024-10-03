@@ -34,10 +34,5 @@
   &--outline {
     background: transparent;
     border: 1px solid $color-white;
-    &-header {
-      background: $color-black;
-      border: 1px solid $color-white;
-      min-width: 19rem;
-    }
   }
 }
