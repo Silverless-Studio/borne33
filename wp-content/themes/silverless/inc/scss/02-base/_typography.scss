@@ -136,4 +136,9 @@ p {
       width: 90%;
     }
   }
+  &--primary {
+    &::after {
+      border-bottom: 1px solid $color-primary;
+    }
+  }
 }
