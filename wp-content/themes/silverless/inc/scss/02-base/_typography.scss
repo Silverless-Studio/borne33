@@ -130,4 +130,10 @@ p {
     padding-top: 2rem;
     width: 4rem;
   }
+  &--long {
+    &::after {
+      padding-top: 4rem;
+      width: 90%;
+    }
+  }
 }

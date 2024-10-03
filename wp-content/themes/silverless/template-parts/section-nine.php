@@ -28,11 +28,11 @@ if ($recipe_query->have_posts()) :?>
                         <?php the_post_thumbnail('full'); // Full-size featured image ?>
             <?php endif; ?></div>
             <div class="details">
-            <h2 class="heading-4 heading-alt"><?php the_title(); ?></h2>
+            <h2 class="heading-4 heading-alt underscores underscores--long"><?php the_title(); ?></h2>
             <h3 class="heading-5 heading-alt font--color-primary"><?php echo esc_html( get_field('ingredients_title') ); ?></h3>
             <div class="ingredients">
                <?php if( have_rows('ingredients') ): ?>
-    <ul class="ingredients">
+    <ul class="ingredient--items">
     <?php while( have_rows('ingredients') ): the_row();?>
         <li>
             <?php echo esc_html( get_sub_field('ingredient') ); ?>
@@ -44,7 +44,7 @@ if ($recipe_query->have_posts()) :?>
 
 <div class="method">
                <?php if( have_rows('method') ): ?>
-    <ol class="method">
+    <ol class="method--items">
     <?php while( have_rows('method') ): the_row();?>
         <li>
             <?php echo esc_html( get_sub_field('step') ); ?>

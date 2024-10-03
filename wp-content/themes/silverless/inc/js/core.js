@@ -50,7 +50,9 @@ jQuery(document).ready(function ($) {
     infinite: true,
     centerMode: true,
     slidesToShow: 1,
-    centerPadding: '10rem',
+    centerPadding: '25px',
+    variableWidth: true,
+    rows: 0,
     prevArrow: $('.hero__navigation__previous'),
     nextArrow: $('.hero__navigation__next')
   });

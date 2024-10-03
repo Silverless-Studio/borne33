@@ -149,10 +149,53 @@
   min-height: 100vh;
   .recipe {
     background-color: $color-supporting-1;
-    margin: 0 5rem;
-    img {
-      height: auto;
-      width: 100%;
+
+    @media only screen and (min-width: $bp-large) {
+      margin: 0 2.5rem;
+      padding: 5rem 8rem;
+      width: 110rem !important;
+    }
+    .col-half {
+      height: 100%;
+    }
+    .image {
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    .details {
+      .heading-5 {
+        padding: 4.5rem 0 2.5rem;
+      }
+      .ingredients {
+        .ingredient--items li {
+          color: $color-primary;
+          font-size: 1.6rem;
+          padding-bottom: 2rem;
+        }
+      }
+      .method {
+        .method--items {
+          li {
+            font-size: 1.6rem;
+            list-style-position: outside;
+            padding-bottom: 2rem;
+            &::marker {
+              font-family: $font-header;
+              font-size: 7rem;
+            }
+          }
+        }
+      }
     }
   }
+}
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: inherit !important;
 }
