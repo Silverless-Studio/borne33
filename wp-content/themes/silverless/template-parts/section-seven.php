@@ -1,6 +1,7 @@
-<section class="section--seven container relative">
+<section class="section--seven container">
     
-    <div class="row col-6">
+    <div class="row col-6 relative">
+        <div class="background--image"><?php get_template_part('inc/img/cluster'); ?></div>
          <h2 class="heading-1">
         <?php echo esc_html( get_field('quote') ); ?>
     </h2>
@@ -10,6 +11,6 @@
         <p><?php echo wp_kses_post ( get_field('seven_description') ); ?></p>
     </div>
     </div>
-   
-    </div>
+
+    
 </section>

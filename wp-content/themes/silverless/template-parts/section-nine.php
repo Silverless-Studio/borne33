@@ -1,6 +1,7 @@
 <section class="section--nine container relative">
     
-    <div class="row col-8">
+    <div class="row col-8 relative">
+         <div class="background--image"><?php get_template_part('inc/img/hand'); ?></div>
         <h2 class="heading-1 heading-1--xl  font--color-primary">
         <?php echo esc_html( get_field('recipes_title') ); ?>
     </h2>
@@ -65,4 +66,5 @@ if ($recipe_query->have_posts()) :?>
 wp_reset_postdata();
 ?>
     </div>
+    <div class="background--image-map"><?php get_template_part('inc/img/contour'); ?></div>
 </section>

@@ -32,7 +32,7 @@
   .background-image {
     inset: 0;
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     img {
       left: 50%;
       position: absolute;
@@ -45,10 +45,11 @@
   align-items: center;
   min-height: 100vh;
   .background--image {
+    inset: 0;
     position: absolute;
-    top: 50%;
-    transform: translate(-20%, -50%);
-    z-index: -1;
+    transform: translate(-25%, -80%);
+    width: 50vw;
+    z-index: -2;
   }
   .heading-3 {
     align-items: center;
@@ -58,6 +59,7 @@
   .image--text {
     display: flex;
     justify-content: center;
+    position: relative;
   }
   .heading-4 {
     padding-bottom: 3rem;
@@ -72,6 +74,20 @@
   }
   .heading-4 {
     padding-bottom: 4rem;
+  }
+  .background--image-high {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(10%, -35%);
+    z-index: -2;
+  }
+  .background--image-low {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(-40%, 60%);
+    z-index: -2;
   }
 }
 
@@ -120,6 +136,13 @@
     max-width: 20ch;
     padding: 4rem 0;
     text-align: center;
+  }
+  .background--image {
+    inset: 0;
+    min-width: 165%;
+    position: absolute;
+    transform: translate(-20%, -20%);
+    z-index: -2;
   }
 }
 .section--eight {
@@ -184,6 +207,18 @@
   .heading-5 {
     max-width: 20ch;
   }
+  .background--image {
+    inset: 0;
+    position: absolute;
+    transform: translate(-50%, -120%);
+    z-index: -2;
+  }
+  .background--image-map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
   .recipe {
     background-color: $color-supporting-1;
 
@@ -235,4 +270,26 @@
 
 .slick-slide {
   height: inherit !important;
+}
+.background--image-bottle {
+  height: 75vh;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-150%, -50%);
+  z-index: -1;
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+.background--image-main {
+  inset: 0;
+  position: fixed;
+  z-index: -2;
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
 }

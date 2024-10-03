@@ -1,4 +1,6 @@
-<section class="hero container">
+<div class="background--image-bottle"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/tbottle.avif" alt="Bottle Image"></div>
+    <div class="background--image-main"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/bg.avif" alt="Bottle Image"></div>
+    <section class="hero container">
     <div class="row">
         <div class="hero--text">
             <h3 class="heading-5 heading-alt font--color-primary"><?php echo esc_html( get_field('top_tagline') ); ?></h3>
