@@ -30,7 +30,15 @@
             <?php esc_html_e('Skip to content', 'silverless'); ?>
         </a>
 
-        <header id="masthead" class="site-header container">
+        <header id="site-header" class="site-header container">
+            <div class="row">
+                <?php get_template_part('inc/img/fish'); ?>  <?php
+$buttontwo = get_field('button_two');
+if( $buttontwo ): ?>
+       
+            <a class="button button--outline-header link-two" href="<?php echo esc_url( $buttontwo['link']['url'] ); ?>"><?php echo esc_html( $buttontwo['link']['title'] ); ?><?php get_template_part('inc/img/arrow'); ?></a>
+<?php endif; ?>
+            </div>
            
         </header>
        

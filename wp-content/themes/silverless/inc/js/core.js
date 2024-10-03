@@ -126,4 +126,16 @@ jQuery(document).ready(function ($) {
   targetElements.each(function (index, element) {
     observer.observe(element);
   });
+
+  $(document).on('scroll', function () {
+    var header = $('#site-header');
+    var scrollPosition = $(window).scrollTop();
+
+    // Check if the scroll is beyond 100vh
+    if (scrollPosition > $(window).height()) {
+      header.addClass('visible');
+    } else {
+      header.removeClass('visible');
+    }
+  });
 });
