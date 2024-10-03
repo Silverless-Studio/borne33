@@ -29,6 +29,13 @@
         <a class="skip-link screen-reader-text" href="#primary">
             <?php esc_html_e('Skip to content', 'silverless'); ?>
         </a>
+        <div id="age-gate" class="age-gate">
+    <div class="age-gate-content">
+        <h1>Are you over 18?</h1>
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
+    </div>
+</div>
 
         <header id="site-header" class="site-header container">
             <div class="row">
