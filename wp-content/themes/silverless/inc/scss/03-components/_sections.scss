@@ -1,13 +1,18 @@
 .section--two {
   align-items: center;
   min-height: 100vh;
+  overflow: hidden;
   .heading-1 {
     padding: 0 0 2rem;
     text-align: center;
   }
   ul {
     display: flex;
+    flex-wrap: wrap;
     grid-gap: 7rem;
+    @media only screen and (min-width: $bp-large) {
+      padding-right: 11rem;
+    }
 
     li {
       align-items: center;
@@ -29,6 +34,7 @@
 .section--three {
   align-items: center;
   min-height: 100vh;
+  overflow: hidden;
   .background-image {
     inset: 0;
     position: absolute;
@@ -44,6 +50,7 @@
 .section--four {
   align-items: center;
   min-height: 100vh;
+  overflow: hidden;
   .background--image {
     inset: 0;
     position: absolute;
@@ -69,6 +76,7 @@
 .section--five {
   align-items: center;
   min-height: 100vh;
+  overflow: hidden;
   .row {
     text-align: center;
   }
@@ -150,10 +158,13 @@
   }
   .background--image {
     inset: 0;
-    min-width: 165%;
+
     position: absolute;
     transform: translate(-20%, -20%);
     z-index: -2;
+    @media only screen and (min-width: $bp-large) {
+      min-width: 165%;
+    }
   }
 }
 .section--eight {
@@ -215,6 +226,7 @@
 .section--nine {
   align-items: center;
   min-height: 100vh;
+  overflow: hidden;
   .heading-5 {
     max-width: 20ch;
   }
@@ -315,11 +327,14 @@
   left: 50%;
   position: fixed;
   top: 50%;
-  transform: translate(-170%, -50%);
+  transform: translate(-50%, -50%);
   z-index: -1;
   img {
     height: 100%;
     width: auto;
+  }
+  @media only screen and (min-width: $bp-large) {
+    transform: translate(-170%, -50%);
   }
 }
 .background--image-main {
