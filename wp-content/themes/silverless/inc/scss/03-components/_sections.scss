@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     grid-gap: 7rem;
     @media only screen and (min-width: $bp-large) {
+      flex-wrap: nowrap;
       padding-right: 11rem;
     }
 
@@ -334,10 +335,16 @@
     width: auto;
   }
   @media only screen and (min-width: $bp-large) {
-    transform: translate(-170%, -50%);
+    transform: translate(-155%, -50%);
   }
 }
 .background--image-main {
+  background: rgb(209, 124, 24);
+  background: linear-gradient(
+    210deg,
+    rgba(209, 124, 24, 1) 0%,
+    rgba(209, 124, 24, 0) 18%
+  );
   inset: 0;
   position: fixed;
   z-index: -2;

@@ -126,6 +126,11 @@ a:not([class]) {
   transform: translate(-50%, 1rem);
 }
 #page {
+  background: linear-gradient(
+    210deg,
+    rgb(209, 124, 24) -5%,
+    rgba(209, 124, 24, 0) 4%
+  );
   &::after {
     background: rgb(20, 0, 17);
     background: linear-gradient(
