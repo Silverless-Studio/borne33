@@ -142,11 +142,14 @@ p {
     }
   }
 }
-.underscores--primary {
-  display: flex;
-  justify-content: center;
-  &::after {
-    padding-top: 4rem;
-    width: 9rem;
+.footer,
+.age-gate {
+  .underscores--primary {
+    display: flex;
+    justify-content: center;
+    &::after {
+      padding-top: 4rem;
+      width: 9rem;
+    }
   }
 }

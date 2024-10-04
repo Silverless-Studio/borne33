@@ -163,9 +163,9 @@ document.getElementById('yes-btn').addEventListener('click', function () {
   setCookie('ageVerified', 'true', 180); // Set cookie to expire in 180 days
 });
 
-document.getElementById('no-btn').addEventListener('click', function () {
-  window.location.href = 'https://en.wikipedia.org/wiki/Vodka'; // Redirect to another page if under 18
-});
+// document.getElementById('no-btn').addEventListener('click', function () {
+//   window.location.href = 'https://en.wikipedia.org/wiki/Vodka'; // Redirect to another page if under 18
+// });
 
 // Check if the age verification cookie exists
 if (getCookie('ageVerified') === 'true') {
