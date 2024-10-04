@@ -263,6 +263,34 @@
       }
     }
   }
+  .slider--nav {
+    display: flex;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 50%);
+    svg {
+      cursor: pointer;
+      height: auto;
+      width: 5.5rem;
+      path {
+        fill: #b23e25;
+      }
+    }
+    &-previous {
+      @media only screen and (min-width: $bp-large) {
+        transform: translate(-60rem);
+      }
+      svg {
+        rotate: 180deg;
+      }
+    }
+    &-next {
+      @media only screen and (min-width: $bp-large) {
+        transform: translate(60rem);
+      }
+    }
+  }
 }
 .slick-track {
   display: flex !important;

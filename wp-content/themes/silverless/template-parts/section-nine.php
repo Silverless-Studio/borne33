@@ -56,6 +56,14 @@ if ($recipe_query->have_posts()) :?>
 
             <?php endwhile; ?>
         </div>
+        <div class="slider--nav row">
+      <div class="slider--nav-previous">
+        <?php echo get_template_part('/inc/img/slider-arrow'); ?>
+      </div>
+      <div class="slider--nav-next">
+        <?php echo get_template_part('/inc/img/slider-arrow'); ?>
+      </div>
+    </div>
         <?php endif;
 // Restore original post data (important after a custom query)
 wp_reset_postdata();

@@ -53,8 +53,8 @@ jQuery(document).ready(function ($) {
     centerPadding: '25px',
     variableWidth: true,
     rows: 0,
-    prevArrow: $('.hero__navigation__previous'),
-    nextArrow: $('.hero__navigation__next')
+    prevArrow: $('.slider--nav-previous'),
+    nextArrow: $('.slider--nav-next')
   });
 
   /* SCROLL TO NEXT SECTION */
