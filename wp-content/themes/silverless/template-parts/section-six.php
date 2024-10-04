@@ -4,9 +4,11 @@
     <div class="image--text">
     <?php while( have_rows('image_text_blocks') ): the_row(); 
         $image = get_sub_field('image');
+        $overlay = get_sub_field('overlay');
         ?>
        <div class="image--text-block col-half">
         <div class="image--text-image">
+            <div class="overlay"><?php echo wp_get_attachment_image( $overlay, 'full' ); ?></div>
             <?php echo wp_get_attachment_image( $image, 'full' ); ?>
             </div>
             <div class="image--text-scroll">

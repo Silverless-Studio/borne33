@@ -115,13 +115,24 @@
     }
   }
   &-image {
+    position: relative;
     @media only screen and (min-width: $bp-large) {
       padding-right: 11rem;
     }
+
     img {
       height: auto;
       position: sticky;
       top: 0;
+    }
+    .overlay {
+      position: absolute;
+      right: 3rem;
+      top: -12rem;
+      img {
+        position: relative;
+        z-index: 3;
+      }
     }
   }
 }
