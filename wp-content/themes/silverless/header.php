@@ -31,7 +31,9 @@
         <?php if ( is_front_page() ) : ?>
         <header id="home-header" class="site-header container">
             <div class="row">
-                <?php get_template_part('inc/img/fish'); ?>
+                <a href="<?php echo home_url(); ?>">
+                    <?php get_template_part('inc/img/fish'); ?>
+                </a>
                 <?php 
             $link = get_field('purchase_link','options');
             if( $link ): 
@@ -50,7 +52,9 @@
         <?php else : ?>
         <header id="main-header" class="site-header container">
             <div class="row">
-                <?php get_template_part('inc/img/fish'); ?>
+                <a href="<?php echo home_url(); ?>">
+                    <?php get_template_part('inc/img/fish'); ?>
+                </a>
                 <?php 
             $link = get_field('discover_link','options');
             if( $link ): 

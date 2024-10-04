@@ -128,16 +128,16 @@ function getCookie(name) {
   return null;
 }
 
+// Check if the age verification cookie exists
+if (getCookie('ageVerified') !== 'true') {
+  document.getElementById('age-gate').style.display = 'flex'; // Show the gateway only if the cookie isn't set
+}
+
 document.getElementById('yes-btn').addEventListener('click', function () {
   document.getElementById('age-gate').style.display = 'none';
   setCookie('ageVerified', 'true', 180); // Set cookie to expire in 180 days
 });
 
-// document.getElementById('no-btn').addEventListener('click', function () {
-//   window.location.href = 'https://en.wikipedia.org/wiki/Vodka'; // Redirect to another page if under 18
+// document.getElementById('no-btn').addEventListener('click', function() {
+//     window.location.href = 'https://www.google.com'; // Redirect to another page if under 18
 // });
-
-// Check if the age verification cookie exists
-if (getCookie('ageVerified') === 'true') {
-  document.getElementById('age-gate').style.display = 'none';
-}
