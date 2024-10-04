@@ -10,14 +10,7 @@ footer {
     padding-top: 3rem;
     text-align: center;
   }
-  .underscores--primary {
-    display: flex;
-    justify-content: center;
-    &::after {
-      padding-top: 4rem;
-      width: 9rem;
-    }
-  }
+
   .address {
     grid-gap: 0;
     border-bottom: 1px solid $color-primary;

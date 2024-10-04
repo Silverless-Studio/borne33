@@ -17,10 +17,7 @@
 }
 
 .age-gate button {
-  --hue: 13;
-  --saturation: 74%;
-  --lightness: 40%;
-  background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+  background-color: $color-primary;
   border: none;
   color: white;
   cursor: pointer;
@@ -34,5 +31,4 @@
 
 .age-gate button:hover {
   transition: 0.2s ease-in;
-  --lightness: 30%;
 }
