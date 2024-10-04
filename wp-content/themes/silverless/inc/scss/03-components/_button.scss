@@ -30,6 +30,10 @@
   }
   &--primary {
     background: $color-primary;
+    &:hover {
+      background: darken($color-primary, 10%);
+      border-color: darken($color-primary, 10%);
+    }
   }
   &--outline {
     background: transparent;
