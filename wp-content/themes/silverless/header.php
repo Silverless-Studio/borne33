@@ -17,11 +17,9 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-<link rel="stylesheet" href="https://use.typekit.net/nwl6azg.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nwl6azg.css">
     <?php wp_head(); ?>
 </head>
-
-
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
@@ -29,23 +27,15 @@
         <a class="skip-link screen-reader-text" href="#primary">
             <?php esc_html_e('Skip to content', 'silverless'); ?>
         </a>
-        <div id="age-gate" class="age-gate">
-    <div class="age-gate-content">
-        <h1>Are you over 18?</h1>
-        <button id="yes-btn">Yes</button>
-        <button id="no-btn">No</button>
-    </div>
-</div>
-
+        <?php get_template_part('template-parts/age-gate');?>
         <header id="site-header" class="site-header container">
             <div class="row">
-                <?php get_template_part('inc/img/fish'); ?>  <?php
+                <?php get_template_part('inc/img/fish'); ?> <?php
 $buttontwo = get_field('button_one');
 if( $buttontwo ): ?>
-       
-            <a class="button button--primary" href="<?php echo esc_url( $buttontwo['link']['url'] ); ?>"><?php echo esc_html( $buttontwo['link']['title'] ); ?><?php get_template_part('inc/img/glass'); ?></a>
-<?php endif; ?>
+
+                <a class="button button--primary"
+                    href="<?php echo esc_url( $buttontwo['link']['url'] ); ?>"><?php echo esc_html( $buttontwo['link']['title'] ); ?><?php get_template_part('inc/img/glass'); ?></a>
+                <?php endif; ?>
             </div>
-           
         </header>
-       

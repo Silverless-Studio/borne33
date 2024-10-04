@@ -1,0 +1,38 @@
+.age-gate {
+  align-items: center;
+  background: $color-black;
+  color: white;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.age-gate-content {
+  text-align: center;
+}
+
+.age-gate button {
+  --hue: 13;
+  --saturation: 74%;
+  --lightness: 40%;
+  background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  min-height: 3.8rem;
+  padding: 0.5rem 1.75rem;
+  svg {
+    margin-left: 3rem;
+  }
+}
+
+.age-gate button:hover {
+  transition: 0.2s ease-in;
+  --lightness: 30%;
+}

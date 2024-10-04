@@ -164,7 +164,7 @@ document.getElementById('yes-btn').addEventListener('click', function () {
 });
 
 document.getElementById('no-btn').addEventListener('click', function () {
-  window.location.href = 'https://www.google.com'; // Redirect to another page if under 18
+  window.location.href = 'https://en.wikipedia.org/wiki/Vodka'; // Redirect to another page if under 18
 });
 
 // Check if the age verification cookie exists
