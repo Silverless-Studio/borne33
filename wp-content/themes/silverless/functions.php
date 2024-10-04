@@ -327,3 +327,22 @@ function get_container_styles(array $styles = [])
 
 	return implode(' ', $styles);
 }
+
+/**
+ * Remove product page tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'my_remove_all_product_tabs', 98 );
+
+function my_remove_all_product_tabs( $tabs ) {
+  unset( $tabs['description'] );      	// Remove the description tab
+  unset( $tabs['reviews'] ); 			// Remove the reviews tab
+  unset( $tabs['additional_information'] );  	// Remove the additional information tab
+  return $tabs;
+}
+
+
+//Remove for original position
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+
+//Move under cart button (option 1)
+add_action ( 'woocommerce_single_product_summary', 'woocommerce_output_all_notices', 35 ); 

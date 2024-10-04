@@ -1,0 +1,102 @@
+.product_title.entry-title {
+  font-family: $font-secondary;
+  font-size: 3.2rem;
+  &::after {
+    border-bottom: 1px solid $color-primary;
+    content: '';
+    display: block;
+    padding-top: 3.5rem;
+    width: 4rem;
+  }
+}
+.woocommerce div.product p.price {
+  color: $color-white;
+  font-family: $font-secondary;
+  font-size: 2.4rem;
+  padding: 3rem 0;
+  &::after {
+    border-bottom: 1px solid $color-primary;
+    content: '';
+    display: block;
+    padding-top: 3.5rem;
+    width: 75%;
+  }
+}
+.woocommerce div.product div.images img {
+  max-height: 50vh;
+  width: auto;
+}
+.woocommerce-product-gallery__wrapper div {
+  display: flex;
+  justify-content: center;
+}
+.woocommerce-product-details__short-description {
+  max-width: 87ch;
+  padding-bottom: 4rem;
+}
+.woocommerce div.product form.cart .button {
+  background-color: $color-primary;
+  border-radius: 0;
+  min-width: 20rem;
+  padding: 0.5rem 1.75rem;
+  position: relative;
+  text-align: left;
+  &::after {
+    content: url('../../img/cross.png');
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+.woocommerce .quantity .qty {
+  font-size: 1.6rem;
+  height: 3.8rem;
+}
+.woocommerce-message {
+  align-items: center;
+  background-color: transparent;
+  border-top: none;
+  color: $color-white;
+  display: flex;
+  font-size: 1.6rem;
+  justify-content: space-between;
+  padding: 0;
+  &::before {
+    display: none;
+  }
+}
+.woocommerce .woocommerce-message .button {
+  background-color: transparent;
+  border: 1px solid $color-white;
+  border-radius: 0;
+  color: $color-white;
+  display: flex;
+  font-weight: 300;
+  min-width: 20rem;
+  padding: 0.5rem 1.75rem;
+  &::after {
+    content: url('../../img/buttarrow.png');
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+.woocommerce div.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images {
+  float: unset;
+  width: unset;
+}
+.woocommerce div.product div.summary {
+  float: unset;
+  width: unset;
+}
