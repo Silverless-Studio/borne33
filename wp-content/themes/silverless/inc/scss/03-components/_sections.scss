@@ -324,6 +324,7 @@
   height: inherit !important;
 }
 .background--image-bottle {
+  backdrop-filter: hue-rotate(45deg);
   height: 75vh;
   left: 50%;
   position: fixed;
