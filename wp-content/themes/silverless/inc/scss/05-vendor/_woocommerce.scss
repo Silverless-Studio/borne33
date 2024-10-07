@@ -235,6 +235,14 @@ table.wc-block-cart-items
     font-family: $font-secondary;
     font-size: 1.6rem;
   }
+  .wc-block-cart-items__row {
+    position: relative;
+    .wc-block-cart-item__remove-link {
+      left: -5rem;
+      position: absolute;
+      top: 50%;
+    }
+  }
 }
 .woocommerce-checkout.theme-silverless .wc-block-components-sidebar-layout {
   @media only screen and (min-width: $bp-large) {

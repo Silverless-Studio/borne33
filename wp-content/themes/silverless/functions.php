@@ -346,3 +346,4 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
 
 //Move under cart button (option 1)
 add_action ( 'woocommerce_single_product_summary', 'woocommerce_output_all_notices', 35 ); 
+
