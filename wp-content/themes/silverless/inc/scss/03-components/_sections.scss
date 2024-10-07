@@ -324,7 +324,6 @@
   height: inherit !important;
 }
 .background--image-bottle {
-  backdrop-filter: hue-rotate(45deg);
   height: 75vh;
   left: 50%;
   position: fixed;
@@ -337,6 +336,12 @@
   }
   @media only screen and (min-width: $bp-large) {
     transform: translate(-155%, -50%);
+  }
+  .effects-div {
+    backdrop-filter: hue-rotate(45deg);
+    inset: 0;
+    margin-top: 30rem;
+    position: absolute;
   }
 }
 .background--image-main {
