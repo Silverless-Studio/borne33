@@ -9,7 +9,7 @@
        <div class="image--text-block col-half">
         <div class="image--text-image">
             <div class="overlay"><?php echo wp_get_attachment_image( $overlay, 'full' ); ?></div>
-            <?php echo wp_get_attachment_image( $image, 'full' ); ?>
+           <?php echo wp_get_attachment_image( $image, 'full', false, array( 'class' => 'sticky-image' ) ); ?>
             </div>
             <div class="image--text-scroll">
             <p class="underscores"><?php echo esc_html( get_sub_field('top_marker') ); ?></p>

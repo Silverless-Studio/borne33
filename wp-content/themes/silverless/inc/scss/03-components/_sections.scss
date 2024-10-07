@@ -129,10 +129,11 @@
       padding-right: 11rem;
     }
 
-    img {
+    img.sticky-image {
       height: auto;
+      margin-bottom: 15rem;
       position: sticky;
-      top: 0;
+      top: 15vh;
     }
     .overlay {
       position: absolute;
