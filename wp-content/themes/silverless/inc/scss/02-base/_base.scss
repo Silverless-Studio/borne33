@@ -64,6 +64,7 @@ input,
 button,
 textarea,
 select {
+  border-radius: 0 !important;
   font: inherit;
 }
 
@@ -125,7 +126,7 @@ a:not([class]) {
 .skip-to-content-link:focus {
   transform: translate(-50%, 1rem);
 }
-#page {
+.home #page {
   background: linear-gradient(
     210deg,
     rgb(209, 124, 24) -5%,
