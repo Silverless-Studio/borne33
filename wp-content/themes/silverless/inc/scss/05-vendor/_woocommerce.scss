@@ -252,11 +252,190 @@ table.wc-block-cart-items
       }
     }
   }
+  table.wc-block-cart-items
+    .wc-block-cart-items__row
+    .wc-block-cart-item__image
+    img {
+    max-height: 15rem;
+    width: auto;
+  }
 }
 .woocommerce-checkout.theme-silverless .wc-block-components-sidebar-layout {
   @media only screen and (min-width: $bp-large) {
     column-gap: 4rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
+  }
+}
+//BASIC STYLES
+.theme-silverless {
+  .shop_table {
+    thead {
+      th {
+        font-size: 1.6rem;
+        font-weight: 300;
+      }
+    }
+    .woocommerce-cart-form__cart-item.cart_item {
+      td {
+        border-bottom: 1px solid $color-primary;
+        border-top: 1px solid $color-primary;
+        padding: 3.5rem 0;
+        &.product-remove {
+          // border: none;
+          a {
+            font-size: 0;
+            position: relative;
+            &::after {
+              content: url('../../img/close.png');
+              display: block;
+              position: absolute;
+              right: 2rem;
+              top: 50%;
+              transform: translate(0, -50%);
+            }
+          }
+        }
+        &.product-price {
+          border: 1px solid $color-primary;
+          font-family: $font-secondary;
+          font-size: 2.4rem;
+          text-align: center;
+        }
+        &.product-quantity {
+          border-right: 1px solid $color-primary;
+          text-align: center;
+        }
+        &.product-name {
+          padding: 0 1.2rem;
+          a {
+            color: $color-white;
+            font-family: $font-secondary;
+            font-size: 2.4rem;
+          }
+        }
+        &.product-thumbnail {
+          a {
+            display: flex;
+            justify-content: center;
+            padding: 0 2rem;
+          }
+        }
+        &.product-subtotal {
+          font-family: $font-secondary;
+          font-size: 2.4rem;
+          text-align: center;
+        }
+      }
+    }
+    .actions {
+      padding: 2rem 0;
+      button[name='update_cart']:not(:disabled) {
+        background-color: transparent;
+        border: 1px solid $color-white;
+        color: white;
+        padding-right: 8rem;
+        &::after {
+          content: url('../../img/refresh.png');
+          display: block;
+          position: absolute;
+          right: 2rem;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+      button[name='update_cart']:disabled {
+        /* Styles for when the button is disabled */
+        background-color: grey;
+        cursor: not-allowed;
+        padding-right: 8rem;
+        &::after {
+          content: url('../../img/refresh.png');
+          display: block;
+          position: absolute;
+          right: 2rem;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+      .coupon {
+        .input-text {
+          background-color: #342432;
+          border: transparent;
+          color: $color-white;
+          min-height: 3.8rem;
+          @media only screen and (min-width: $bp-large) {
+            min-width: 33rem;
+          }
+          &::placeholder {
+            color: $color-white;
+            opacity: 1; /* Firefox */
+          }
+        }
+        button[name='apply_coupon'] {
+          background-color: transparent;
+          border: 1px solid $color-white;
+          color: white;
+        }
+      }
+      .screen-reader-text {
+        color: $color-white;
+      }
+    }
+  }
+  .cart-collaterals {
+    .cart_totals {
+      width: fit-content;
+      h2 {
+        display: none;
+      }
+      .shop_table {
+        tbody {
+          tr {
+            th,
+            td {
+              border-bottom: 1px solid $color-primary;
+              font-size: 1.6rem;
+              font-weight: 300;
+              strong {
+                font-weight: 300;
+              }
+            }
+            th {
+              padding-right: 15rem;
+            }
+          }
+        }
+      }
+    }
+    .wc-proceed-to-checkout {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        background-color: $color-primary;
+        display: flex;
+        font-family: $font-primary;
+        font-size: 1.4rem;
+        font-weight: 300;
+        min-width: 20rem;
+        padding: 0.5rem 6rem 0.5rem 1.5rem;
+        &::after {
+          content: url('../../img/buttarrow.png');
+          display: block;
+          position: absolute;
+          right: 2rem;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+  &.woocommerce-cart .cart-collaterals .cart_totals tr th,
+  &.woocommerce-cart .cart-collaterals .cart_totals tr td {
+    border: none;
+  }
+  &.woocommerce-cart table.cart td.actions .coupon .input-text {
+    border: transparent;
+    color: $color-white;
   }
 }
