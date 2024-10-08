@@ -549,4 +549,10 @@ table.wc-block-cart-items
   .woocommerce-page form .form-row-last {
     width: 48%;
   }
+  .select2-results__option {
+    color: $color-black;
+  }
+  #order_comments {
+    padding: 2rem;
+  }
 }
