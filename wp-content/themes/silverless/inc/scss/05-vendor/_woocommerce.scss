@@ -517,6 +517,7 @@ table.wc-block-cart-items
   }
   .select2-container--default .select2-selection--single {
     align-items: center;
+    border-radius: 0;
     display: flex;
     min-height: 5rem;
     padding: 0 2rem;
@@ -538,5 +539,14 @@ table.wc-block-cart-items
   }
   #order_review_heading {
     padding-left: 8rem;
+  }
+  .woocommerce form .form-row {
+    margin-bottom: 2.5rem;
+  }
+  .woocommerce form .form-row-first,
+  .woocommerce form .form-row-last,
+  .woocommerce-page form .form-row-first,
+  .woocommerce-page form .form-row-last {
+    width: 48%;
   }
 }
