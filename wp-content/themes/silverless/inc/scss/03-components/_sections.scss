@@ -336,12 +336,12 @@
     width: auto;
   }
   @media only screen and (min-width: $bp-large) {
-    transform: translate(-155%, -50%);
+    transform: translate(-150%, -50%);
   }
   .effects-div {
     backdrop-filter: hue-rotate(45deg);
     inset: 0;
-    margin-top: 30rem;
+    margin-top: 20rem;
     position: absolute;
   }
 }
