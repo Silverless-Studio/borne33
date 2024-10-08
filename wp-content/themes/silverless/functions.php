@@ -347,3 +347,22 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
 //Move under cart button (option 1)
 add_action ( 'woocommerce_single_product_summary', 'woocommerce_output_all_notices', 35 ); 
 
+/**
+ * @snippet       Move Labels Inside Inputs - WooCommerce Checkout
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 5
+ * @community     https://businessbloomer.com/club/
+ */
+ 
+add_filter( 'woocommerce_checkout_fields', 'bbloomer_labels_inside_checkout_fields', 9999 );
+   
+function bbloomer_labels_inside_checkout_fields( $fields ) {
+   foreach ( $fields as $section => $section_fields ) {
+      foreach ( $section_fields as $section_field => $section_field_settings ) {
+         $fields[$section][$section_field]['placeholder'] = $fields[$section][$section_field]['label'];
+         $fields[$section][$section_field]['label'] = '';
+      }
+   }
+   return $fields;
+}

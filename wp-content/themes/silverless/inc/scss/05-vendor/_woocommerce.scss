@@ -427,6 +427,9 @@ table.wc-block-cart-items
           top: 50%;
           transform: translate(0, -50%);
         }
+        &:hover {
+          background-color: darken($color: $color-primary, $amount: 10%);
+        }
       }
     }
   }
@@ -437,5 +440,102 @@ table.wc-block-cart-items
   &.woocommerce-cart table.cart td.actions .coupon .input-text {
     border: transparent;
     color: $color-white;
+  }
+  .woocommerce-checkout {
+    @media only screen and (min-width: $bp-large) {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: 3rem 1fr 1fr;
+      .col2-set .col-1,
+      .col2-set .col-1 {
+        width: 100%;
+      }
+      .col2-set .col-2,
+      .col2-set .col-2 {
+        width: 100%;
+      }
+      .woocommerce-checkout-review-order {
+        grid-column: 2;
+        padding-left: 8rem;
+        thead {
+          th {
+            background-color: $color-tertiary;
+            border-bottom: 1px solid $color-primary;
+            font-weight: 600;
+            padding: 2.5rem;
+          }
+        }
+        .woocommerce-checkout-review-order-table {
+          border: 1px solid $color-primary;
+          border-collapse: collapse;
+          border-radius: 0;
+          border-top: none;
+          .product-name,
+          .cart-subtotal th,
+          .order-total th {
+            border-right: 1px solid $color-primary;
+          }
+          .cart_item td {
+            border-bottom: 1px solid $color-primary;
+            font-size: 1.6rem;
+            font-style: italic;
+            padding: 2.5rem;
+          }
+          .cart-subtotal,
+          .order-total {
+            th,
+            td {
+              border-bottom: 1px solid $color-primary;
+              font-size: 1.6rem;
+              padding: 2.5rem;
+            }
+            td {
+              font-weight: 300;
+              strong {
+                font-weight: 300;
+              }
+            }
+          }
+        }
+      }
+      #order_review_heading,
+      .woocommerce-billing-fields h3 {
+        border-bottom: 1px solid $color-primary;
+        font-family: $font-primary;
+        font-size: 1.6rem;
+        height: 3rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+  .woocommerce form .form-row input.input-text {
+    border: transparent;
+    color: $color-tertiary;
+    min-height: 5rem;
+    padding: 0 2rem;
+  }
+  .select2-container--default .select2-selection--single {
+    align-items: center;
+    display: flex;
+    min-height: 5rem;
+    padding: 0 2rem;
+  }
+  .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .select2-container .select2-selection--single .select2-selection__rendered {
+    color: $color-tertiary;
+    padding: 0;
+  }
+  .woocommerce-additional-fields h3 {
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    padding: 2rem 0 1rem;
+  }
+  #order_review_heading {
+    padding-left: 8rem;
   }
 }
