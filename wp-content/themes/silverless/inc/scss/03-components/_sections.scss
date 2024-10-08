@@ -244,6 +244,9 @@
     top: 0;
     z-index: -1;
   }
+  .recipe-slider {
+    padding: 5rem 0;
+  }
   .recipe {
     background-color: $color-supporting-1;
 
@@ -338,12 +341,12 @@
   @media only screen and (min-width: $bp-large) {
     transform: translate(-150%, -50%);
   }
-  // .effects-div {
-  //   backdrop-filter: hue-rotate(45deg);
-  //   inset: 0;
-  //   margin-top: 20rem;
-  //   position: absolute;
-  // }
+  .effects-div {
+    backdrop-filter: hue-rotate(45deg);
+    inset: 0;
+    margin: 22rem 2rem 14rem;
+    position: absolute;
+  }
 }
 .background--image-main {
   inset: 0;
