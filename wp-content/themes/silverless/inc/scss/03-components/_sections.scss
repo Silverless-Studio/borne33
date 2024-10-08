@@ -338,12 +338,12 @@
   @media only screen and (min-width: $bp-large) {
     transform: translate(-150%, -50%);
   }
-  .effects-div {
-    backdrop-filter: hue-rotate(45deg);
-    inset: 0;
-    margin-top: 20rem;
-    position: absolute;
-  }
+  // .effects-div {
+  //   backdrop-filter: hue-rotate(45deg);
+  //   inset: 0;
+  //   margin-top: 20rem;
+  //   position: absolute;
+  // }
 }
 .background--image-main {
   inset: 0;
