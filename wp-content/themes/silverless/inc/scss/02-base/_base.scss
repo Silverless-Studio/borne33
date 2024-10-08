@@ -127,11 +127,11 @@ a:not([class]) {
   transform: translate(-50%, 1rem);
 }
 .home #page {
-  background: linear-gradient(
-    210deg,
-    rgb(209, 124, 24) -5%,
-    rgba(209, 124, 24, 0) 4%
-  );
+  // background: linear-gradient(
+  //   210deg,
+  //   rgb(209, 124, 24) -5%,
+  //   rgba(209, 124, 24, 0) 4%
+  // );
   &::after {
     background: rgb(20, 0, 17);
     background: linear-gradient(
@@ -147,4 +147,17 @@ a:not([class]) {
     width: 100%;
     z-index: -1;
   }
+}
+.sunburst {
+  background: rgb(209, 124, 24);
+  background: radial-gradient(
+    circle,
+    rgba(209, 124, 24, 1) 0%,
+    rgba(209, 124, 24, 0) 40%
+  );
+  height: 30vw;
+  position: fixed;
+  right: -15vw;
+  top: -30rem;
+  width: 30vw;
 }

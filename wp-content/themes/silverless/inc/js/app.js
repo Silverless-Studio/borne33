@@ -13,3 +13,15 @@ gsap.to('.blob', {
     onLeaveBack: () => gsap.to('.blob', { fill: 'black' }) // Reset to the original color (black)
   }
 });
+
+// Animate the sunburst down the page
+gsap.to('.sunburst', {
+  scrollTrigger: {
+    trigger: 'body', // Start the animation on body scroll
+    start: 'top top', // Start the animation when the user starts scrolling
+    end: 'bottom bottom', // End when the user reaches the bottom of the page
+    scrub: true // Smoothly transition as the user scrolls
+  },
+  y: window.innerHeight + 200, // Move the sunburst down by the height of the window + extra to make it exit the bottom
+  ease: 'none' // Linear animation
+});
