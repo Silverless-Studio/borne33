@@ -38,19 +38,32 @@ gsap.to('.dark-gradient', {
   }
 });
 
-// Create a GSAP timeline for the splats
-const tl = gsap.timeline({
-  repeat: 0,
-  defaults: { duration: 0.1, ease: 'back.out(1.7)' }
-});
+// Function to start splat animations
+function startSplatAnimations() {
+  const tl = gsap.timeline({
+    repeat: 0,
+    defaults: { duration: 0.2, ease: 'back.out(1.7)' }
+  });
 
-// Target each splat and animate them in sequence
-tl.to('.splat--one', { opacity: 1, scale: 1 })
-  .to('.splat--two', { opacity: 1, scale: 1 }, '+=0.1') // Delay of 0.2 seconds between each
-  .to('.splat--three', { opacity: 1, scale: 1 }, '+=0.1')
-  .to('.splat--four', { opacity: 1, scale: 1 }, '+=0.1')
-  .to('.splat--five', { opacity: 1, scale: 1 }, '+=0.1')
-  .to('.splat--six', { opacity: 1, scale: 1 }, '+=0.1')
-  .to('.splat--seven', { opacity: 1, scale: 1 }, '+=0.1')
-  .to('.splat--eight', { opacity: 1, scale: 1 }, '+=0.1')
-  .to('.splat--nine', { opacity: 1, scale: 1 }, '+=0.1');
+  // Target each splat and animate them in sequence
+  tl.to('.splat--one', { opacity: 1, scale: 1 })
+    .to('.splat--two', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--three', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--four', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--five', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--six', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--seven', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--eight', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--nine', { opacity: 1, scale: 1 }, '+=0.1')
+    .add(function () {
+      // Fade out the age gate after the last splat
+      const ageGate = document.getElementById('age-gate');
+      gsap.to(ageGate, {
+        opacity: 0,
+        duration: 1,
+        onComplete: function () {
+          ageGate.style.pointerEvents = 'none'; // Disable interactions after fading out
+        }
+      });
+    });
+}

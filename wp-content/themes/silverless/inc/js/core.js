@@ -168,8 +168,11 @@ if (getCookie('ageVerified') !== 'true') {
 }
 
 document.getElementById('yes-btn').addEventListener('click', function () {
-  document.getElementById('age-gate').style.display = 'none';
+  // document.getElementById('age-gate').style.display = 'none'; // Hide the age gate
   setCookie('ageVerified', 'true', 180); // Set cookie to expire in 180 days
+
+  // Start splat animations after hiding the age gate
+  startSplatAnimations(); // Call the function to start animations
 });
 
 // document.getElementById('no-btn').addEventListener('click', function() {
