@@ -39,7 +39,7 @@
   .background-image {
     inset: 0;
     position: absolute;
-    z-index: -2;
+    z-index: -1;
     img {
       left: 50%;
       position: absolute;
@@ -57,7 +57,7 @@
     position: absolute;
     transform: translate(-25%, -80%);
     width: 50vw;
-    z-index: -2;
+    z-index: -1;
   }
   .heading-3 {
     align-items: center;
@@ -89,14 +89,14 @@
     right: 0;
     top: 0;
     transform: translate(10%, -35%);
-    z-index: -2;
+    z-index: -1;
   }
   .background--image-low {
     bottom: 0;
     left: 0;
     position: absolute;
     transform: translate(-40%, 60%);
-    z-index: -2;
+    z-index: -1;
   }
 }
 
@@ -163,7 +163,7 @@
 
     position: absolute;
     transform: translate(-20%, -20%);
-    z-index: -2;
+    z-index: -1;
     @media only screen and (min-width: $bp-large) {
       min-width: 165%;
     }
@@ -228,7 +228,6 @@
 .section--nine {
   align-items: center;
   min-height: 100vh;
-  overflow: hidden;
   .heading-5 {
     max-width: 20ch;
   }
@@ -236,7 +235,7 @@
     inset: 0;
     position: absolute;
     transform: translate(-50%, -120%);
-    z-index: -2;
+    z-index: -1;
   }
   .background--image-map {
     position: absolute;
@@ -333,7 +332,7 @@
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  z-index: -3;
   img {
     height: 100%;
     width: auto;
@@ -351,7 +350,7 @@
 .background--image-main {
   inset: 0;
   position: fixed;
-  z-index: -2;
+  z-index: -4;
   img {
     height: 100%;
     object-fit: cover;

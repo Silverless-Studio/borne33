@@ -4,7 +4,7 @@
         alt="Bottle Image"></div>
 <section class="hero container">
     <div class="row">
-        <div class="hero--text">
+        <div class="hero--text fm-left">
             <h3 class="heading-5 heading-alt font--color-primary"><?php echo esc_html( get_field('top_tagline') ); ?>
             </h3>
             <div class="logo"><?php get_template_part('inc/img/logo-main'); ?></div>
