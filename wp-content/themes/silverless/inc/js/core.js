@@ -79,8 +79,8 @@ jQuery(document).ready(function ($) {
       if (entry.isIntersecting) {
         $(entry.target).removeClass('hidden').addClass('visible');
 
-        // Disconnect the observer after the element is animated
-        observer.unobserve(entry.target);
+        // // Disconnect the observer after the element is animated
+        // observer.unobserve(entry.target);
       } else {
         $(entry.target).removeClass('visible').addClass('hidden');
       }
@@ -120,7 +120,7 @@ jQuery(document).ready(function ($) {
       });
     },
     {
-      threshold: 0.5
+      threshold: 1
     }
   );
 
