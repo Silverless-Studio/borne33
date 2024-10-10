@@ -59,7 +59,7 @@
 .st0.rune-six,
 .st0.rune-seven,
 .st0.rune-eight {
-  animation: colorChange 8s infinite;
+  animation: colorChange 16s infinite;
 }
 
 .st0.rune-one {
@@ -67,29 +67,29 @@
 }
 
 .st0.rune-two {
-  animation-delay: 2s;
-}
-
-.st0.rune-three {
   animation-delay: 4s;
 }
 
-.st0.rune-four {
-  animation-delay: 6s;
-}
-
-.st0.rune-five {
+.st0.rune-three {
   animation-delay: 8s;
 }
 
-.st0.rune-six {
-  animation-delay: 10s;
-}
-
-.st0.rune-seven {
+.st0.rune-four {
   animation-delay: 12s;
 }
 
+.st0.rune-five {
+  animation-delay: 16s;
+}
+
+.st0.rune-six {
+  animation-delay: 20s;
+}
+
+.st0.rune-seven {
+  animation-delay: 24s;
+}
+
 .st0.rune-eight {
-  animation-delay: 14s;
+  animation-delay: 28s;
 }
