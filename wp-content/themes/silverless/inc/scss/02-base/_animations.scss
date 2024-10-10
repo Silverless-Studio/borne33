@@ -4,7 +4,8 @@
   .fm-left,
   .fm-right,
   .tiled,
-  .tiled-fm-left {
+  .tiled-fm-left,
+  .fade-in {
     &.visible {
       opacity: 1;
       transform: translate(0);
@@ -28,6 +29,20 @@
   .fm-below {
     @media only screen and (min-width: $bp-large) {
       transform: translateY(3rem);
+    }
+  }
+  .fade-in {
+    @media only screen and (min-width: $bp-large) {
+    }
+  }
+  .delay-2 {
+    @media only screen and (min-width: $bp-large) {
+      transition-delay: 1s; // Adjust for delay
+    }
+  }
+  .delay-4 {
+    @media only screen and (min-width: $bp-large) {
+      transition-delay: 2s; // Adjust for delay
     }
   }
   .tiled {

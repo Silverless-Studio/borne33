@@ -94,7 +94,9 @@ jQuery(document).ready(function ($) {
   );
 
   // Target non-tiled elements to observe
-  const nonTiledElements = $('.fm-below, .fm-above, .fm-left, .fm-right');
+  const nonTiledElements = $(
+    '.fm-below, .fm-above, .fm-left, .fm-right, .fade-in'
+  );
 
   // Start observing each non-tiled target element
   nonTiledElements.each(function (index, element) {

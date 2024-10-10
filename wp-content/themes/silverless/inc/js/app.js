@@ -27,12 +27,12 @@ gsap.registerPlugin(ScrollTrigger);
 // });
 
 gsap.to('.dark-gradient', {
-  '--start-grad': '50%', // Animate from 0% to 50%
-  '--end-grad': '200%', // Animate from 100% to 200%
+  '--start-grad': '100%', // Animate from 0% to 50%
+  '--end-grad': '300%', // Animate from 100% to 200%
   scrollTrigger: {
     trigger: '.section--two',
     start: 'top bottom', // Start the animation when the page starts scrolling
-    end: 'bottom+=200vh', // Animation ends after scrolling 200vh
+    end: 'bottom+=300vh', // Animation ends after scrolling 200vh
 
     scrub: true // Makes the animation follow the scroll position
   }
