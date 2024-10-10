@@ -8,7 +8,7 @@
             <?php while( have_rows('content_blocks') ): the_row(); 
         $image = get_sub_field('image');
         ?>
-            <li class="tiled">
+            <li class="tiled-fm-left rotate-img">
                 <?php echo wp_get_attachment_image( $image, 'full' ); ?>
                 <div><?php the_sub_field('text'); ?></div>
             </li>

@@ -23,6 +23,20 @@
         font-family: $font-secondary;
         font-size: 2.4rem;
       }
+      &.rotate-img {
+        img {
+          opacity: 0;
+          rotate: -45deg;
+          transition: all 1s ease-in-out;
+        }
+
+        &.animated {
+          img {
+            opacity: 1;
+            rotate: 0deg;
+          }
+        }
+      }
     }
   }
   .content_blocks {
@@ -63,6 +77,15 @@
   .spin-me {
     inset: 0;
     position: absolute;
+    svg {
+      height: 66rem;
+      transform: translate(0px, 20px);
+      width: 70rem;
+    }
+    img {
+      height: 70rem;
+      width: 70rem;
+    }
   }
   .flask {
     bottom: 20rem;

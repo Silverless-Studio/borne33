@@ -91,7 +91,7 @@ jQuery(document).ready(function ($) {
   const observer = new IntersectionObserver(
     (entries) => handleIntersection(entries, observer),
     {
-      threshold: 0.1
+      threshold: 1
     }
   );
 
@@ -109,12 +109,12 @@ jQuery(document).ready(function ($) {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting && !$(entry.target).hasClass('animated')) {
           // Calculate delay based on index
-          const delay = index * 200; // Adjust this delay according to your preference
+          const delay = index * 400; // Adjust this delay according to your preference
           setTimeout(() => {
             $(entry.target).removeClass('hidden').addClass('visible animated');
 
-            // Disconnect the observer after the element is animated
-            tiledObserver.unobserve(entry.target);
+            // // Disconnect the observer after the element is animated
+            // tiledObserver.unobserve(entry.target);
           }, delay);
         }
       });
@@ -125,7 +125,7 @@ jQuery(document).ready(function ($) {
   );
 
   // Target tiled elements to observe
-  const tiledElements = $('.tiled');
+  const tiledElements = $('.tiled, .tiled-fm-left');
 
   // Start observing each tiled target element
   tiledElements.each(function (index, element) {

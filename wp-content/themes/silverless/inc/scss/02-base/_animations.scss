@@ -3,11 +3,18 @@
   .fm-below,
   .fm-left,
   .fm-right,
-  .tiled {
+  .tiled,
+  .tiled-fm-left {
     &.visible {
       opacity: 1;
       transform: translate(0);
     }
+    @media only screen and (min-width: $bp-large) {
+      opacity: 0;
+      transition: all 1s ease-in-out;
+    }
+  }
+  .tiled-fm-left div {
     @media only screen and (min-width: $bp-large) {
       opacity: 0;
       transition: all 1s ease-in-out;
@@ -25,7 +32,14 @@
   }
   .tiled {
     @media only screen and (min-width: $bp-large) {
-      transform: translateY(3rem);
+      transform: translateX(3rem);
+    }
+  }
+  .tiled-fm-left {
+    div {
+      @media only screen and (min-width: $bp-large) {
+        transform: translateX(-3rem);
+      }
     }
   }
   .fm-left {
@@ -36,6 +50,12 @@
   .fm-right {
     @media only screen and (min-width: $bp-large) {
       transform: translateX(3rem);
+    }
+  }
+  .tiled-fm-left.visible {
+    div {
+      opacity: 1;
+      transform: translate(0);
     }
   }
 }
