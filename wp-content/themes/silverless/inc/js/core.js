@@ -78,9 +78,6 @@ jQuery(document).ready(function ($) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         $(entry.target).removeClass('hidden').addClass('visible');
-
-        // // Disconnect the observer after the element is animated
-        // observer.unobserve(entry.target);
       } else {
         $(entry.target).removeClass('visible').addClass('hidden');
       }
@@ -91,7 +88,8 @@ jQuery(document).ready(function ($) {
   const observer = new IntersectionObserver(
     (entries) => handleIntersection(entries, observer),
     {
-      threshold: 1
+      threshold: 0.5,
+      rootMargin: '0px 0px -25% 0px' // Adjusts the trigger point to when the top hits the center
     }
   );
 
@@ -112,15 +110,13 @@ jQuery(document).ready(function ($) {
           const delay = index * 400; // Adjust this delay according to your preference
           setTimeout(() => {
             $(entry.target).removeClass('hidden').addClass('visible animated');
-
-            // // Disconnect the observer after the element is animated
-            // tiledObserver.unobserve(entry.target);
           }, delay);
         }
       });
     },
     {
-      threshold: 1
+      threshold: 0.5,
+      rootMargin: '0px 0px -25% 0px' // Same adjustment for the tiled elements
     }
   );
 
