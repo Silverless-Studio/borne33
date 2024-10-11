@@ -1,30 +1,40 @@
 // Ensure GSAP and ScrollTrigger are loaded
 gsap.registerPlugin(ScrollTrigger);
 
-// // Target the SVG with the class 'blog'
-// gsap.to('.blob', {
-//   fill: 'red', // Fill color change to red
-//   scrollTrigger: {
-//     trigger: '.background--image-high',
-//     // markers: true,
-//     start: 'top 80%', // When the top of the SVG hits the bottom of the screen
-//     end: 'top 20%', // When the top of the SVG hits the top of the screen
-//     toggleActions: 'play reverse play reverse', // Play when in view, reverse when out of view
-//     onLeaveBack: () => gsap.to('.blob', { fill: 'black' }) // Reset to the original color (black)
-//   }
-// });
+// Function to set a cookie
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Convert days to milliseconds
+  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+}
 
-// // Animate the sunburst down the page
-// gsap.to('.sunburst', {
-//   scrollTrigger: {
-//     trigger: 'body', // Start the animation on body scroll
-//     start: 'top top', // Start the animation when the user starts scrolling
-//     end: 'bottom bottom', // End when the user reaches the bottom of the page
-//     scrub: true // Smoothly transition as the user scrolls
-//   },
-//   y: window.innerHeight + 200, // Move the sunburst down by the height of the window + extra to make it exit the bottom
-//   ease: 'none' // Linear animation
-// });
+// Function to get a cookie value
+function getCookie(name) {
+  const nameEQ = name + '=';
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+// Check if the age verification cookie exists
+if (getCookie('ageVerified') === 'true') {
+  // If cookie is set, immediately animate the content
+  animateContent();
+} else {
+  // Show the gateway if the cookie isn't set
+  document.getElementById('age-gate').style.display = 'flex';
+
+  document.getElementById('yes-btn').addEventListener('click', function () {
+    setCookie('ageVerified', 'true', 180); // Set cookie to expire in 180 days
+
+    // Start splat animations and fade out the age gate after the last splat
+    startSplatAnimations();
+  });
+}
 
 gsap.to('.dark-gradient', {
   '--start-grad': '100%', // Animate from 0% to 50%
@@ -37,6 +47,25 @@ gsap.to('.dark-gradient', {
     scrub: true // Makes the animation follow the scroll position
   }
 });
+
+// Function to trigger page content animation
+function animateContent() {
+  const heroTop = document.querySelector('.hero-fm-top');
+  const line = heroTop.querySelector('.line');
+
+  const tl = gsap.timeline();
+
+  // Animate the '.hero-fm-top' (adjust selectors as needed)
+  tl.fromTo(
+    heroTop,
+    { opacity: 0, y: -24 }, // Start at 0 opacity and 24px above
+    { opacity: 1, y: 0, duration: 1, ease: 'power2.out' } // Animate to full opacity and normal position
+  ).to(
+    line,
+    { height: '100%', duration: 1, ease: 'power2.out' }, // Animate to 100% height
+    '+=0.1' // Start this animation half a second before the previous one ends
+  );
+}
 
 // Function to start splat animations
 function startSplatAnimations() {
@@ -66,6 +95,7 @@ function startSplatAnimations() {
         }
       });
     });
+  animateContent();
 }
 
 gsap.to('.spin-me', {
@@ -84,7 +114,7 @@ gsap.utils.toArray('.fm-above').forEach((element) => {
     ease: 'power2.out', // Easing for smooth motion
     scrollTrigger: {
       trigger: element, // Trigger animation when the element enters the viewport
-      start: 'top center', // Start animation when the element hits the center of the viewport
+      start: 'top 60%', // Start animation when the element hits the center of the viewport
       toggleActions: 'play none none none' // Play the animation when entering the viewport
     }
   });
@@ -99,7 +129,7 @@ gsap.utils.toArray('.fm-right').forEach((element) => {
     ease: 'power2.out', // Easing for smooth motion
     scrollTrigger: {
       trigger: element, // Trigger animation when the element enters the viewport
-      start: 'top center', // Start animation when the element hits the center of the viewport
+      start: 'top 60%', // Start animation when the element hits the center of the viewport
       toggleActions: 'play none none none' // Play the animation when entering the viewport
     }
   });
@@ -111,7 +141,7 @@ gsap.utils.toArray('.content_blocks li').forEach((li, index) => {
     .timeline({
       scrollTrigger: {
         trigger: li, // Trigger animation when each 'li' enters the viewport
-        start: 'top center', // Start when 'li' hits the center of the viewport
+        start: 'top 75%', // Start when 'li' hits the center of the viewport
         toggleActions: 'play none none none' // Play only once when entering
       }
     })
@@ -141,7 +171,7 @@ gsap.utils.toArray('.content_blocks li').forEach((li, index) => {
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.section--three', // Trigger when 'section--three' hits the center of the viewport
-    start: 'top center', // Start when the top of 'section--three' hits the center
+    start: 'top 60%', // Start when the top of 'section--three' hits the center
     toggleActions: 'play none none none' // Play the animation when entering
   }
 });
@@ -182,7 +212,7 @@ gsap.utils.toArray('.splats').forEach((splat) => {
     ease: 'back.out(1.7)', // Splat effect with back easing
     scrollTrigger: {
       trigger: '.splats--top', // Trigger animation when the element hits the center of the viewport
-      start: 'top 75%', // Start when the top of the element hits the center
+      start: 'top 80%', // Start when the top of the element hits the center
       toggleActions: 'play none none none' // Play once when entering the viewport
     }
   });

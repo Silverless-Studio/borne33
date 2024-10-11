@@ -141,37 +141,6 @@ jQuery(document).ready(function ($) {
     }
   });
 });
-// Function to set a cookie
-function setCookie(name, value, days) {
-  const date = new Date();
-  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Convert days to milliseconds
-  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
-}
-
-// Function to get a cookie value
-function getCookie(name) {
-  const nameEQ = name + '=';
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-
-// Check if the age verification cookie exists
-if (getCookie('ageVerified') !== 'true') {
-  document.getElementById('age-gate').style.display = 'flex'; // Show the gateway only if the cookie isn't set
-}
-
-document.getElementById('yes-btn').addEventListener('click', function () {
-  // document.getElementById('age-gate').style.display = 'none'; // Hide the age gate
-  setCookie('ageVerified', 'true', 180); // Set cookie to expire in 180 days
-
-  // Start splat animations after hiding the age gate
-  startSplatAnimations(); // Call the function to start animations
-});
 
 // document.getElementById('no-btn').addEventListener('click', function() {
 //     window.location.href = 'https://www.google.com'; // Redirect to another page if under 18
