@@ -71,19 +71,19 @@ function animateContent() {
 function startSplatAnimations() {
   const tl = gsap.timeline({
     repeat: 0,
-    defaults: { duration: 0.1, ease: 'back.out(1.7)' }
+    defaults: { duration: 0.2, ease: 'back.out(1.7)' }
   });
 
   // Target each splat and animate them in sequence
   tl.to('.splat--one', { opacity: 1, scale: 1 })
-    .to('.splat--two', { opacity: 1, scale: 1 }, '+=0.1')
-    .to('.splat--three', { opacity: 1, scale: 1 }, '+=0.1')
-    .to('.splat--four', { opacity: 1, scale: 1 }, '+=0.1')
-    .to('.splat--five', { opacity: 1, scale: 1 }, '+=0.1')
-    .to('.splat--six', { opacity: 1, scale: 1 }, '+=0.1')
-    .to('.splat--seven', { opacity: 1, scale: 1 }, '+=0.1')
-    .to('.splat--eight', { opacity: 1, scale: 1 }, '+=0.1')
-    .to('.splat--nine', { opacity: 1, scale: 1 }, '+=0.1')
+    .to('.splat--two', { opacity: 1, scale: 1 }, '+=0.2')
+    .to('.splat--three', { opacity: 1, scale: 1 }, '+=0.2')
+    .to('.splat--four', { opacity: 1, scale: 1 }, '+=0.2')
+    .to('.splat--five', { opacity: 1, scale: 1 }, '+=0.2')
+    .to('.splat--six', { opacity: 1, scale: 1 }, '+=0.2')
+    .to('.splat--seven', { opacity: 1, scale: 1 }, '+=0.2')
+    .to('.splat--eight', { opacity: 1, scale: 1 }, '+=0.2')
+    .to('.splat--nine', { opacity: 1, scale: 1 }, '+=0.2')
     .add(function () {
       // Fade out the age gate after the last splat
       const ageGate = document.getElementById('age-gate');
@@ -256,6 +256,73 @@ sectionSevenTimeline
     {
       opacity: 0,
       duration: 1
+    },
+    '-=0.5'
+  ); // Start this animation 0.5 seconds before the previous one completes
+
+// Create a new timeline for section seven animations
+const sectionEightTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.section--eight', // Element that triggers the animation
+    start: 'top center', // When the top of the trigger hits the center of the viewport
+    once: true // Animation will only happen once
+  }
+});
+
+// Add animations to the section seven timeline
+sectionEightTimeline
+  .from('.eight-fade', {
+    opacity: 0,
+    duration: 1
+  })
+  .from(
+    '.grow-right-1',
+    {
+      opacity: 0,
+      width: 0,
+      duration: 1
+    },
+    '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.fm-right-1',
+    {
+      opacity: 0,
+      x: 16
+    },
+    '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.grow-right-2',
+    {
+      opacity: 0,
+      width: 0,
+      duration: 1
+    },
+    '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.fm-right-2',
+    {
+      opacity: 0,
+      x: 16
+    },
+    '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.grow-right-3',
+    {
+      opacity: 0,
+      width: 0,
+      duration: 1
+    },
+    '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.fm-right-3',
+    {
+      opacity: 0,
+      x: 16
     },
     '-=0.5'
   ); // Start this animation 0.5 seconds before the previous one completes

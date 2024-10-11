@@ -17,8 +17,7 @@
   width: max-content;
 
   &:hover {
-    background: darken($color-secondary, 20%);
-    border-color: darken($color-secondary, 20%);
+    box-shadow: 0px 2px 24px 2px rgba(209, 124, 24, 0.6);
   }
 
   &__alt {
@@ -30,10 +29,6 @@
   }
   &--primary {
     background: $color-primary;
-    &:hover {
-      background: darken($color-primary, 10%);
-      border-color: darken($color-primary, 10%);
-    }
   }
   &--outline {
     background: transparent;
