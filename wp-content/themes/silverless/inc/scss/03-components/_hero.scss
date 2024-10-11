@@ -32,3 +32,24 @@ section.hero {
     }
   }
 }
+.white-line {
+  height: 15rem;
+  margin: 3rem auto;
+  width: 0.2rem;
+  .line {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    height: 100%;
+    transition: all 1s ease-in-out;
+    &.grow {
+      height: 0%;
+    }
+    &.visible {
+      height: 100%;
+    }
+  }
+}

@@ -1,79 +1,107 @@
-.js-on {
-  .fm-above,
-  .fm-below,
-  .fm-left,
-  .fm-right,
-  .tiled,
-  .tiled-fm-left,
-  .fade-in {
-    &.visible {
-      opacity: 1;
-      transform: translate(0);
-    }
-    @media only screen and (min-width: $bp-large) {
-      opacity: 0;
-      transition: all 1s ease-in-out;
-    }
-  }
-  .tiled-fm-left div {
-    @media only screen and (min-width: $bp-large) {
-      opacity: 0;
-      transition: all 1s ease-in-out;
-    }
-  }
-  .fm-above {
-    @media only screen and (min-width: $bp-large) {
-      transform: translateY(-3rem);
-    }
-  }
-  .fm-below {
-    @media only screen and (min-width: $bp-large) {
-      transform: translateY(3rem);
-    }
-  }
-  .fade-in {
-    @media only screen and (min-width: $bp-large) {
-    }
-  }
-  .delay-2 {
-    @media only screen and (min-width: $bp-large) {
-      transition-delay: 1s; // Adjust for delay
-    }
-  }
-  .delay-4 {
-    @media only screen and (min-width: $bp-large) {
-      transition-delay: 2s; // Adjust for delay
-    }
-  }
-  .tiled {
-    @media only screen and (min-width: $bp-large) {
-      transform: translateX(3rem);
-    }
-  }
-  .tiled-fm-left {
-    div {
-      @media only screen and (min-width: $bp-large) {
-        transform: translateX(-3rem);
-      }
-    }
-  }
-  .fm-left {
-    @media only screen and (min-width: $bp-large) {
-      transform: translateX(-3rem);
-    }
-  }
-  .fm-right {
-    @media only screen and (min-width: $bp-large) {
-      transform: translateX(3rem);
-    }
-  }
-  .tiled-fm-left.visible {
-    div {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-}
+// .js-on {
+//   .fm-above,
+//   .fm-below,
+//   .fm-left,
+//   .fm-right,
+//   .tiled,
+//   .tiled-fm-left,
+//   .fade-in {
+//     &.visible {
+//       opacity: 1;
+//       transform: translate(0);
+//     }
+//     @media only screen and (min-width: $bp-large) {
+//       opacity: 0;
+//       transition: all 1s ease-in-out;
+//     }
+//   }
+//   .tiled-fm-left div {
+//     @media only screen and (min-width: $bp-large) {
+//       opacity: 0;
+//       transition: all 1s ease-in-out;
+//     }
+//   }
+//   .fm-above {
+//     @media only screen and (min-width: $bp-large) {
+//       transform: translateY(-3rem);
+//     }
+//   }
+//   .fm-below {
+//     @media only screen and (min-width: $bp-large) {
+//       transform: translateY(3rem);
+//     }
+//   }
+//   .fade-in {
+//     @media only screen and (min-width: $bp-large) {
+//     }
+//   }
+//   .delay-1 {
+//     @media only screen and (min-width: $bp-large) {
+//       transition-delay: 0.5s; // Adjust for delay
+//     }
+//   }
+//   .delay-2 {
+//     @media only screen and (min-width: $bp-large) {
+//       transition-delay: 1s; // Adjust for delay
+//     }
+//   }
+//   .delay-3 {
+//     @media only screen and (min-width: $bp-large) {
+//       transition-delay: 1.5s; // Adjust for delay
+//     }
+//   }
+//   .delay-4 {
+//     @media only screen and (min-width: $bp-large) {
+//       transition-delay: 2s; // Adjust for delay
+//     }
+//   }
+//   .delay-5 {
+//     @media only screen and (min-width: $bp-large) {
+//       transition-delay: 2.5s; // Adjust for delay
+//     }
+//   }
+//   .delay-6 {
+//     @media only screen and (min-width: $bp-large) {
+//       transition-delay: 3s; // Adjust for delay
+//     }
+//   }
+//   .tiled {
+//     @media only screen and (min-width: $bp-large) {
+//       transform: translateX(3rem);
+//     }
+//   }
+//   .tiled-fm-left {
+//     div {
+//       @media only screen and (min-width: $bp-large) {
+//         transform: translateX(-3rem);
+//       }
+//     }
+//   }
+//   .fm-left {
+//     @media only screen and (min-width: $bp-large) {
+//       transform: translateX(-3rem);
+//     }
+//   }
+//   .fm-right {
+//     @media only screen and (min-width: $bp-large) {
+//       transform: translateX(3rem);
+//     }
+//   }
+//   .tiled-fm-left.visible {
+//     div {
+//       opacity: 1;
+//       transform: translate(0);
+//     }
+//   }
+//   .filler {
+//     @media only screen and (min-width: $bp-large) {
+//       width: 0%;
+//       &.visible {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
 @keyframes colorChange {
   0% {
     fill: #3b2a38;

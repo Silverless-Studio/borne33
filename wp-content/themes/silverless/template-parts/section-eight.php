@@ -2,10 +2,15 @@
     <div class="row">
         <?php if( have_rows('image_block') ): ?>
         <div class="image--box">
-            <?php while( have_rows('image_block') ): the_row(); 
-        $image = get_sub_field('image');
-        ?>
-            <div class="image--box-outer">
+            <?php 
+            $counter = 0; // Initialize a counter for image--box-outer
+            $grow_counter = 1; // Initialize a counter for grow-right starting with delay-1
+            while( have_rows('image_block') ): the_row(); 
+                $image = get_sub_field('image');
+                $delay_class = $counter > 0 ? 'fm-right delay-' . ($counter * 2) : 'fade-in'; // Add delay class for image--box-outer
+                $grow_delay_class = 'delay-' . $grow_counter; // Add delay class for grow-right
+            ?>
+            <div class="image--box-outer <?php echo $delay_class; ?>">
                 <div class="spacer left">
                     <div class="top"></div>
                     <div class="bottom"></div>
@@ -19,11 +24,15 @@
                     <div class="bottom"></div>
                 </div>
             </div>
-            <div class="filler">
+            <div class="filler grow-right <?php echo $grow_delay_class; ?>">
                 <div class="top"></div>
                 <div class="bottom"></div>
             </div>
-            <?php endwhile; ?>
+            <?php 
+            $counter++; // Increment the counter for image--box-outer delay
+            $grow_counter+= 2; // Increment the grow-right delay for the next iteration
+            endwhile; 
+            ?>
         </div>
         <?php endif; ?>
     </div>

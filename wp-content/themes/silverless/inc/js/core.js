@@ -71,64 +71,64 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  /* ANIMATIONS */
-  $('body').addClass('js-on');
+  // /* ANIMATIONS */
+  // $('body').addClass('js-on');
 
-  function handleIntersection(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        $(entry.target).removeClass('hidden').addClass('visible');
-      } else {
-        $(entry.target).removeClass('visible').addClass('hidden');
-      }
-    });
-  }
+  // function handleIntersection(entries, observer) {
+  //   entries.forEach((entry) => {
+  //     if (entry.isIntersecting) {
+  //       $(entry.target).removeClass('hidden').addClass('visible');
+  //     } else {
+  //       $(entry.target).removeClass('visible').addClass('hidden');
+  //     }
+  //   });
+  // }
 
-  // Create an Intersection Observer for non-tiled elements
-  const observer = new IntersectionObserver(
-    (entries) => handleIntersection(entries, observer),
-    {
-      threshold: 0.5,
-      rootMargin: '0px 0px -25% 0px' // Adjusts the trigger point to when the top hits the center
-    }
-  );
+  // // Create an Intersection Observer for non-tiled elements
+  // const observer = new IntersectionObserver(
+  //   (entries) => handleIntersection(entries, observer),
+  //   {
+  //     threshold: 0.5,
+  //     rootMargin: '0px 0px -25% 0px' // Adjusts the trigger point to when the top hits the center
+  //   }
+  // );
 
-  // Target non-tiled elements to observe
-  const nonTiledElements = $(
-    '.fm-below, .fm-above, .fm-left, .fm-right, .fade-in'
-  );
+  // // Target non-tiled elements to observe
+  // const nonTiledElements = $(
+  //   '.fm-below, .fm-above, .fm-left, .fm-right, .fade-in, .grow, .grow-right'
+  // );
 
-  // Start observing each non-tiled target element
-  nonTiledElements.each(function (index, element) {
-    observer.observe(element);
-  });
+  // // Start observing each non-tiled target element
+  // nonTiledElements.each(function (index, element) {
+  //   observer.observe(element);
+  // });
 
-  // Create an Intersection Observer for tiled elements
-  const tiledObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting && !$(entry.target).hasClass('animated')) {
-          // Calculate delay based on index
-          const delay = index * 400; // Adjust this delay according to your preference
-          setTimeout(() => {
-            $(entry.target).removeClass('hidden').addClass('visible animated');
-          }, delay);
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-      rootMargin: '0px 0px -25% 0px' // Same adjustment for the tiled elements
-    }
-  );
+  // // Create an Intersection Observer for tiled elements
+  // const tiledObserver = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry, index) => {
+  //       if (entry.isIntersecting && !$(entry.target).hasClass('animated')) {
+  //         // Calculate delay based on index
+  //         const delay = index * 400; // Adjust this delay according to your preference
+  //         setTimeout(() => {
+  //           $(entry.target).removeClass('hidden').addClass('visible animated');
+  //         }, delay);
+  //       }
+  //     });
+  //   },
+  //   {
+  //     threshold: 0.5,
+  //     rootMargin: '0px 0px -25% 0px' // Same adjustment for the tiled elements
+  //   }
+  // );
 
-  // Target tiled elements to observe
-  const tiledElements = $('.tiled, .tiled-fm-left');
+  // // Target tiled elements to observe
+  // const tiledElements = $('.tiled, .tiled-fm-left');
 
-  // Start observing each tiled target element
-  tiledElements.each(function (index, element) {
-    tiledObserver.observe(element);
-  });
+  // // Start observing each tiled target element
+  // tiledElements.each(function (index, element) {
+  //   tiledObserver.observe(element);
+  // });
   $(document).on('scroll', function () {
     var header = $('#home-header');
     var scrollPosition = $(window).scrollTop();
