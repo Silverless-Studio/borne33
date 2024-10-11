@@ -62,8 +62,8 @@ function animateContent() {
     { opacity: 1, y: 0, duration: 1, ease: 'power2.out' } // Animate to full opacity and normal position
   ).to(
     line,
-    { height: '100%', duration: 1, ease: 'power2.out' }, // Animate to 100% height
-    '+=0.1' // Start this animation half a second before the previous one ends
+    { height: '100%', duration: 0.5, ease: 'power2.out' }, // Animate to 100% height
+    '+=0'
   );
 }
 
@@ -217,3 +217,45 @@ gsap.utils.toArray('.splats').forEach((splat) => {
     }
   });
 });
+
+// Create a new timeline for section seven animations
+const sectionSevenTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.section--seven', // Element that triggers the animation
+    start: 'top center', // When the top of the trigger hits the center of the viewport
+    once: true // Animation will only happen once
+  }
+});
+
+// Add animations to the section seven timeline
+sectionSevenTimeline
+  .from('.seven--one', {
+    y: -50, // Drop effect
+    opacity: 0,
+    duration: 1
+  })
+  .from(
+    '.seven--two path',
+    {
+      opacity: 0,
+      rotate: 4, // Set rotation to 0
+      duration: 1
+    },
+    '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.seven--three',
+    {
+      opacity: 0,
+      duration: 1
+    },
+    '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.seven--four',
+    {
+      opacity: 0,
+      duration: 1
+    },
+    '-=0.5'
+  ); // Start this animation 0.5 seconds before the previous one completes
