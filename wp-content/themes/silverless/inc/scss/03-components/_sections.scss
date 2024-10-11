@@ -382,6 +382,16 @@
     position: absolute;
   }
 }
+.age-gate .background--image-main {
+  inset: 0;
+  position: fixed;
+  z-index: -4;
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
 .background--image-main {
   inset: 0;
   position: fixed;

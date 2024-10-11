@@ -23,12 +23,13 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <?php get_template_part('template-parts/age-gate');?>
     <div id="page" class="site" style="--start-grad:0%;--end-grad:100%">
         <a class="skip-link screen-reader-text" href="#primary">
             <?php esc_html_e('Skip to content', 'silverless'); ?>
         </a>
         <div class="dark-gradient"></div>
-        <?php get_template_part('template-parts/age-gate');?>
+        
         <?php if ( is_front_page() ) : ?>
         <header id="home-header" class="site-header container">
             <div class="row">

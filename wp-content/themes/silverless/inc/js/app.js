@@ -22,13 +22,16 @@ function getCookie(name) {
 
 // Check if the age verification cookie exists
 if (getCookie('ageVerified') === 'true') {
-  // If cookie is set, immediately animate the content
-  animateContent();
+  document.body.classList.add('age-verified'); // Show content
+  animateContent(); // Greensock animation for content
 } else {
-  // Show the gateway if the cookie isn't set
+  // Ensure the body remains hidden until age gate interaction
+  document.body.style.display = 'block'; // Now just show the age gate
+
   document.getElementById('age-gate').style.display = 'flex';
 
   document.getElementById('yes-btn').addEventListener('click', function () {
+    document.body.classList.add('age-verified'); // Show content
     setCookie('ageVerified', 'true', 180); // Set cookie to expire in 180 days
 
     // Start splat animations and fade out the age gate after the last splat
@@ -36,14 +39,35 @@ if (getCookie('ageVerified') === 'true') {
   });
 }
 
+function startSplatAnimations() {
+  // Example Greensock splat animation
+  gsap.to('#splat1', { opacity: 1, duration: 1, ease: 'back.out' });
+  gsap.to('#splat2', { opacity: 1, duration: 1, delay: 0.5, ease: 'back.out' });
+
+  // After splat animations complete, fade out the age gate and reveal content
+  gsap.to('#age-gate', {
+    opacity: 0,
+    duration: 0.5,
+    onComplete: function () {
+      document.getElementById('age-gate').style.display = 'none';
+      document.body.classList.add('age-verified'); // Reveal content
+      animateContent(); // Trigger Greensock content animations
+    }
+  });
+}
+
+function animateContent() {
+  // Greensock animations for content after verification
+  gsap.to('.content', { opacity: 1, duration: 1 });
+}
+
 gsap.to('.dark-gradient', {
   '--start-grad': '100%', // Animate from 0% to 50%
   '--end-grad': '300%', // Animate from 100% to 200%
   scrollTrigger: {
-    trigger: '.section--two',
+    trigger: '.age-verified .section--two',
     start: 'top bottom', // Start the animation when the page starts scrolling
     end: 'bottom+=300vh', // Animation ends after scrolling 200vh
-
     scrub: true // Makes the animation follow the scroll position
   }
 });

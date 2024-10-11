@@ -157,3 +157,9 @@ a:not([class]) {
   width: 30vw;
   z-index: -1;
 }
+#page {
+  opacity: 0;
+}
+body.age-verified #page {
+  opacity: 1;
+}
