@@ -272,7 +272,6 @@ gsap.utils.toArray('.splats').forEach((splat) => {
   });
 });
 
-// Check if '.section--seven' exists before creating the timeline
 const sectionSeven = document.querySelector('.section--seven');
 
 if (sectionSeven) {
@@ -285,18 +284,24 @@ if (sectionSeven) {
   });
 
   const animations = [
+    { selector: '.seven--one', props: { y: -50, opacity: 0, duration: 1 } },
     {
-      selector: '.seven--one',
-      props: { y: -50, opacity: 0, duration: 1 },
-      offset: '-=0.5'
-    },
-    {
-      selector: '.seven--two path.leaf-two, .seven--two path.leaf-five',
+      selector: '.seven--two path.leaf-two',
       props: { opacity: 0, rotate: 4, duration: 1 },
       offset: '-=0.5'
     },
     {
-      selector: '.seven--two path.leaf-one, .seven--two path.leaf-three',
+      selector: '.seven--two path.leaf-five',
+      props: { opacity: 0, rotate: 4, duration: 1 },
+      offset: '-=0.5'
+    }, // Ensure these are separated
+    {
+      selector: '.seven--two path.leaf-one',
+      props: { opacity: 0, rotate: -4, duration: 1 },
+      offset: '-=0.2'
+    },
+    {
+      selector: '.seven--two path.leaf-three',
       props: { opacity: 0, rotate: -4, duration: 1 },
       offset: '-=0.2'
     },
