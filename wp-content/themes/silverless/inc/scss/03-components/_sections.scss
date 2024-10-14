@@ -170,19 +170,46 @@
       padding-right: 11rem;
     }
 
-    img.sticky-image {
+    .image-holder.sticky-image {
       height: auto;
-      margin-bottom: 15rem;
+      margin-bottom: 40vh;
       position: sticky;
       top: 15vh;
+      .bird-morph {
+        position: relative;
+        .overlay {
+          position: absolute;
+          right: -10rem;
+          top: -15rem;
+        }
+      }
+      .main-image {
+        position: relative;
+        img {
+          height: auto;
+          inset: 0;
+          position: absolute;
+        }
+        > div {
+          opacity: 0;
+          &.main-image-1 {
+            opacity: 1;
+          }
+        }
+      }
     }
     .overlay {
+      opacity: 0;
       position: absolute;
       right: 3rem;
       top: -12rem;
       img {
         position: relative;
         z-index: 3;
+      }
+
+      &.overlay-1 {
+        opacity: 1;
       }
     }
   }
