@@ -259,13 +259,31 @@ sectionSevenTimeline
     duration: 1
   })
   .from(
-    '.seven--two path',
+    '.seven--two path.leaf-two,.seven--two path.leaf-five',
     {
       opacity: 0,
       rotate: 4, // Set rotation to 0
       duration: 1
     },
     '-=0.5'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.seven--two path.leaf-one,.seven--two path.leaf-three',
+    {
+      opacity: 0,
+      rotate: -4, // Set rotation to 0
+      duration: 1
+    },
+    '-=0.2'
+  ) // Start this animation 0.5 seconds before the previous one completes
+  .from(
+    '.seven--two path.leaf-four',
+    {
+      opacity: 0,
+      rotate: -7, // Set rotation to 0
+      duration: 1
+    },
+    '-=0.2'
   ) // Start this animation 0.5 seconds before the previous one completes
   .from(
     '.seven--three',
