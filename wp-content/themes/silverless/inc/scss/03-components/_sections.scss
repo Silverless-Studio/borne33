@@ -315,31 +315,110 @@
   }
   .recipe {
     background-color: $color-supporting-1;
-
+    position: relative;
     @media only screen and (min-width: $bp-large) {
       margin: 0 2.5rem;
       padding: 5rem 8rem;
       width: 110rem !important;
     }
+    .slider-text {
+      left: 2rem;
+      position: absolute;
+      top: 2rem;
+    }
     .col-half {
       height: 100%;
+      .image {
+        position: relative;
+        svg {
+          position: absolute;
+          &.slider-three {
+            bottom: 0;
+            left: -8rem;
+            rotate: -45deg;
+          }
+          &.slider-four {
+            right: -20rem;
+            rotate: 45deg;
+            top: -5rem;
+            z-index: 9;
+            path {
+              fill: #342432;
+            }
+          }
+          &.slider-five {
+            bottom: 0;
+            right: -15rem;
+            rotate: 180deg;
+            z-index: 9;
+            path {
+              fill: #342432;
+            }
+          }
+          &.slider-three,
+          &.slider-four,
+          &.slider-five {
+            opacity: 0;
+            transition: opacity 1s ease;
+            transition-delay: 0.5s; /* 1 second delay */
+          }
+          &.slider-four {
+            transition-delay: 0.75s;
+          }
+          &.slider-five {
+            transition-delay: 1s;
+          }
+        }
+      }
     }
     .image {
       img {
         height: 100%;
         object-fit: cover;
+        position: relative;
         width: 100%;
+        z-index: 8;
       }
     }
     .details {
+      position: relative;
+      svg {
+        position: absolute;
+        &.slider-one {
+          opacity: 0;
+          right: 0;
+          rotate: 15deg;
+          top: 8rem;
+          transform-origin: bottom right;
+          transition:
+            rotate 1s ease,
+            opacity 1s ease;
+          transition-delay: 1s; /* 1 second delay */
+        }
+      }
       .heading-5 {
         padding: 4.5rem 0 2.5rem;
       }
       .ingredients {
+        position: relative;
         .ingredient--items li {
           color: $color-primary;
           font-size: 1.6rem;
           padding-bottom: 2rem;
+        }
+        svg {
+          position: absolute;
+          &.slider-two {
+            bottom: 0;
+            opacity: 0;
+            right: 8rem;
+            rotate: -15deg;
+            transform-origin: bottom right;
+            transition:
+              rotate 1s ease,
+              opacity 1s ease;
+            transition-delay: 1s; /* 1 second delay */
+          }
         }
       }
       .method {
@@ -354,6 +433,21 @@
             }
           }
         }
+      }
+    }
+    &.slick-active {
+      #slider-one {
+        opacity: 1;
+        rotate: 0deg;
+      }
+      #slider-two {
+        opacity: 1;
+        rotate: 0deg;
+      }
+      #slider-three,
+      #slider-four,
+      #slider-five {
+        opacity: 1;
       }
     }
   }

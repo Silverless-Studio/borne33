@@ -20,15 +20,22 @@ if ($recipe_query->have_posts()) :?>
         <div class="recipe-slider">
             <?php while ($recipe_query->have_posts()) : $recipe_query->the_post(); ?>
             <div class="recipe">
+                <?php echo get_template_part('/inc/img/slider-text'); ?>
                 <div class="col-half">
                     <div class="image"> <?php if (has_post_thumbnail()) : ?>
+                         <?php echo get_template_part('/inc/img/slider-three'); ?>
+                          <?php echo get_template_part('/inc/img/slider-four'); ?>
+                           <?php echo get_template_part('/inc/img/slider-five'); ?>
                         <?php the_post_thumbnail('full'); // Full-size featured image ?>
                         <?php endif; ?></div>
                     <div class="details">
+                        <?php echo get_template_part('/inc/img/slider-one'); ?>
                         <h2 class="heading-4 heading-alt underscores underscores--long fm-right"><?php the_title(); ?></h2>
                         <h3 class="heading-5 heading-alt font--color-primary">
                             <?php echo esc_html( get_field('ingredients_title') ); ?></h3>
                         <div class="ingredients">
+                             
+                              <?php echo get_template_part('/inc/img/slider-two'); ?>
                             <?php if( have_rows('ingredients') ): ?>
                             <ul class="ingredient--items">
                                 <?php while( have_rows('ingredients') ): the_row();?>
