@@ -350,3 +350,35 @@ sectionEightTimeline
     },
     '-=0.5'
   ); // Start this animation 0.5 seconds before the previous one completes
+
+// Number of text blocks (can be increased dynamically)
+const totalBlocks = document.querySelectorAll('[class^="text--block"]').length;
+
+// Loop through the blocks and create animations
+for (let i = 1; i <= totalBlocks; i++) {
+  // Animate fade out of current image/overlay and fade in the next one
+  ScrollTrigger.create({
+    trigger: `.text--block-${i}`, // Each text block triggers its corresponding image
+    start: 'top center', // When the top of the text block hits the center of the viewport
+    end: 'bottom center',
+    onEnter: () => {
+      gsap.to(`.main-image-${i}`, { opacity: 1, duration: 1 });
+      gsap.to(`.overlay-${i}`, { opacity: 1, duration: 1 });
+
+      // Fade out previous images and overlays
+      if (i > 1) {
+        gsap.to(`.main-image-${i - 1}`, { opacity: 0, duration: 1 });
+        gsap.to(`.overlay-${i - 1}`, { opacity: 0, duration: 1 });
+      }
+    },
+    onLeaveBack: () => {
+      // Reset to previous image when scrolling back up
+      gsap.to(`.main-image-${i}`, { opacity: 0, duration: 1 });
+      gsap.to(`.overlay-${i}`, { opacity: 0, duration: 1 });
+      if (i > 1) {
+        gsap.to(`.main-image-${i - 1}`, { opacity: 1, duration: 1 });
+        gsap.to(`.overlay-${i - 1}`, { opacity: 1, duration: 1 });
+      }
+    }
+  });
+}
