@@ -1,10 +1,10 @@
 <section class="section--nine container relative">
     <div class="row col-8 relative">
         <div class="background--image"><?php get_template_part('inc/img/hand'); ?></div>
-        <h2 class="heading-1 heading-1--xl  font--color-primary">
+        <h2 class="heading-1 heading-1--xl  font--color-primary fm-right">
             <?php echo esc_html( get_field('recipes_title') ); ?>
         </h2>
-        <h3 class="heading-5 heading-alt"><?php echo esc_html( get_field('recipes_sub_title') ); ?></h3>
+        <h3 class="heading-5 heading-alt fm-right"><?php echo esc_html( get_field('recipes_sub_title') ); ?></h3>
     </div>
     <div class="row extended">
         <?php
@@ -25,7 +25,7 @@ if ($recipe_query->have_posts()) :?>
                         <?php the_post_thumbnail('full'); // Full-size featured image ?>
                         <?php endif; ?></div>
                     <div class="details">
-                        <h2 class="heading-4 heading-alt underscores underscores--long"><?php the_title(); ?></h2>
+                        <h2 class="heading-4 heading-alt underscores underscores--long fm-right"><?php the_title(); ?></h2>
                         <h3 class="heading-5 heading-alt font--color-primary">
                             <?php echo esc_html( get_field('ingredients_title') ); ?></h3>
                         <div class="ingredients">

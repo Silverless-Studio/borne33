@@ -11,7 +11,7 @@
 
 ?>
 <footer id="colophon" class="site-footer container">
-    <div class="row col-6">
+    <div class="row col-6 fm-above">
         <div class="logo"><?php get_template_part('inc/img/logo-main'); ?></div>
         <div class="underscores underscores--primary"></div>
         <h2 class="heading-3"><?php echo esc_html( get_field('footer_byline','options') ); ?></h2>
