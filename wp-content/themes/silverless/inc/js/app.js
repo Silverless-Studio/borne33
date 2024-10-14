@@ -75,7 +75,20 @@ gsap.to('.dark-gradient', {
 // Function to trigger page content animation
 function animateContent() {
   const heroTop = document.querySelector('.hero-fm-top');
+
+  // Check if '.hero-fm-top' exists
+  if (!heroTop) {
+    console.warn('Element .hero-fm-top not found');
+    return; // Exit the function if element is not found
+  }
+
   const line = heroTop.querySelector('.line');
+
+  // Check if '.line' exists within '.hero-fm-top'
+  if (!line) {
+    console.warn('Element .line not found inside .hero-fm-top');
+    return; // Exit the function if element is not found
+  }
 
   const tl = gsap.timeline();
 
@@ -145,7 +158,7 @@ gsap.utils.toArray('.fm-above').forEach((element) => {
 });
 
 // Apply the animation to all elements with the class .fm-above
-gsap.utils.toArray('.fm-right').forEach((element) => {
+gsap.utils.toArray('.fm-right,.entry-summary').forEach((element) => {
   gsap.from(element, {
     x: 24, // Move 24px left
     opacity: 0, // Start at 0 opacity
@@ -158,6 +171,23 @@ gsap.utils.toArray('.fm-right').forEach((element) => {
     }
   });
 });
+
+// Apply the animation to all elements with the class .fm-above
+gsap.utils
+  .toArray('.fm-left,.woocommerce-product-gallery')
+  .forEach((element) => {
+    gsap.from(element, {
+      x: -24, // Move 24px left
+      //   opacity: 0, // Start at 0 opacity
+      duration: 1.5, // Animation duration (1 second)
+      ease: 'power2.out', // Easing for smooth motion
+      scrollTrigger: {
+        trigger: element, // Trigger animation when the element enters the viewport
+        start: 'top 60%', // Start animation when the element hits the center of the viewport
+        toggleActions: 'play none none none' // Play the animation when entering the viewport
+      }
+    });
+  });
 // Target all 'li' elements within '.content_blocks'
 gsap.utils.toArray('.content_blocks li').forEach((li, index) => {
   // Create a timeline for each 'li' with staggered animations
@@ -242,132 +272,104 @@ gsap.utils.toArray('.splats').forEach((splat) => {
   });
 });
 
-// Create a new timeline for section seven animations
-const sectionSevenTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.section--seven', // Element that triggers the animation
-    start: 'top center', // When the top of the trigger hits the center of the viewport
-    once: true // Animation will only happen once
-  }
-});
+// Check if '.section--seven' exists before creating the timeline
+const sectionSeven = document.querySelector('.section--seven');
 
-// Add animations to the section seven timeline
-sectionSevenTimeline
-  .from('.seven--one', {
-    y: -50, // Drop effect
-    opacity: 0,
-    duration: 1
-  })
-  .from(
-    '.seven--two path.leaf-two,.seven--two path.leaf-five',
-    {
-      opacity: 0,
-      rotate: 4, // Set rotation to 0
-      duration: 1
-    },
-    '-=0.5'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.seven--two path.leaf-one,.seven--two path.leaf-three',
-    {
-      opacity: 0,
-      rotate: -4, // Set rotation to 0
-      duration: 1
-    },
-    '-=0.2'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.seven--two path.leaf-four',
-    {
-      opacity: 0,
-      rotate: -7, // Set rotation to 0
-      duration: 1
-    },
-    '-=0.2'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.seven--three',
-    {
-      opacity: 0,
-      duration: 1
-    },
-    '-=0.5'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.seven--four',
-    {
-      opacity: 0,
-      duration: 1
-    },
-    '-=0.5'
-  ); // Start this animation 0.5 seconds before the previous one completes
+if (sectionSeven) {
+  const sectionSevenTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section--seven',
+      start: 'top center',
+      once: true
+    }
+  });
 
-// Create a new timeline for section seven animations
-const sectionEightTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.section--eight', // Element that triggers the animation
-    start: 'top center', // When the top of the trigger hits the center of the viewport
-    once: true // Animation will only happen once
-  }
-});
+  const animations = [
+    {
+      selector: '.seven--one',
+      props: { y: -50, opacity: 0, duration: 1 },
+      offset: '-=0.5'
+    },
+    {
+      selector: '.seven--two path.leaf-two, .seven--two path.leaf-five',
+      props: { opacity: 0, rotate: 4, duration: 1 },
+      offset: '-=0.5'
+    },
+    {
+      selector: '.seven--two path.leaf-one, .seven--two path.leaf-three',
+      props: { opacity: 0, rotate: -4, duration: 1 },
+      offset: '-=0.2'
+    },
+    {
+      selector: '.seven--two path.leaf-four',
+      props: { opacity: 0, rotate: -7, duration: 1 },
+      offset: '-=0.2'
+    },
+    {
+      selector: '.seven--three',
+      props: { opacity: 0, duration: 1 },
+      offset: '-=0.5'
+    },
+    {
+      selector: '.seven--four',
+      props: { opacity: 0, duration: 1 },
+      offset: '-=0.5'
+    }
+  ];
 
-// Add animations to the section seven timeline
-sectionEightTimeline
-  .from('.eight-fade', {
-    opacity: 0,
-    duration: 1
-  })
-  .from(
-    '.grow-right-1',
+  animations.forEach(({ selector, props, offset }) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      sectionSevenTimeline.from(element, props, offset);
+    }
+  });
+} else {
+  console.warn('Element .section--seven not found on this page');
+}
+
+// Check if '.section--eight' exists before creating the timeline
+const sectionEight = document.querySelector('.section--eight');
+
+if (sectionEight) {
+  const sectionEightTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section--eight',
+      start: 'top center',
+      once: true
+    }
+  });
+
+  const animations = [
+    { selector: '.eight-fade', props: { opacity: 0, duration: 1 } },
     {
-      opacity: 0,
-      width: 0,
-      duration: 1
+      selector: '.grow-right-1',
+      props: { opacity: 0, width: 0, duration: 1 },
+      offset: '-=0.5'
     },
-    '-=0.5'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.fm-right-1',
+    { selector: '.fm-right-1', props: { opacity: 0, x: 16 }, offset: '-=0.5' },
     {
-      opacity: 0,
-      x: 16
+      selector: '.grow-right-2',
+      props: { opacity: 0, width: 0, duration: 1 },
+      offset: '-=0.5'
     },
-    '-=0.5'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.grow-right-2',
+    { selector: '.fm-right-2', props: { opacity: 0, x: 16 }, offset: '-=0.5' },
     {
-      opacity: 0,
-      width: 0,
-      duration: 1
+      selector: '.grow-right-3',
+      props: { opacity: 0, width: 0, duration: 1 },
+      offset: '-=0.5'
     },
-    '-=0.5'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.fm-right-2',
-    {
-      opacity: 0,
-      x: 16
-    },
-    '-=0.5'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.grow-right-3',
-    {
-      opacity: 0,
-      width: 0,
-      duration: 1
-    },
-    '-=0.5'
-  ) // Start this animation 0.5 seconds before the previous one completes
-  .from(
-    '.fm-right-3',
-    {
-      opacity: 0,
-      x: 16
-    },
-    '-=0.5'
-  ); // Start this animation 0.5 seconds before the previous one completes
+    { selector: '.fm-right-3', props: { opacity: 0, x: 16 }, offset: '-=0.5' }
+  ];
+
+  animations.forEach(({ selector, props, offset }) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      sectionEightTimeline.from(element, props, offset);
+    }
+  });
+} else {
+  console.warn('Element .section--eight not found on this page');
+}
 
 // Number of text blocks (can be increased dynamically)
 const totalBlocks = document.querySelectorAll('[class^="text--block"]').length;
