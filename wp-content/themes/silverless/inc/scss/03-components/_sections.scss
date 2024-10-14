@@ -151,10 +151,9 @@
       padding-right: 11rem;
     }
     p {
-      margin-bottom: 26rem;
-      //   &:last-of-type {
-      //     margin-bottom: 0;
-      //   }
+      &:last-of-type {
+        margin-bottom: 10rem;
+      }
     }
     .underscores {
       margin-bottom: 4rem;
@@ -172,7 +171,7 @@
 
     .image-holder.sticky-image {
       height: auto;
-      margin-bottom: 40vh;
+      margin-bottom: 85vh;
       position: sticky;
       top: 15vh;
       .bird-morph {
@@ -395,7 +394,7 @@
   height: inherit !important;
 }
 .background--image-bottle {
-  height: 75vh;
+  height: 90vh;
   left: 50%;
   position: fixed;
   top: 50%;
@@ -406,7 +405,7 @@
     width: auto;
   }
   @media only screen and (min-width: $bp-large) {
-    transform: translate(-150%, -50%);
+    transform: translate(-168%, -50%);
   }
   .effects-div {
     backdrop-filter: hue-rotate(45deg);
