@@ -256,26 +256,29 @@ if (document.querySelector('.section--three')) {
     ); // Add a 0.5-second delay after the second animation
 }
 gsap.utils.toArray('.splats').forEach((splat) => {
-  // Create a splat animation for each element
-  gsap.from(splat, {
-    scale: 0, // Start with scale 0 (invisible)
-    opacity: 0, // Start with 0 opacity (fade in)
-    duration: 1, // Duration of the animation (1 second)
-    ease: 'back.out(1.7)', // Splat effect with back easing
+  // Create a timeline for each splat
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.splats--top', // Trigger animation when the element hits the center of the viewport
-      start: 'top 80%', // Start when the top of the element hits the center
+      trigger: '.splats--top', // Trigger animation when this element hits the viewport
+      start: 'top 80%', // Start when the top of the element hits 80% of the viewport height
       toggleActions: 'play none none none' // Play once when entering the viewport
     }
   });
 
-  // Fade to 0.5 opacity after the splat animation
-  gsap.to(splat, {
-    opacity: 0.5, // Fade to 0.5 opacity
-    duration: 2, // Duration of the fade
-    delay: 1, // Delay to start the fade after the splat animation (matches the previous duration)
-    ease: 'power2.inOut' // Smooth easing for fade
-  });
+  // First animation: splat effect (scale and fade in)
+  tl.from(splat, {
+    scale: 0, // Start with scale 0 (invisible)
+    opacity: 0, // Start with 0 opacity (fade in)
+    duration: 1, // Duration of the animation (1 second)
+    ease: 'back.out(1.7)' // Splat effect with back easing
+  })
+
+    // Second animation: fade out to 0.5 opacity after the splat animation
+    .to(splat, {
+      opacity: 0.5, // Fade to 0.5 opacity
+      duration: 1, // Duration of the fade
+      ease: 'power2.inOut' // Smooth easing for fade
+    });
 });
 if (document.querySelector('.section--five')) {
   // Create the animation
