@@ -256,7 +256,6 @@ tl.from('.step--one', {
     '+=0.3'
   ); // Add a 0.5-second delay after the second animation
 
-// Target both splat elements
 gsap.utils.toArray('.splats').forEach((splat) => {
   // Create a splat animation for each element
   gsap.from(splat, {
@@ -267,9 +266,29 @@ gsap.utils.toArray('.splats').forEach((splat) => {
     scrollTrigger: {
       trigger: '.splats--top', // Trigger animation when the element hits the center of the viewport
       start: 'top 80%', // Start when the top of the element hits the center
-      toggleActions: 'play none none none' // Play once when entering the viewport
+      toggleActions: 'play none none none', // Play once when entering the viewport
+      onComplete: () => {
+        console.log('Splat animation complete, starting line animation.');
+        gsap.to('.white-line .line', {
+          height: '100%',
+          duration: 1,
+          delay: 1 // Add a delay of 1 second before starting this animation
+        });
+      }
     }
   });
+});
+
+// Create the animation
+gsap.to('.section--five .line', {
+  height: '100%',
+  scrollTrigger: {
+    trigger: '.section--five',
+    start: 'top center', // when the top of the section hits the center of the viewport
+    end: 'bottom center', // when the bottom of the section hits the center of the viewport
+    scrub: true, // smooth scrubbing, takes the duration of the scroll
+    toggleActions: 'play none none reverse' // play on enter, reverse on leave
+  }
 });
 
 const sectionSeven = document.querySelector('.section--seven');
@@ -332,6 +351,8 @@ if (sectionSeven) {
   console.warn('Element .section--seven not found on this page');
 }
 
+//FOUR BOX REVEAL ANIMATION
+
 // Check if '.section--eight' exists before creating the timeline
 const sectionEight = document.querySelector('.section--eight');
 
@@ -376,6 +397,8 @@ if (sectionEight) {
   console.warn('Element .section--eight not found on this page');
 }
 
+//IMAGE WITH OVERLAY AND TEXT COLUMNS ANIMATION
+
 // Number of text blocks (can be increased dynamically)
 const totalBlocks = document.querySelectorAll('[class^="text--block"]').length;
 
@@ -407,6 +430,9 @@ for (let i = 1; i <= totalBlocks; i++) {
     }
   });
 }
+
+//RECIPE HAND ANIMATION
+
 const handElement = document.querySelector('#the-hand');
 
 if (handElement) {
@@ -425,66 +451,55 @@ if (handElement) {
   });
 }
 
-// Pulse animation function
-function pulseGlow() {
-  return gsap.to('.left-glow', {
-    width: '40rem',
-    x: '0',
-    repeat: -1, // Infinite repetition
-    yoyo: true, // Pulse effect
-    duration: 1.5, // Speed of pulsing
-    ease: 'power1.inOut' // Smooth transition
-  });
-}
+//  LEFT HAND GLOW ELEMENT
 
-// Function to shrink width and shift position
-function shrinkGlow() {
-  return gsap.to('.left-glow', {
-    width: '0rem', // Shrink to 0 width
-    x: '-30rem', // Move to the left out of view
-    duration: 1, // Time to shrink and move
-    ease: 'power1.inOut'
-  });
-}
+const leftGlow = document.querySelector('.left-glow');
+const element1 = document.querySelector('.hero');
+const element2 = document.querySelector('.section--eight');
 
-// Function to smoothly expand before resuming pulse
-function expandGlow() {
-  return gsap.to('.left-glow', {
-    width: '40rem',
-    x: '0',
-    duration: 1.5, // Smooth expansion time
-    ease: 'power2.out' // Use a slower ease-out for a gentler transition
-  });
-}
-
-// Start the pulse on page load
-let glowPulse = pulseGlow();
-
-// ScrollTrigger for stopping and resuming the pulse
-ScrollTrigger.create({
-  trigger: '.hero',
-  start: 'bottom top', // When .hero leaves the viewport
-  onLeave: () => {
-    glowPulse.pause(); // Pause the pulse
-    shrinkGlow(); // Shrink width and shift position
-  },
-  onEnterBack: () => {
-    shrinkGlow().then(() => glowPulse.resume()); // Shrink before resuming pulse
+// Check if left-glow exists on the page
+if (leftGlow) {
+  // Function to update the left-glow based on the position of the elements
+  function updateLeftGlow() {
+    // Animate the changes using GSAP
+    gsap.to(leftGlow, {
+      width: '30rem', // Set the new width
+      x: '0', // Change the position
+      duration: 0.75, // Animation duration
+      ease: 'power1.out' // Easing function
+    });
   }
-});
 
-ScrollTrigger.create({
-  trigger: '.section--eight',
-  start: 'top bottom', // When .section--eight enters the viewport
-  onEnter: () => {
-    expandGlow().then(() => glowPulse.resume()); // Expand smoothly before pulsing again
-  },
-  onLeave: () => {
-    glowPulse.pause(); // Pause the pulse
-    shrinkGlow(); // Shrink to 0 when section leaves viewport
-  },
-  onLeaveBack: () => {
-    glowPulse.pause(); // Pause the pulse
-    shrinkGlow(); // Shrink to 0 when scrolling back up
+  // Create ScrollTrigger for element1
+  ScrollTrigger.create({
+    trigger: element1, // Trigger point for the first element
+    start: 'top center', // Start when the top of element1 hits the center of the viewport
+    end: 'bottom center', // End when the bottom of element1 hits the center of the viewport
+    onEnter: updateLeftGlow, // Call update function on enter
+    onLeave: resetLeftGlow, // Call reset function on leave
+    onEnterBack: updateLeftGlow, // Call update on entering back
+    onLeaveBack: resetLeftGlow // Call reset on leaving back
+  });
+
+  // Create ScrollTrigger for element2
+  ScrollTrigger.create({
+    trigger: element2, // Trigger point for the second element
+    start: 'top center', // Start when the top of element2 hits the center of the viewport
+    end: 'bottom center', // End when the bottom of element2 hits the center of the viewport
+    onEnter: updateLeftGlow, // Call update function on enter
+    onLeave: resetLeftGlow, // Call reset function on leave
+    onEnterBack: updateLeftGlow, // Call update on entering back
+    onLeaveBack: resetLeftGlow // Call reset on leaving back
+  });
+
+  // Reset function for left-glow
+  function resetLeftGlow() {
+    // Reset to original state if needed
+    gsap.to(leftGlow, {
+      width: '30rem', // Reset width to initial value
+      x: '-30rem', // Reset position if needed
+      duration: 0.75,
+      ease: 'power1.out'
+    });
   }
-});
+}
