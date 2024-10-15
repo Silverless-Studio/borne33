@@ -499,22 +499,22 @@
       }
       &:hover {
         #rotate-ring {
-          animation: rotateAnimation 0.5s ease-in-out; /* Adjust the duration to suit */
+          animation: rotateAnimation 0.75s ease-in-out; /* Adjust the duration to suit */
           transform-origin: center;
-        }
-
-        #rotate-ring:hover {
         }
 
         @keyframes rotateAnimation {
           0% {
             transform: rotate(0deg);
           }
-          33% {
-            transform: rotate(-20deg);
+          30% {
+            transform: rotate(-30deg);
           }
-          66% {
-            transform: rotate(30deg); /* Rotated 10deg more */
+          57% {
+            transform: rotate(5deg); /* Rotated 10deg more */
+          }
+          81% {
+            transform: rotate(-17deg); /* Rotated 10deg more */
           }
           100% {
             transform: rotate(0deg); /* Rotated 30deg more */
