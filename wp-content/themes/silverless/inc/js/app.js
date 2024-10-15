@@ -60,17 +60,18 @@ function animateContent() {
   // Greensock animations for content after verification
   gsap.to('.content', { opacity: 1, duration: 1 });
 }
-
-gsap.to('.dark-gradient', {
-  '--start-grad': '100%', // Animate from 0% to 50%
-  '--end-grad': '300%', // Animate from 100% to 200%
-  scrollTrigger: {
-    trigger: '.age-verified .section--two',
-    start: 'top bottom', // Start the animation when the page starts scrolling
-    end: 'bottom+=300vh', // Animation ends after scrolling 200vh
-    scrub: true // Makes the animation follow the scroll position
-  }
-});
+if (document.querySelector('.section--two')) {
+  gsap.to('.dark-gradient', {
+    '--start-grad': '100%', // Animate from 0% to 50%
+    '--end-grad': '300%', // Animate from 100% to 200%
+    scrollTrigger: {
+      trigger: '.age-verified .section--two',
+      start: 'top bottom', // Start the animation when the page starts scrolling
+      end: 'bottom+=300vh', // Animation ends after scrolling 200vh
+      scrub: true // Makes the animation follow the scroll position
+    }
+  });
+}
 
 // Function to trigger page content animation
 function animateContent() {
@@ -78,7 +79,6 @@ function animateContent() {
 
   // Check if '.hero-fm-top' exists
   if (!heroTop) {
-    console.warn('Element .hero-fm-top not found');
     return; // Exit the function if element is not found
   }
 
@@ -86,7 +86,6 @@ function animateContent() {
 
   // Check if '.line' exists within '.hero-fm-top'
   if (!line) {
-    console.warn('Element .line not found inside .hero-fm-top');
     return; // Exit the function if element is not found
   }
 
@@ -135,12 +134,14 @@ function startSplatAnimations() {
   animateContent();
 }
 
-gsap.to('.spin-me', {
-  rotate: 360,
-  duration: 20,
-  ease: 'none',
-  repeat: -1 // Continuous spin
-});
+if (document.querySelector('.spin-me')) {
+  gsap.to('.spin-me', {
+    rotate: 360,
+    duration: 20,
+    ease: 'none',
+    repeat: -1 // Continuous spin
+  });
+}
 
 // Apply the animation to all elements with the class .fm-above
 gsap.utils.toArray('.fm-above').forEach((element) => {
@@ -158,7 +159,7 @@ gsap.utils.toArray('.fm-above').forEach((element) => {
 });
 
 // Apply the animation to all elements with the class .fm-above
-gsap.utils.toArray('.fm-right,.entry-summary').forEach((element) => {
+gsap.utils.toArray('.fm-right').forEach((element) => {
   gsap.from(element, {
     x: 24, // Move 24px left
     opacity: 0, // Start at 0 opacity
@@ -173,21 +174,19 @@ gsap.utils.toArray('.fm-right,.entry-summary').forEach((element) => {
 });
 
 // Apply the animation to all elements with the class .fm-above
-gsap.utils
-  .toArray('.fm-left,.woocommerce-product-gallery')
-  .forEach((element) => {
-    gsap.from(element, {
-      x: -24, // Move 24px left
-      //   opacity: 0, // Start at 0 opacity
-      duration: 1.5, // Animation duration (1 second)
-      ease: 'power2.out', // Easing for smooth motion
-      scrollTrigger: {
-        trigger: element, // Trigger animation when the element enters the viewport
-        start: 'top 60%', // Start animation when the element hits the center of the viewport
-        toggleActions: 'play none none none' // Play the animation when entering the viewport
-      }
-    });
+gsap.utils.toArray('.fm-left,.entry-summary').forEach((element) => {
+  gsap.from(element, {
+    x: -24, // Move 24px left
+    //   opacity: 0, // Start at 0 opacity
+    duration: 1.5, // Animation duration (1 second)
+    ease: 'power2.out', // Easing for smooth motion
+    scrollTrigger: {
+      trigger: element, // Trigger animation when the element enters the viewport
+      start: 'top 60%', // Start animation when the element hits the center of the viewport
+      toggleActions: 'play none none none' // Play the animation when entering the viewport
+    }
   });
+});
 // Target all 'li' elements within '.content_blocks'
 gsap.utils.toArray('.content_blocks li').forEach((li, index) => {
   // Create a timeline for each 'li' with staggered animations
@@ -220,42 +219,42 @@ gsap.utils.toArray('.content_blocks li').forEach((li, index) => {
       index * 0.5 + 0.2
     ); // Start text animation after image, with a slight overlap
 });
+if (document.querySelector('.section--three')) {
+  // Create a timeline for step animations
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section--three', // Trigger when 'section--three' hits the center of the viewport
+      start: 'top 60%', // Start when the top of 'section--three' hits the center
+      toggleActions: 'play none none none' // Play the animation when entering
+    }
+  });
 
-// Create a timeline for step animations
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.section--three', // Trigger when 'section--three' hits the center of the viewport
-    start: 'top 60%', // Start when the top of 'section--three' hits the center
-    toggleActions: 'play none none none' // Play the animation when entering
-  }
-});
-
-// Step animations with a slight delay between each
-tl.from('.step--one', {
-  opacity: 0, // Fade in from 0 to 1 opacity
-  duration: 1, // Duration of fade-in
-  ease: 'power2.out' // Smooth easing
-})
-  .from(
-    '.step--two',
-    {
-      x: -100, // Enter from the left (-100px)
-      opacity: 0, // Fade in from 0 to 1 opacity
-      duration: 1, // Duration of movement and fade-in
-      ease: 'power2.out' // Smooth easing
-    },
-    '+=0.3'
-  ) // Add a 0.5-second delay after the first animation finishes
-  .from(
-    '.step--three',
-    {
-      opacity: 0, // Fade in from 0 to 1 opacity
-      duration: 1, // Duration of fade-in
-      ease: 'power2.out' // Smooth easing
-    },
-    '+=0.3'
-  ); // Add a 0.5-second delay after the second animation
-
+  // Step animations with a slight delay between each
+  tl.from('.step--one', {
+    opacity: 0, // Fade in from 0 to 1 opacity
+    duration: 1, // Duration of fade-in
+    ease: 'power2.out' // Smooth easing
+  })
+    .from(
+      '.step--two',
+      {
+        x: -100, // Enter from the left (-100px)
+        opacity: 0, // Fade in from 0 to 1 opacity
+        duration: 1, // Duration of movement and fade-in
+        ease: 'power2.out' // Smooth easing
+      },
+      '+=0.3'
+    ) // Add a 0.5-second delay after the first animation finishes
+    .from(
+      '.step--three',
+      {
+        opacity: 0, // Fade in from 0 to 1 opacity
+        duration: 1, // Duration of fade-in
+        ease: 'power2.out' // Smooth easing
+      },
+      '+=0.3'
+    ); // Add a 0.5-second delay after the second animation
+}
 gsap.utils.toArray('.splats').forEach((splat) => {
   // Create a splat animation for each element
   gsap.from(splat, {
@@ -278,19 +277,19 @@ gsap.utils.toArray('.splats').forEach((splat) => {
     }
   });
 });
-
-// Create the animation
-gsap.to('.section--five .line', {
-  height: '100%',
-  scrollTrigger: {
-    trigger: '.section--five',
-    start: 'top center', // when the top of the section hits the center of the viewport
-    end: 'bottom center', // when the bottom of the section hits the center of the viewport
-    scrub: true, // smooth scrubbing, takes the duration of the scroll
-    toggleActions: 'play none none reverse' // play on enter, reverse on leave
-  }
-});
-
+if (document.querySelector('.section--five')) {
+  // Create the animation
+  gsap.to('.section--five .line', {
+    height: '100%',
+    scrollTrigger: {
+      trigger: '.section--five',
+      start: 'top center', // when the top of the section hits the center of the viewport
+      end: 'bottom center', // when the bottom of the section hits the center of the viewport
+      scrub: true, // smooth scrubbing, takes the duration of the scroll
+      toggleActions: 'play none none reverse' // play on enter, reverse on leave
+    }
+  });
+}
 const sectionSeven = document.querySelector('.section--seven');
 
 if (sectionSeven) {
@@ -347,8 +346,6 @@ if (sectionSeven) {
       sectionSevenTimeline.from(element, props, offset);
     }
   });
-} else {
-  console.warn('Element .section--seven not found on this page');
 }
 
 //FOUR BOX REVEAL ANIMATION
@@ -393,8 +390,6 @@ if (sectionEight) {
       sectionEightTimeline.from(element, props, offset);
     }
   });
-} else {
-  console.warn('Element .section--eight not found on this page');
 }
 
 //IMAGE WITH OVERLAY AND TEXT COLUMNS ANIMATION

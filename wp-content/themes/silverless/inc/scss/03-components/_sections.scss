@@ -550,18 +550,21 @@
 }
 .background--image-bottle {
   height: 90vh;
-  left: 50%;
+  left: 0;
   position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 5vh;
+  width: 100%;
   z-index: -3;
   img {
     height: 100%;
+    margin: 0 auto;
+
     width: auto;
+    @media only screen and (min-width: $bp-large) {
+      transform: translateX(-33rem);
+    }
   }
-  @media only screen and (min-width: $bp-large) {
-    transform: translate(-168%, -50%);
-  }
+
   .effects-div {
     backdrop-filter: hue-rotate(45deg);
     inset: 0;
