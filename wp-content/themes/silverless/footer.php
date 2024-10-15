@@ -11,6 +11,12 @@
 
 ?>
 <footer id="colophon" class="site-footer container">
+    <div class="background--image-footer"><?php 
+$image = get_field('background_image','options');
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+}?></div>
     <div class="row col-6 fm-above">
         <div class="logo"><?php get_template_part('inc/img/logo-main'); ?></div>
         <div class="underscores underscores--primary"></div>
