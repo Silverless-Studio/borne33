@@ -7,9 +7,10 @@
             </h2>
             <div class="background--image">
 
-                <div class="spin-me"><?php get_template_part('inc/img/runes'); ?></div>
+               
                 <div class="spin-me"><img
                         src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/img/wheel.avif" /></div>
+                         <div class="spin-me"><?php get_template_part('inc/img/runes'); ?></div>
             </div>
         </div>
         <div class="main-description fm-right">
