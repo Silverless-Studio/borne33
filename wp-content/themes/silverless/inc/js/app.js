@@ -367,21 +367,21 @@ if (sectionEight) {
     {
       selector: '.grow-right-1',
       props: { opacity: 0, width: 0, duration: 1 },
-      offset: '-=0.5'
+      offset: '+=0'
     },
-    { selector: '.fm-right-1', props: { opacity: 0, x: 16 }, offset: '-=0.5' },
+    { selector: '.fm-right-1', props: { opacity: 0, x: 16 }, offset: '+=0' },
     {
       selector: '.grow-right-2',
       props: { opacity: 0, width: 0, duration: 1 },
-      offset: '-=0.5'
+      offset: '+=0'
     },
-    { selector: '.fm-right-2', props: { opacity: 0, x: 16 }, offset: '-=0.5' },
+    { selector: '.fm-right-2', props: { opacity: 0, x: 16 }, offset: '+=0' },
     {
       selector: '.grow-right-3',
       props: { opacity: 0, width: 0, duration: 1 },
-      offset: '-=0.5'
+      offset: '+=0'
     },
-    { selector: '.fm-right-3', props: { opacity: 0, x: 16 }, offset: '-=0.5' }
+    { selector: '.fm-right-3', props: { opacity: 0, x: 16 }, offset: '+=0' }
   ];
 
   animations.forEach(({ selector, props, offset }) => {
