@@ -259,6 +259,9 @@ table.wc-block-cart-items
     max-height: 15rem;
     width: auto;
   }
+  .woocommerce button.button.alt {
+    background-color: $color-primary;
+  }
 }
 .woocommerce-checkout.theme-silverless .wc-block-components-sidebar-layout {
   @media only screen and (min-width: $bp-large) {
@@ -555,4 +558,8 @@ table.wc-block-cart-items
   #order_comments {
     padding: 2rem;
   }
+}
+.woocommerce-checkout #payment {
+  background-color: $color-tertiary;
+  border-radius: 0;
 }
