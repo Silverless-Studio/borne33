@@ -1,6 +1,10 @@
 <div id="age-gate" class="age-gate container">
-    <div class="background--image-main"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/bg.avif"
-            alt="Bottle Image"></div>
+    <div class="background--image-main"><?php 
+$image = get_field('background_image','options');
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+}?></div>
     <div class="age-gate-content row col-6">
         <div class="logo"><?php get_template_part('inc/img/logo-main'); ?></div>
         <div class="underscores underscores--primary"></div>

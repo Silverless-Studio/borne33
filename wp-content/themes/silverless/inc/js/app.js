@@ -99,7 +99,7 @@ function animateContent() {
   ).to(
     line,
     { height: '100%', duration: 0.5, ease: 'power2.out' }, // Animate to 100% height
-    '+=0'
+    '-=0.5'
   );
 }
 
