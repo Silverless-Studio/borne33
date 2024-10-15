@@ -412,8 +412,9 @@ const handElement = document.querySelector('#the-hand');
 if (handElement) {
   // Use GSAP ScrollTrigger to animate when the element reaches the center of the page
   gsap.from('#the-hand', {
-    x: '-100vw', // Move from off-screen to the left
-    rotation: -360, // Full rotation
+    x: '-120px', // Move from off-screen to the left
+    rotation: -45, // Full rotation
+    opacity: 0,
     duration: 3, // Duration of the animation
     ease: 'power2.out', // Ease for deceleration
     scrollTrigger: {
