@@ -300,9 +300,19 @@
   }
   .background--image {
     inset: 0;
+    left: -11rem;
     position: absolute;
-    transform: translate(-50%, -120%);
     z-index: -1;
+  }
+  .recipe-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50vh;
+
+    @media only screen and (min-width: $bp-large) {
+      padding-left: 22rem;
+    }
   }
   .background--image-map {
     position: absolute;

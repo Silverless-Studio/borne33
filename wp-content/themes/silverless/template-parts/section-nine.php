@@ -1,12 +1,12 @@
 <section class="section--nine container relative">
-    <div class="row col-8 relative">
+    <div class="row relative recipe-intro">
         <div class="background--image"><?php get_template_part('inc/img/hand'); ?></div>
         <h2 class="heading-1 heading-1--xl  font--color-primary fm-right">
             <?php echo esc_html( get_field('recipes_title') ); ?>
         </h2>
         <h3 class="heading-5 heading-alt fm-right"><?php echo esc_html( get_field('recipes_sub_title') ); ?></h3>
     </div>
-    <div class="row extended">
+    <div class="row extended relative">
         <?php
 // Define the query parameters
 $args = array(
