@@ -265,16 +265,16 @@ gsap.utils.toArray('.splats').forEach((splat) => {
     scrollTrigger: {
       trigger: '.splats--top', // Trigger animation when the element hits the center of the viewport
       start: 'top 80%', // Start when the top of the element hits the center
-      toggleActions: 'play none none none', // Play once when entering the viewport
-      onComplete: () => {
-        console.log('Splat animation complete, starting line animation.');
-        gsap.to('.white-line .line', {
-          height: '100%',
-          duration: 1,
-          delay: 1 // Add a delay of 1 second before starting this animation
-        });
-      }
+      toggleActions: 'play none none none' // Play once when entering the viewport
     }
+  });
+
+  // Fade to 0.5 opacity after the splat animation
+  gsap.to(splat, {
+    opacity: 0.5, // Fade to 0.5 opacity
+    duration: 2, // Duration of the fade
+    delay: 1, // Delay to start the fade after the splat animation (matches the previous duration)
+    ease: 'power2.inOut' // Smooth easing for fade
   });
 });
 if (document.querySelector('.section--five')) {
