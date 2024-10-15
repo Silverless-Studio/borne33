@@ -307,27 +307,27 @@ if (sectionSeven) {
     {
       selector: '.seven--two path.leaf-two',
       props: { opacity: 0, rotate: 4, duration: 1 },
-      offset: '-=0.5'
+      offset: '0'
     },
     {
       selector: '.seven--two path.leaf-five',
       props: { opacity: 0, rotate: 4, duration: 1 },
-      offset: '-=0.5'
+      offset: '0'
     }, // Ensure these are separated
     {
       selector: '.seven--two path.leaf-one',
       props: { opacity: 0, rotate: -4, duration: 1 },
-      offset: '-=0.2'
+      offset: '0'
     },
     {
       selector: '.seven--two path.leaf-three',
       props: { opacity: 0, rotate: -4, duration: 1 },
-      offset: '-=0.2'
+      offset: '0'
     },
     {
       selector: '.seven--two path.leaf-four',
       props: { opacity: 0, rotate: -7, duration: 1 },
-      offset: '-=0.2'
+      offset: '0'
     },
     {
       selector: '.seven--three',
