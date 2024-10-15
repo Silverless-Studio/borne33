@@ -320,6 +320,29 @@
     top: 0;
     z-index: -1;
   }
+  #rotate-ring {
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+  }
+
+  #rotate-ring:hover {
+    animation: rotateAnimation 1.5s ease-in-out; /* Adjust the duration to suit */
+  }
+
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    33% {
+      transform: rotate(-20deg);
+    }
+    66% {
+      transform: rotate(30deg); /* Rotated 10deg more */
+    }
+    100% {
+      transform: rotate(60deg); /* Rotated 30deg more */
+    }
+  }
   .recipe-slider {
     padding: 5rem 0;
   }
@@ -473,6 +496,30 @@
       width: 5.5rem;
       path {
         fill: #b23e25;
+      }
+      &:hover {
+        #rotate-ring {
+          animation: rotateAnimation 0.5s ease-in-out; /* Adjust the duration to suit */
+          transform-origin: center;
+        }
+
+        #rotate-ring:hover {
+        }
+
+        @keyframes rotateAnimation {
+          0% {
+            transform: rotate(0deg);
+          }
+          33% {
+            transform: rotate(-20deg);
+          }
+          66% {
+            transform: rotate(30deg); /* Rotated 10deg more */
+          }
+          100% {
+            transform: rotate(0deg); /* Rotated 30deg more */
+          }
+        }
       }
     }
     &-previous {
