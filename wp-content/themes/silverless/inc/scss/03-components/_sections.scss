@@ -173,10 +173,9 @@
     }
 
     .image-holder.sticky-image {
-      height: auto;
-      margin-bottom: 64vh;
+      height: calc(50vh + 17.5rem);
       position: sticky;
-      top: 15vh;
+      top: calc(50vh - 17.5rem);
       .bird-morph {
         position: relative;
         .overlay {
@@ -188,9 +187,11 @@
       .main-image {
         position: relative;
         img {
-          height: auto;
+          height: 35rem;
           inset: 0;
+          object-fit: cover;
           position: absolute;
+          width: 100%;
         }
         > div {
           opacity: 0;
