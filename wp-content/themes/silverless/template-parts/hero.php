@@ -1,7 +1,15 @@
-<div class="background--image-bottle"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/bottlem.avif"
-        alt="Bottle Image"></div>
-<div class="background--image-main"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/bg.avif"
-        alt="Bottle Image"></div>
+<div class="background--image-bottle"><?php 
+$image = get_field('bottle','options');
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+}?></div>
+<div class="background--image-main"><?php 
+$image = get_field('background_image','options');
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+}?></div>
 <section class="hero container">
     <div class="row">
         <div class="hero--text hero-fm-top">
