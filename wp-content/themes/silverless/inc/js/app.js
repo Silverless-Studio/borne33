@@ -137,7 +137,7 @@ function startSplatAnimations() {
 if (document.querySelector('.spin-me')) {
   gsap.to('.spin-me', {
     rotate: 360,
-    duration: 20,
+    duration: 150,
     ease: 'none',
     repeat: -1 // Continuous spin
   });
