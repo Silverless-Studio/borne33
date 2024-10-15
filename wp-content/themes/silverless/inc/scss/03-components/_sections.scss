@@ -255,6 +255,7 @@
         border-bottom: 1px solid $color-tertiary;
         display: grid;
         grid-template-rows: 2fr 1fr;
+        justify-items: center;
         img {
           max-height: 24rem;
         }
