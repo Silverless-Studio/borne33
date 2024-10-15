@@ -1,4 +1,4 @@
-<div class="background--image-bottle"><div class="effects-div"></div><img src="<?php echo get_template_directory_uri(); ?>/inc/img/bottlem.avif"
+<div class="background--image-bottle"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/bottlem.avif"
         alt="Bottle Image"></div>
 <div class="background--image-main"><img src="<?php echo get_template_directory_uri(); ?>/inc/img/bg.avif"
         alt="Bottle Image"></div>
