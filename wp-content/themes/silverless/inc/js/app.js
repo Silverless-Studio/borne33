@@ -424,3 +424,67 @@ if (handElement) {
     }
   });
 }
+
+// Pulse animation function
+function pulseGlow() {
+  return gsap.to('.left-glow', {
+    width: '40rem',
+    x: '0',
+    repeat: -1, // Infinite repetition
+    yoyo: true, // Pulse effect
+    duration: 1.5, // Speed of pulsing
+    ease: 'power1.inOut' // Smooth transition
+  });
+}
+
+// Function to shrink width and shift position
+function shrinkGlow() {
+  return gsap.to('.left-glow', {
+    width: '0rem', // Shrink to 0 width
+    x: '-30rem', // Move to the left out of view
+    duration: 1, // Time to shrink and move
+    ease: 'power1.inOut'
+  });
+}
+
+// Function to smoothly expand before resuming pulse
+function expandGlow() {
+  return gsap.to('.left-glow', {
+    width: '40rem',
+    x: '0',
+    duration: 1.5, // Smooth expansion time
+    ease: 'power2.out' // Use a slower ease-out for a gentler transition
+  });
+}
+
+// Start the pulse on page load
+let glowPulse = pulseGlow();
+
+// ScrollTrigger for stopping and resuming the pulse
+ScrollTrigger.create({
+  trigger: '.hero',
+  start: 'bottom top', // When .hero leaves the viewport
+  onLeave: () => {
+    glowPulse.pause(); // Pause the pulse
+    shrinkGlow(); // Shrink width and shift position
+  },
+  onEnterBack: () => {
+    shrinkGlow().then(() => glowPulse.resume()); // Shrink before resuming pulse
+  }
+});
+
+ScrollTrigger.create({
+  trigger: '.section--eight',
+  start: 'top bottom', // When .section--eight enters the viewport
+  onEnter: () => {
+    expandGlow().then(() => glowPulse.resume()); // Expand smoothly before pulsing again
+  },
+  onLeave: () => {
+    glowPulse.pause(); // Pause the pulse
+    shrinkGlow(); // Shrink to 0 when section leaves viewport
+  },
+  onLeaveBack: () => {
+    glowPulse.pause(); // Pause the pulse
+    shrinkGlow(); // Shrink to 0 when scrolling back up
+  }
+});

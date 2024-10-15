@@ -152,8 +152,8 @@ a:not([class]) {
   );
   height: 30vw;
   position: fixed;
-  right: -15vw;
-  top: -30rem;
+  right: 10rem;
+  top: -38rem;
   width: 30vw;
   z-index: -1;
 }
@@ -162,4 +162,15 @@ a:not([class]) {
 }
 body.age-verified #page {
   opacity: 1;
+}
+.left-glow {
+  background: rgb(209, 124, 24);
+  background: linear-gradient(
+    90deg,
+    rgba(209, 124, 24, 0.5) 0%,
+    rgba(209, 124, 24, 0) 100%
+  );
+  inset: 0;
+  position: fixed;
+  width: 20rem;
 }

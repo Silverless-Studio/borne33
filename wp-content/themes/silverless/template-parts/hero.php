@@ -29,4 +29,3 @@ if( $buttontwo ): ?>
         </div>
     </div>
 </section>
-<div class="sunburst"></div>

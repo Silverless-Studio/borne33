@@ -32,6 +32,7 @@
         
         <?php if ( is_front_page() ) : ?>
         <header id="home-header" class="site-header container">
+            <div class="sunburst"></div>
             <div class="row">
                 <a href="<?php echo home_url(); ?>">
                     <?php get_template_part('inc/img/fish'); ?>
@@ -54,6 +55,7 @@
         <?php else : ?>
         <header id="main-header" class="site-header container">
             <div class="row">
+                <div class="sunburst"></div>
                 <a href="<?php echo home_url(); ?>">
                     <?php get_template_part('inc/img/fish'); ?>
                 </a>
@@ -73,3 +75,4 @@
             </div>
         </header>
         <?php endif; ?>
+        <div class="left-glow"></div>
