@@ -401,14 +401,14 @@
           &.slider-four,
           &.slider-five {
             opacity: 0;
-            transition: opacity 1s ease;
-            transition-delay: 0.5s; /* 1 second delay */
+            transition: opacity 0.25s ease;
+            transition-delay: 0.25s; /* 1 second delay */
           }
           &.slider-four {
-            transition-delay: 0.75s;
+            transition-delay: 0.5s;
           }
           &.slider-five {
-            transition-delay: 1s;
+            transition-delay: 0.75s;
           }
         }
       }
@@ -424,6 +424,7 @@
     }
     .details {
       position: relative;
+      z-index: 10;
       svg {
         position: absolute;
         &.slider-one {
