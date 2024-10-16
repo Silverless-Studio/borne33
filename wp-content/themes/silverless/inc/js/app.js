@@ -267,7 +267,6 @@ gsap.utils.toArray('.splats').forEach((splat) => {
 
   // First animation: splat effect (scale and fade in)
   tl.from(splat, {
-    scale: 0, // Start with scale 0 (invisible)
     opacity: 0, // Start with 0 opacity (fade in)
     duration: 1, // Duration of the animation (1 second)
     ease: 'back.out(1.7)' // Splat effect with back easing
