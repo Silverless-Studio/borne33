@@ -3,7 +3,7 @@ $image = get_field('bottle','options');
 $size = 'full'; // (thumbnail, medium, large, full or custom size)
 if( $image ) {
     echo wp_get_attachment_image( $image, $size );
-}?></div>
+}?><div class="dark-gradient"></div></div>
 <div class="background--image-main"><?php 
 $image = get_field('background_image','options');
 $size = 'full'; // (thumbnail, medium, large, full or custom size)

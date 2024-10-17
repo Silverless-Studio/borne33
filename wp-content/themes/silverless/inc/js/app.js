@@ -63,11 +63,11 @@ function animateContent() {
 if (document.querySelector('.section--two')) {
   gsap.to('.dark-gradient', {
     '--start-grad': '100%', // Animate from 0% to 50%
-    '--end-grad': '300%', // Animate from 100% to 200%
+    '--end-grad': '200%', // Animate from 100% to 200%
     scrollTrigger: {
-      trigger: '.age-verified .section--two',
-      start: 'top bottom', // Start the animation when the page starts scrolling
-      end: 'bottom+=300vh', // Animation ends after scrolling 200vh
+      trigger: '.hero',
+      start: 'bottom bottom', // Start the animation when the page starts scrolling
+      end: 'bottom top', // Animation ends after scrolling 200vh
       scrub: true // Makes the animation follow the scroll position
     }
   });

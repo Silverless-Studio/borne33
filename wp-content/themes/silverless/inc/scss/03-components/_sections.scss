@@ -65,6 +65,9 @@
 .section--four {
   align-items: center;
   min-height: 100vh;
+  @media only screen and (min-width: $bp-large) {
+    margin: 20rem 0;
+  }
   .background--image {
     // transform: translate(-25%, -80%);
     height: 120vh;

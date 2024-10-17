@@ -28,7 +28,7 @@
         <a class="skip-link screen-reader-text" href="#primary">
             <?php esc_html_e('Skip to content', 'silverless'); ?>
         </a>
-        <div class="dark-gradient"></div>
+        <!-- <div class="dark-gradient"></div> -->
         
         <?php if ( is_front_page() ) : ?>
         <header id="home-header" class="site-header container">
