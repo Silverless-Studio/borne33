@@ -62,58 +62,57 @@ function animateContent() {
 }
 if (document.querySelector('.section--two')) {
   gsap.to('.dark-gradient', {
-    '--start-grad': '20%', 
-    '--end-grad': '80%', 
+    '--start-grad': '20%',
+    '--end-grad': '80%',
     scrollTrigger: {
-      trigger: '.hero', 
-      start: 'bottom top', 
-      end: 'bottom bottom', 
-      scrub: true 
+      trigger: '.hero',
+      start: 'bottom top',
+      end: 'bottom bottom',
+      scrub: true
     }
   });
 
+  // Grow the image when .hero bottom hits the center of the viewport
   gsap.to('.background--image-bottle img', {
     scale: 1.5,
     y: '25vh',
+    duration: 2, // Slow animation
+    ease: 'power2.out', // Smooth easing
     scrollTrigger: {
-      trigger: '.hero', 
-      start: 'bottom bottom',
-      end: 'bottom top',
-      scrub: true 
+      trigger: '.hero',
+      start: 'bottom center', // Start when .hero's bottom hits the center
+      endTrigger: '.site-footer',
+      end: 'top bottom', // Continue the grow until .hero exits the viewport
+      toggleActions: 'play reverse play reverse', // Play on scroll down, reverse on scroll up
+      markers: true // Optional: Add markers to visualize the triggers
     }
   });
 }
 
 if (document.querySelector('.section--three')) {
   gsap.to('.dark-gradient', {
-    '--start-grad': '50%', 
-    '--end-grad': '200%', 
+    '--start-grad': '50%',
+    '--end-grad': '200%',
     scrollTrigger: {
-      trigger: '.section--three', 
-      start: 'top bottom', 
-      end: 'middle top', 
-      scrub: true 
+      trigger: '.section--three',
+      start: 'top bottom',
+      end: 'middle top',
+      scrub: true
     }
   });
 
   // if (document.querySelector('.site--footer')) {
   //   gsap.to('.dark-gradient', {
-  //     '--start-grad': '0', 
-  //     '--end-grad': '0', 
+  //     '--start-grad': '0',
+  //     '--end-grad': '0',
   //     scrollTrigger: {
-  //       trigger: '.site--footer', 
-  //       start: 'top top', 
-  //       end: 'middle top', 
-  //       scrub: true 
+  //       trigger: '.site--footer',
+  //       start: 'top top',
+  //       end: 'middle top',
+  //       scrub: true
   //     }
   //   });
-
-  
 }
-
-
-
-
 
 // Function to trigger page content animation
 function animateContent() {
@@ -153,14 +152,14 @@ function startSplatAnimations() {
   });
 
   // Target each splat and animate them in sequence
-  tl.to('.splat--one', { opacity: .95, scale: 1, zIndex: 50 })
-    .to('.splat--two', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
-    .to('.splat--three', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
-    .to('.splat--four', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
-    .to('.splat--five', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
-    .to('.splat--six', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
-    .to('.splat--seven', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
-    .to('.splat--eight', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+  tl.to('.splat--one', { opacity: 0.95, scale: 1, zIndex: 50 })
+    .to('.splat--two', { opacity: 0.95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--three', { opacity: 0.95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--four', { opacity: 0.95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--five', { opacity: 0.95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--six', { opacity: 0.95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--seven', { opacity: 0.95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--eight', { opacity: 0.95, scale: 1, zIndex: 50 }, '+=0.1')
     .to('.splat--nine', { opacity: 1, scale: 1, zIndex: 50 }, '+=0.1')
     .add(function () {
       // Fade out the age gate after the last splat
@@ -279,7 +278,7 @@ if (document.querySelector('.section--three')) {
   })
     .from(
       '.step--two',
-      { 
+      {
         opacity: 0, // Fade in from 0 to 1 opacity
         duration: 1, // Duration of movement and fade-in
         ease: 'power2.out' // Smooth easing
