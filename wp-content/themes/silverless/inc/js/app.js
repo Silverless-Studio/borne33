@@ -61,16 +61,17 @@ function animateContent() {
   gsap.to('.content', { opacity: 1, duration: 1 });
 }
 if (document.querySelector('.section--two')) {
-  gsap.to('.dark-gradient', {
-    '--start-grad': '20%',
-    '--end-grad': '80%',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'bottom top',
-      end: 'bottom bottom',
-      scrub: true
-    }
-  });
+  // gsap.to('.dark-gradient', {
+  //   '--start-grad': '20%',
+  //   '--end-grad': '80%',
+  //   scrollTrigger: {
+  //     trigger: '.hero',
+  //     start: 'bottom top',
+  //     endTrigger: '.site-footer',
+  //     end: 'top bottom',
+  //     scrub: true
+  //   }
+  // });
 
   // Grow the image when .hero bottom hits the center of the viewport
   gsap.to('.background--image-bottle img', {
@@ -92,11 +93,15 @@ if (document.querySelector('.section--three')) {
   gsap.to('.dark-gradient', {
     '--start-grad': '50%',
     '--end-grad': '200%',
+    duration: 2,
+    ease: 'power2.out', // Smooth easing
     scrollTrigger: {
-      trigger: '.section--three',
-      start: 'top bottom',
-      end: 'middle top',
-      scrub: true
+      trigger: '.hero',
+      start: 'bottom center',
+      endTrigger: '.site-footer',
+      end: 'top bottom',
+      // scrub: true,
+      toggleActions: 'play reverse play reverse' // Play on scroll down, reverse on scroll up
     }
   });
 

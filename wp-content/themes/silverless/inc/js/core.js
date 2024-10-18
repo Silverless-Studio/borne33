@@ -73,6 +73,7 @@ jQuery(document).ready(function ($) {
           slidesToShow: 1,
           centerPadding: '25px',
           variableWidth: true,
+          dots: false,
           rows: 0
         }
       }
