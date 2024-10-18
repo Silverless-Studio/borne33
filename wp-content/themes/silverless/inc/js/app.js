@@ -62,16 +62,58 @@ function animateContent() {
 }
 if (document.querySelector('.section--two')) {
   gsap.to('.dark-gradient', {
-    '--start-grad': '100%', // Animate from 0% to 50%
-    '--end-grad': '200%', // Animate from 100% to 200%
+    '--start-grad': '20%', 
+    '--end-grad': '80%', 
     scrollTrigger: {
-      trigger: '.hero',
-      start: 'bottom bottom', // Start the animation when the page starts scrolling
-      end: 'bottom top', // Animation ends after scrolling 200vh
-      scrub: true // Makes the animation follow the scroll position
+      trigger: '.hero', 
+      start: 'bottom top', 
+      end: 'bottom bottom', 
+      scrub: true 
+    }
+  });
+
+  gsap.to('.background--image-bottle img', {
+    scale: 1.5,
+    y: '25vh',
+    scrollTrigger: {
+      trigger: '.hero', 
+      start: 'bottom bottom',
+      end: 'bottom top',
+      scrub: true 
     }
   });
 }
+
+if (document.querySelector('.section--three')) {
+  gsap.to('.dark-gradient', {
+    '--start-grad': '50%', 
+    '--end-grad': '200%', 
+    scrollTrigger: {
+      trigger: '.section--three', 
+      start: 'top bottom', 
+      end: 'middle top', 
+      scrub: true 
+    }
+  });
+
+  // if (document.querySelector('.site--footer')) {
+  //   gsap.to('.dark-gradient', {
+  //     '--start-grad': '0', 
+  //     '--end-grad': '0', 
+  //     scrollTrigger: {
+  //       trigger: '.site--footer', 
+  //       start: 'top top', 
+  //       end: 'middle top', 
+  //       scrub: true 
+  //     }
+  //   });
+
+  
+}
+
+
+
+
 
 // Function to trigger page content animation
 function animateContent() {
@@ -111,15 +153,15 @@ function startSplatAnimations() {
   });
 
   // Target each splat and animate them in sequence
-  tl.to('.splat--one', { opacity: 1, scale: 1 })
-    .to('.splat--two', { opacity: 1, scale: 1 }, '+=0.2')
-    .to('.splat--three', { opacity: 1, scale: 1 }, '+=0.2')
-    .to('.splat--four', { opacity: 1, scale: 1 }, '+=0.2')
-    .to('.splat--five', { opacity: 1, scale: 1 }, '+=0.2')
-    .to('.splat--six', { opacity: 1, scale: 1 }, '+=0.2')
-    .to('.splat--seven', { opacity: 1, scale: 1 }, '+=0.2')
-    .to('.splat--eight', { opacity: 1, scale: 1 }, '+=0.2')
-    .to('.splat--nine', { opacity: 1, scale: 1 }, '+=0.2')
+  tl.to('.splat--one', { opacity: .95, scale: 1, zIndex: 50 })
+    .to('.splat--two', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--three', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--four', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--five', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--six', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--seven', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--eight', { opacity: .95, scale: 1, zIndex: 50 }, '+=0.1')
+    .to('.splat--nine', { opacity: 1, scale: 1, zIndex: 50 }, '+=0.1')
     .add(function () {
       // Fade out the age gate after the last splat
       const ageGate = document.getElementById('age-gate');
@@ -237,8 +279,7 @@ if (document.querySelector('.section--three')) {
   })
     .from(
       '.step--two',
-      {
-        x: -100, // Enter from the left (-100px)
+      { 
         opacity: 0, // Fade in from 0 to 1 opacity
         duration: 1, // Duration of movement and fade-in
         ease: 'power2.out' // Smooth easing

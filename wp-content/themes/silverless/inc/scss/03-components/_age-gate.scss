@@ -20,17 +20,29 @@
   .background--image-main {
     &::after {
       background: rgb(0, 0, 0);
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 1) 100%
-      );
-      content: '';
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+      content: "";
       inset: 0;
       position: absolute;
+      bottom: -25vh;
+      left: 0;
+      top: unset;
+      height: 75vh;
+      transform: skewY(10deg);
+      transition: 10s all ease;
+      animation: vingnette 5s infinite alternate ease-in-out;
     }
+  }
+}
+
+@keyframes vingnette {
+  0% {
+    transform: skewY(10deg);
+    height: 100vh;
+  }
+  100% {
+    transform: skewY(-10deg);
+    height: 75vh;
   }
 }
 
@@ -38,13 +50,53 @@
   border-bottom: 1px solid $color-primary;
   padding-bottom: 3.5rem;
   text-align: center;
+  z-index: 10;
   .heading-3 {
+    position: relative;
     border-bottom: 1px solid $color-primary;
     margin-bottom: 4rem;
     padding: 2.5rem 0;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: rgb(255 255 255);
+      box-shadow: 0 0 10px #ffb13f;
+      border-radius: 50%;
+      border-radius: 50%;
+      z-index: 5;
+      animation: lineaccent 15s ease-in-out;
+    }
   }
 }
+@keyframes lineaccent {
+  0% {
+    width: 0;
+    left: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.25;
+    width: 30px;
+  }
 
+  95% {
+    left: calc(100% - 150px);
+    width: 150px;
+    opacity: 0.75;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+    width: 0;
+  }
+}
 .age-gate button {
   background-color: $color-primary;
   border: none;
@@ -65,14 +117,14 @@
 }
 
 .splat {
-  opacity: 0; /* Initially invisible */
+  opacity: 0;
   position: absolute;
-  transform: scale(0); /* Initially small */
+  transform: scale(1);
+  z-index: 1;
   svg {
     height: auto;
     path {
       fill: $color-black;
-      // fill: rgba(red, 0.2);
     }
   }
   &--one {
@@ -137,5 +189,29 @@
     background-color: $color-black;
     height: 100%;
     width: 100%;
+  }
+}
+
+.age-gate-content {
+  .logo {
+    svg {
+      overflow: visible;
+      path,
+      rect {
+        animation: pulseglow 10s infinite reverse ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes pulseglow {
+  0% {
+    filter: drop-shadow(0 0 0.25rem orange);
+  }
+  50% {
+    filter: drop-shadow(0 0 0.5rem orange) drop-shadow(0 0 1rem orange);
+  }
+  100% {
+    filter: drop-shadow(0 0 0.25rem orange);
   }
 }
