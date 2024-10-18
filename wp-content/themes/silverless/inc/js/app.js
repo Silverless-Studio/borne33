@@ -83,8 +83,7 @@ if (document.querySelector('.section--two')) {
       start: 'bottom center', // Start when .hero's bottom hits the center
       endTrigger: '.site-footer',
       end: 'top bottom', // Continue the grow until .hero exits the viewport
-      toggleActions: 'play reverse play reverse', // Play on scroll down, reverse on scroll up
-      markers: true // Optional: Add markers to visualize the triggers
+      toggleActions: 'play reverse play reverse' // Play on scroll down, reverse on scroll up
     }
   });
 }

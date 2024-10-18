@@ -580,7 +580,36 @@
       }
     }
   }
-
+  .slick-dots {
+    border-bottom: 3px solid $color-primary;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 1.5rem;
+    li {
+      position: relative;
+      &::after {
+        background: url(../../img/round.png);
+        background-color: $color-black;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        height: 2.5rem;
+        left: -0.5rem;
+        position: absolute;
+        top: 0.5rem;
+        width: 2.5rem;
+      }
+      &.slick-active {
+        &::after {
+          background: url(../../img/roundactive.png);
+        }
+      }
+    }
+    button {
+      background: transparent;
+      font-size: 0;
+    }
+  }
   .slick-slide > div {
     height: 100%;
   }
