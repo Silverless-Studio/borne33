@@ -192,14 +192,12 @@
   }
 }
 
-.age-gate-content {
-  .logo {
-    svg {
-      overflow: visible;
-      path,
-      rect {
-        animation: pulseglow 10s infinite reverse ease-in-out;
-      }
+.logo {
+  svg {
+    overflow: hidden;
+    animation: pulseglow 10s infinite reverse ease-in-out;
+    path,
+    rect {
     }
   }
 }

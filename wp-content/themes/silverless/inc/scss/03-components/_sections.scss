@@ -5,11 +5,17 @@
   .heading-1 {
     padding: 0 0 2rem;
     text-align: center;
+    max-width: 15ch;
+    margin: 0 auto;
+    line-height: 1;
+    @media only screen and (min-width: $bp-large) {
+      max-width: none;
+    }
   }
   ul {
     display: flex;
     flex-wrap: wrap;
-    grid-gap: 7rem;
+    grid-gap: 3rem;
     @media only screen and (min-width: $bp-large) {
       flex-wrap: nowrap;
       padding-right: 11rem;
@@ -18,7 +24,10 @@
     li {
       align-items: center;
       display: grid;
-      grid-template-columns: 2fr 3fr;
+      grid-template-columns: 1fr 3fr;
+      @media only screen and (min-width: $bp-large) {
+        grid-template-columns: 2fr 3fr;
+      }
       p {
         font-family: $font-secondary;
         font-size: 2.4rem;
@@ -65,13 +74,20 @@
     }
     img {
       height: auto;
-
+      filter: brightness(10.5);
+      opacity: 0.3;
       @media only screen and (min-width: $bp-large) {
         left: 50%;
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);
       }
+    }
+  }
+  .heading-1 {
+    margin-bottom: 4rem;
+    @media only screen and (min-width: $bp-large) {
+      margin-bottom: 2rem;
     }
   }
   @media only screen and (min-width: $bp-large) {
@@ -339,11 +355,7 @@
 .section--nine {
   align-items: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
   min-height: 100vh;
   .heading-5 {
     max-width: 20ch;
@@ -592,7 +604,7 @@
         background-color: $color-black;
         background-repeat: no-repeat;
         background-size: contain;
-        content: '';
+        content: "";
         height: 2.5rem;
         left: -0.5rem;
         position: absolute;
@@ -686,7 +698,7 @@
   left: 0;
   position: fixed;
   top: 5vh;
-  width: 100%;
+  width: 100vw;
   z-index: -3;
   img {
     height: 100%;

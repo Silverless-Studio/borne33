@@ -92,7 +92,7 @@ if (document.querySelector('.section--two')) {
 if (document.querySelector('.section--three')) {
   gsap.to('.dark-gradient', {
     '--start-grad': '50%',
-    '--end-grad': '200%',
+    '--end-grad': '120%',
     duration: 2,
     ease: 'power2.out', // Smooth easing
     scrollTrigger: {
@@ -104,18 +104,6 @@ if (document.querySelector('.section--three')) {
       toggleActions: 'play reverse play reverse' // Play on scroll down, reverse on scroll up
     }
   });
-
-  // if (document.querySelector('.site--footer')) {
-  //   gsap.to('.dark-gradient', {
-  //     '--start-grad': '0',
-  //     '--end-grad': '0',
-  //     scrollTrigger: {
-  //       trigger: '.site--footer',
-  //       start: 'top top',
-  //       end: 'middle top',
-  //       scrub: true
-  //     }
-  //   });
 }
 
 // Function to trigger page content animation
