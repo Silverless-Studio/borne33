@@ -46,15 +46,37 @@ jQuery(document).ready(function ($) {
   });
 
   /* INITIATE SLIDERS */
+  // $('.recipe-slider').slick({
+  //   infinite: true,
+  //   centerMode: true,
+  //   slidesToShow: 1,
+  //   centerPadding: '25px',
+  //   variableWidth: true,
+  //   rows: 0,
+  //   prevArrow: $('.slider--nav-previous'),
+  //   nextArrow: $('.slider--nav-next')
+  // });
+
   $('.recipe-slider').slick({
-    infinite: true,
-    centerMode: true,
     slidesToShow: 1,
-    centerPadding: '25px',
-    variableWidth: true,
-    rows: 0,
+    slidesToScroll: 1,
+    mobileFirst: true,
     prevArrow: $('.slider--nav-previous'),
-    nextArrow: $('.slider--nav-next')
+    nextArrow: $('.slider--nav-next'),
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          infinite: true,
+          centerMode: true,
+          slidesToShow: 1,
+          centerPadding: '25px',
+          variableWidth: true,
+          rows: 0
+        }
+      }
+    ]
   });
 
   /* SCROLL TO NEXT SECTION */

@@ -30,7 +30,7 @@ if ($recipe_query->have_posts()) :?>
                         <?php endif; ?></div>
                     <div class="details">
                         <?php echo get_template_part('/inc/img/slider-one'); ?>
-                        <h2 class="heading-4 heading-alt underscores underscores--long fm-right"><?php the_title(); ?></h2>
+                        <h2 class="heading-4 heading-alt underscores underscores--long"><?php the_title(); ?></h2>
                         <h3 class="heading-5 heading-alt font--color-primary">
                             <?php echo esc_html( get_field('ingredients_title') ); ?></h3>
                         <div class="ingredients">

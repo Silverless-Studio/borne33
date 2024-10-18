@@ -14,9 +14,9 @@ h1 {
     line-height: 1.1;
   }
   &--xl {
-    font-size: 11rem;
+    font-size: 6.4rem;
     @media only screen and (min-width: $bp-large) {
-      font-size: 13.4rem;
+      font-size: 11rem;
     }
   }
 }
@@ -42,7 +42,7 @@ h3 {
 
 .heading-4 {
   @extend %heading;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
 
   @media only screen and (min-width: $bp-large) {
     font-size: 3.2rem;

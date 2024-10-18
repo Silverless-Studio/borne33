@@ -175,3 +175,9 @@ body.age-verified #page {
   position: fixed;
   width: 20rem;
 }
+section {
+  // overflow-x: hidden;
+  // @media only screen and (min-width: $bp-large) {
+  //   overflow-x: unset;
+  // }
+}

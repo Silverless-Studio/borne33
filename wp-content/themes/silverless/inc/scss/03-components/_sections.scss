@@ -40,6 +40,10 @@
     }
   }
   .content_blocks {
+    margin: 2rem;
+    @media only screen and (min-width: $bp-large) {
+      margin: 0;
+    }
     img {
       height: auto;
       width: auto;
@@ -50,34 +54,56 @@
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
+  text-align: center;
   .background-image {
-    inset: 0;
-    position: absolute;
-    z-index: -1;
-    img {
-      left: 50%;
+    grid-column: 1/-1;
+    position: relative;
+    @media only screen and (min-width: $bp-large) {
+      inset: 0;
       position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      z-index: -1;
     }
+    img {
+      height: auto;
+
+      @media only screen and (min-width: $bp-large) {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  @media only screen and (min-width: $bp-large) {
+    text-align: left;
   }
 }
 .section--four {
   align-items: center;
   min-height: 100vh;
+  overflow-x: hidden;
+  text-align: center;
   @media only screen and (min-width: $bp-large) {
     margin: 20rem 0;
+    overflow: unset;
+    text-align: left;
   }
   .background--image {
     // transform: translate(-25%, -80%);
-    height: 120vh;
+    height: 100vw;
     inset: 0;
-    left: 10%;
+    left: 50%;
     position: absolute;
-    top: 60%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    width: 120vh;
+    width: 100vw;
     z-index: -1;
+    @media only screen and (min-width: $bp-large) {
+      height: 120vh;
+      left: 10%;
+      top: 60%;
+      width: 120vh;
+    }
   }
   .spin-me {
     inset: 0;
@@ -153,6 +179,10 @@
 .section--six {
   align-items: center;
   min-height: 100vh;
+  text-align: center;
+  @media only screen and (min-width: $bp-large) {
+    text-align: left;
+  }
 }
 .image--text {
   &-scroll {
@@ -186,8 +216,11 @@
         position: relative;
         .overlay {
           position: absolute;
-          right: -10rem;
-          top: -15rem;
+
+          @media only screen and (min-width: $bp-large) {
+            right: -10rem;
+            top: -15rem;
+          }
         }
       }
       .main-image {
@@ -311,11 +344,22 @@
   .heading-5 {
     max-width: 20ch;
   }
+  .row.extended {
+    grid-column: full-start / full-end !important;
+    @media only screen and (min-width: $bp-large) {
+      // grid-column: center-start / center-end !important;
+    }
+  }
   .background--image {
     inset: 0;
     left: -11rem;
     position: absolute;
     z-index: -1;
+    svg {
+      max-width: 100%;
+      @media only screen and (min-width: $bp-large) {
+      }
+    }
   }
   .recipe-intro {
     display: flex;
@@ -361,6 +405,7 @@
   }
   .recipe {
     background-color: $color-supporting-1;
+    height: 100%;
     position: relative;
     @media only screen and (min-width: $bp-large) {
       margin: 0 2.5rem;
@@ -375,9 +420,17 @@
     .col-half {
       height: 100%;
       .image {
+        padding: 1.5rem;
         position: relative;
+        @media only screen and (min-width: $bp-large) {
+          padding: 0;
+        }
         svg {
-          position: absolute;
+          display: none;
+          @media only screen and (min-width: $bp-large) {
+            display: flex;
+            position: absolute;
+          }
           &.slider-three {
             bottom: 0;
             left: -8rem;
@@ -427,10 +480,16 @@
       }
     }
     .details {
+      padding: 0 1.5rem;
       position: relative;
       z-index: 10;
       svg {
+        // display: none;
         position: absolute;
+        @media only screen and (min-width: $bp-large) {
+          display: flex;
+          position: absolute;
+        }
         &.slider-one {
           opacity: 0;
           right: 0;
@@ -444,10 +503,23 @@
         }
       }
       .heading-5 {
-        padding: 4.5rem 0 2.5rem;
+        padding: 4.5rem 4rem 2.5rem 4rem;
+        @media only screen and (min-width: $bp-large) {
+          padding: 4.5rem 0 2.5rem;
+        }
+      }
+      .heading-4 {
+        padding: 0 4rem;
+        @media only screen and (min-width: $bp-large) {
+          padding: 0;
+        }
       }
       .ingredients {
+        padding: 0 4rem;
         position: relative;
+        @media only screen and (min-width: $bp-large) {
+          padding: 0;
+        }
         .ingredient--items li {
           color: $color-primary;
           font-size: 1.6rem;
@@ -470,7 +542,9 @@
       }
       .method {
         .method--items {
-          padding-left: 0;
+          @media only screen and (min-width: $bp-large) {
+            padding-left: 0;
+          }
           li {
             font-size: 1.6rem;
             list-style-position: outside;
@@ -500,12 +574,23 @@
       }
     }
   }
+  .slick-slide > div {
+    height: 100%;
+  }
   .slider--nav {
     display: flex;
+    justify-content: space-between;
     left: 50%;
+    padding: 0 1.5rem;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, 50%);
+    top: -5rem;
+    transform: translate(-50%, 0);
+    width: 100%;
+    @media only screen and (min-width: $bp-large) {
+      top: 50%;
+      transform: translate(-50%, 50%);
+      width: unset;
+    }
     svg {
       cursor: pointer;
       height: auto;
