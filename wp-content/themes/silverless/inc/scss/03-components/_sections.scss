@@ -111,7 +111,12 @@
   .image--text {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
+    text-shadow:
+      0 0 10px #000000,
+      0 0 20px #000000,
+      0 0 20px #000000;
   }
   .heading-4 {
     padding-bottom: 3rem;
@@ -301,11 +306,7 @@
 .section--nine {
   align-items: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
   min-height: 100vh;
   .heading-5 {
     max-width: 20ch;
