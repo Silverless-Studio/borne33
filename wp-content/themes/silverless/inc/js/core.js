@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
     mobileFirst: true,
     prevArrow: $('.slider--nav-previous'),
     nextArrow: $('.slider--nav-next'),
-    dots: true,
+    dots: false,
     responsive: [
       {
         breakpoint: 1200,

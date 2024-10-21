@@ -3,8 +3,14 @@ footer {
   min-height: 100vh;
   position: relative;
   .logo {
+    width: 50vw;
+    margin: 0 auto;
     text-align: center;
+    @media only screen and (min-width: $bp-large) {
+      width: 100%;
+    }
     svg {
+      width: 100%;
     }
   }
   .heading-3 {
@@ -17,9 +23,16 @@ footer {
     border-bottom: 1px solid $color-primary;
     border-top: 1px solid $color-primary;
     margin-top: 2rem;
+    padding: 2rem 0;
+    @media only screen and (min-width: $bp-large) {
+      padding: 0;
+    }
     &--details,
     &--contact {
-      padding: 4rem 6rem;
+      text-align: center;
+      @media only screen and (min-width: $bp-large) {
+        padding: 4rem 6rem;
+      }
     }
     &--details {
       @media only screen and (min-width: $bp-large) {
@@ -41,7 +54,10 @@ footer {
       display: flex;
       justify-content: center;
       grid-gap: 4rem;
-      padding: 3rem 0;
+      padding: 1rem 0;
+      @media only screen and (min-width: $bp-large) {
+        padding: 3rem 0;
+      }
       li {
         fill: $color-white;
         font-size: 2.5rem;
@@ -92,8 +108,11 @@ footer {
   }
   .copyright {
     font-size: 1.2rem;
-    padding: 2rem 0 7.5rem;
+    padding: 2rem 0;
     text-align: center;
+    @media only screen and (min-width: $bp-large) {
+      padding: 2rem 0 7.5rem;
+    }
     .button--text {
       border-left: 1px solid $color-white;
       color: $color-white;

@@ -129,6 +129,10 @@ p {
     display: block;
     padding-top: 2rem;
     width: 4rem;
+    margin: 0 auto;
+    @media only screen and (min-width: $bp-large) {
+      margin: 0;
+    }
   }
   &--long {
     &::after {
@@ -148,8 +152,11 @@ p {
     display: flex;
     justify-content: center;
     &::after {
-      padding-top: 4rem;
+      padding-top: 1rem;
       width: 9rem;
+      @media only screen and (min-width: $bp-large) {
+        padding-top: 4rem;
+      }
     }
   }
 }

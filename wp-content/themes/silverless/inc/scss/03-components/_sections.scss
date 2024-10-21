@@ -64,6 +64,10 @@
   min-height: 100vh;
   overflow: hidden;
   text-align: center;
+  margin-bottom: 25vh;
+  @media only screen and (min-width: $bp-large) {
+    margin-bottom: 0;
+  }
   .background-image {
     grid-column: 1/-1;
     position: relative;
@@ -97,8 +101,8 @@
 .section--four {
   align-items: center;
   min-height: 100vh;
-  overflow-x: hidden;
   text-align: center;
+  overflow-x: hidden;
   @media only screen and (min-width: $bp-large) {
     margin: 20rem 0;
     overflow: unset;
@@ -106,13 +110,13 @@
   }
   .background--image {
     // transform: translate(-25%, -80%);
-    height: 100vw;
+    height: 120vw;
     inset: 0;
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 100vw;
+    width: 120vw;
     z-index: -1;
     @media only screen and (min-width: $bp-large) {
       height: 120vh;
@@ -159,6 +163,10 @@
       0 0 10px #000000,
       0 0 20px #000000,
       0 0 20px #000000;
+    .heading-2 {
+      font-size: 6rem;
+      margin-bottom: 10rem;
+    }
   }
   .heading-4 {
     padding-bottom: 3rem;
@@ -305,6 +313,10 @@
     &-outer {
       display: grid;
       grid-template-columns: 4rem 1fr 4rem;
+      margin-bottom: 2rem;
+      @media only screen and (min-width: $bp-large) {
+        margin-bottom: 0;
+      }
       .content {
         align-items: center;
         border-bottom: 1px solid $color-tertiary;
@@ -341,8 +353,11 @@
       }
     }
     .filler {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
+      display: none;
+      @media only screen and (min-width: $bp-large) {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      }
       .top {
         border-bottom: 1px solid $color-tertiary;
       }
@@ -380,11 +395,12 @@
   .recipe-intro {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     min-height: 50vh;
 
     @media only screen and (min-width: $bp-large) {
       padding-left: 22rem;
+      justify-content: center;
     }
   }
   .background--image-map {
@@ -417,7 +433,10 @@
     }
   }
   .recipe-slider {
-    padding: 5rem 0;
+    padding: 10rem 0;
+    @media only screen and (min-width: $bp-large) {
+      padding: 5rem 0;
+    }
     .slick-slide {
       &.slick-active {
         #slider-one {
@@ -508,8 +527,12 @@
         height: 100%;
         object-fit: cover;
         position: relative;
-        width: 100%;
+        width: 50%;
+        margin: 0 auto;
         z-index: 8;
+        @media only screen and (min-width: $bp-large) {
+          width: 100%;
+        }
       }
     }
     .details {
@@ -597,6 +620,7 @@
     display: flex;
     justify-content: space-between;
     margin: 2rem 1.5rem;
+    display: none;
     li {
       position: relative;
       &::after {
@@ -631,7 +655,7 @@
     left: 50%;
     padding: 0 1.5rem;
     position: absolute;
-    top: -5rem;
+    top: 15rem;
     transform: translate(-50%, 0);
     width: 100%;
     @media only screen and (min-width: $bp-large) {
