@@ -444,14 +444,14 @@ for (let i = 1; i <= totalBlocks; i++) {
       if (isMobile) {
         gsap.set(`.main-image-${i}`, {
           position: 'fixed',
-          top: 0,
+          top: '10rem',
           width: 'calc(100% - 3rem)',
           zIndex: 1,
           margin: '0 auto'
         });
         gsap.set(`.overlay-${i}`, {
           position: 'fixed',
-          top: '13rem',
+          top: '25rem',
           width: '100%',
           zIndex: 2
         });
