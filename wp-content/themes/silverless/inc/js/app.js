@@ -447,7 +447,8 @@ for (let i = 1; i <= totalBlocks; i++) {
           top: '10rem',
           width: 'calc(100% - 3rem)',
           zIndex: 1,
-          margin: '0 auto'
+          margin: '0 auto',
+          "--before-opacity": 1
         });
         gsap.set(`.overlay-${i}`, {
           position: 'fixed',
