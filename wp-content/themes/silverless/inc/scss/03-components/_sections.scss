@@ -235,7 +235,7 @@
     .image-holder.sticky-image {
       height: 35rem;
       @media only screen and (min-width: $bp-large) {
-        height: calc(50vh + 17.5rem);
+        height: calc(50vh - 17.5rem);
         position: sticky;
         top: calc(50vh - 17.5rem);
       }
