@@ -445,9 +445,9 @@ for (let i = 1; i <= totalBlocks; i++) {
         gsap.set(`.main-image-${i}`, {
           position: 'fixed',
           top: 0,
-          left: 0,
-          width: '100%',
-          zIndex: 1
+          width: 'calc(100% - 3rem)',
+          zIndex: 1,
+          margin: '0 auto'
         });
         gsap.set(`.overlay-${i}`, {
           position: 'fixed',
