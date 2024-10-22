@@ -452,7 +452,6 @@ for (let i = 1; i <= totalBlocks; i++) {
         gsap.set(`.overlay-${i}`, {
           position: 'fixed',
           top: '13rem',
-          right: '50%',
           width: '100%',
           zIndex: 2
         });
@@ -480,7 +479,6 @@ for (let i = 1; i <= totalBlocks; i++) {
         gsap.set(`.overlay-${i}`, {
           position: 'absolute',
           top: '13rem',
-          right: 'initial',
           width: 'auto',
           zIndex: 2
         });
