@@ -244,9 +244,9 @@
       .bird-morph {
         position: relative;
         .overlay {
+          display: flex;
+          justify-content: center;
           position: absolute;
-          // right: 0rem;
-          // top: -15rem;
           @media only screen and (min-width: $bp-large) {
             right: 0rem;
             top: -15rem;

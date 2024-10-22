@@ -451,8 +451,8 @@ for (let i = 1; i <= totalBlocks; i++) {
         });
         gsap.set(`.overlay-${i}`, {
           position: 'fixed',
-          top: 0,
-          left: 0,
+          top: '13rem',
+          right: '50%',
           width: '100%',
           zIndex: 2
         });
@@ -471,6 +471,39 @@ for (let i = 1; i <= totalBlocks; i++) {
       // On mobile, reset position when scrolling back up
       if (isMobile) {
         gsap.set(`.main-image-${i}`, {
+          position: 'relative',
+          top: 'initial',
+          left: 'initial',
+          width: 'auto',
+          zIndex: 1
+        });
+        gsap.set(`.overlay-${i}`, {
+          position: 'absolute',
+          top: '13rem',
+          right: 'initial',
+          width: 'auto',
+          zIndex: 2
+        });
+      }
+
+      gsap.to(`.main-image-${i}`, { opacity: 0, duration: 1 });
+      gsap.to(`.overlay-${i}`, { opacity: 0, duration: 1 });
+
+      if (i > 1) {
+        gsap.to(`.main-image-${i - 1}`, { opacity: 1, duration: 1 });
+        gsap.to(`.overlay-${i - 1}`, { opacity: 1, duration: 1 });
+      }
+
+      // Ensure first image reappears when scrolling back to the top
+      if (i === 1) {
+        gsap.to(`.main-image-${i}`, { opacity: 1, duration: 1 });
+        gsap.to(`.overlay-${i}`, { opacity: 1, duration: 1 });
+      }
+    },
+    onLeave: () => {
+      // If it's the last block, reset position when scrolling past the last element
+      if (isMobile && i === totalBlocks) {
+        gsap.set(`.main-image-${i}`, {
           position: 'absolute',
           top: 'initial',
           left: 'initial',
@@ -484,14 +517,10 @@ for (let i = 1; i <= totalBlocks; i++) {
           width: 'auto',
           zIndex: 2
         });
-      }
 
-      gsap.to(`.main-image-${i}`, { opacity: 0, duration: 1 });
-      gsap.to(`.overlay-${i}`, { opacity: 0, duration: 1 });
-
-      if (i > 1) {
-        gsap.to(`.main-image-${i - 1}`, { opacity: 1, duration: 1 });
-        gsap.to(`.overlay-${i - 1}`, { opacity: 1, duration: 1 });
+        // Optionally fade out the last image and overlay when leaving
+        gsap.to(`.main-image-${i}`, { opacity: 0, duration: 1 });
+        gsap.to(`.overlay-${i}`, { opacity: 0, duration: 1 });
       }
     }
   });
