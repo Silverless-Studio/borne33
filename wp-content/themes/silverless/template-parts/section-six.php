@@ -39,7 +39,7 @@
                 </div>
                 <?php endif; ?>
                 <?php if( have_rows('image_text_blocks') ): ?>
-                <div class="image--text-scroll fm-right">
+                <div class="image--text-scroll">
                     <?php $counter = 1;
                      while( have_rows('image_text_blocks') ): the_row(); ?>
                      <div class="text--block-<?php echo $counter; ?>">

@@ -233,7 +233,9 @@
     }
 
     .image-holder.sticky-image {
-      height: 35rem;
+      height: 25rem;
+      position: sticky;
+      top: 1rem;
       @media only screen and (min-width: $bp-large) {
         height: calc(50vh - 17.5rem);
         position: sticky;
@@ -243,9 +245,10 @@
         position: relative;
         .overlay {
           position: absolute;
-
+          // right: 0rem;
+          // top: -15rem;
           @media only screen and (min-width: $bp-large) {
-            right: -10rem;
+            right: 0rem;
             top: -15rem;
           }
         }
@@ -253,11 +256,14 @@
       .main-image {
         position: relative;
         img {
-          height: 35rem;
+          height: 22rem;
           inset: 0;
           object-fit: cover;
           position: absolute;
           width: 100%;
+          @media only screen and (min-width: $bp-large) {
+            height: 35rem;
+          }
         }
         > div {
           opacity: 0;
@@ -270,15 +276,22 @@
     .overlay {
       opacity: 0;
       position: absolute;
-      right: 3rem;
-      top: 20rem;
+      right: 50%;
+      top: 13rem;
+      transform: translate(50%, 0);
       @media only screen and (min-width: $bp-large) {
         right: 3rem;
         top: -12rem;
       }
       img {
+        height: 15rem;
         position: relative;
+        width: auto;
         z-index: 3;
+        @media only screen and (min-width: $bp-large) {
+          height: auto;
+          width: auto;
+        }
       }
 
       &.overlay-1 {

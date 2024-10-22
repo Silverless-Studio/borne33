@@ -426,7 +426,8 @@ if (sectionEight) {
   });
 }
 
-//IMAGE WITH OVERLAY AND TEXT COLUMNS ANIMATION
+// Check if the screen is mobile
+const isMobile = window.matchMedia('(max-width: 768px)').matches; // Adjust the max-width for your mobile breakpoint
 
 // Number of text blocks (can be increased dynamically)
 const totalBlocks = document.querySelectorAll('[class^="text--block"]').length;
@@ -439,6 +440,24 @@ for (let i = 1; i <= totalBlocks; i++) {
     start: 'top center', // When the top of the text block hits the center of the viewport
     end: 'bottom center',
     onEnter: () => {
+      // On mobile, lock the main image and overlay to the top of the screen
+      if (isMobile) {
+        gsap.set(`.main-image-${i}`, {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 1
+        });
+        gsap.set(`.overlay-${i}`, {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 2
+        });
+      }
+
       gsap.to(`.main-image-${i}`, { opacity: 1, duration: 1 });
       gsap.to(`.overlay-${i}`, { opacity: 1, duration: 1 });
 
@@ -449,9 +468,27 @@ for (let i = 1; i <= totalBlocks; i++) {
       }
     },
     onLeaveBack: () => {
-      // Reset to previous image when scrolling back up
+      // On mobile, reset position when scrolling back up
+      if (isMobile) {
+        gsap.set(`.main-image-${i}`, {
+          position: 'absolute',
+          top: 'initial',
+          left: 'initial',
+          width: 'auto',
+          zIndex: 1
+        });
+        gsap.set(`.overlay-${i}`, {
+          position: 'absolute',
+          top: 'initial',
+          left: 'initial',
+          width: 'auto',
+          zIndex: 2
+        });
+      }
+
       gsap.to(`.main-image-${i}`, { opacity: 0, duration: 1 });
       gsap.to(`.overlay-${i}`, { opacity: 0, duration: 1 });
+
       if (i > 1) {
         gsap.to(`.main-image-${i - 1}`, { opacity: 1, duration: 1 });
         gsap.to(`.overlay-${i - 1}`, { opacity: 1, duration: 1 });
