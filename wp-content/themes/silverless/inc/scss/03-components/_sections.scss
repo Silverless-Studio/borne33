@@ -3,11 +3,11 @@
   min-height: 100vh;
   overflow: hidden;
   .heading-1 {
+    line-height: 1;
+    margin: 0 auto;
+    max-width: 15ch;
     padding: 0 0 2rem;
     text-align: center;
-    max-width: 15ch;
-    margin: 0 auto;
-    line-height: 1;
     @media only screen and (min-width: $bp-large) {
       max-width: none;
     }
@@ -61,10 +61,10 @@
 }
 .section--three {
   align-items: center;
+  margin-bottom: 25vh;
   min-height: 100vh;
   overflow: hidden;
   text-align: center;
-  margin-bottom: 25vh;
   @media only screen and (min-width: $bp-large) {
     margin-bottom: 0;
   }
@@ -77,8 +77,8 @@
       z-index: -1;
     }
     img {
-      height: auto;
       filter: brightness(10.5);
+      height: auto;
       opacity: 0.3;
       @media only screen and (min-width: $bp-large) {
         left: 50%;
@@ -101,8 +101,8 @@
 .section--four {
   align-items: center;
   min-height: 100vh;
+  // overflow-x: hidden;
   text-align: center;
-  overflow-x: hidden;
   @media only screen and (min-width: $bp-large) {
     margin: 20rem 0;
     overflow: unset;
@@ -233,9 +233,12 @@
     }
 
     .image-holder.sticky-image {
-      height: calc(50vh + 17.5rem);
-      position: sticky;
-      top: calc(50vh - 17.5rem);
+      height: 35rem;
+      @media only screen and (min-width: $bp-large) {
+        height: calc(50vh + 17.5rem);
+        position: sticky;
+        top: calc(50vh - 17.5rem);
+      }
       .bird-morph {
         position: relative;
         .overlay {
@@ -268,7 +271,11 @@
       opacity: 0;
       position: absolute;
       right: 3rem;
-      top: -12rem;
+      top: 20rem;
+      @media only screen and (min-width: $bp-large) {
+        right: 3rem;
+        top: -12rem;
+      }
       img {
         position: relative;
         z-index: 3;
@@ -277,6 +284,12 @@
       &.overlay-1 {
         opacity: 1;
       }
+    }
+  }
+  &-scroll {
+    margin-top: 15rem;
+    @media only screen and (min-width: $bp-large) {
+      margin: 0;
     }
   }
 }
@@ -295,10 +308,11 @@
   .background--image {
     inset: 0;
     position: absolute;
-    transform: translate(-20%, -20%);
+    transform: translate(0, -20%);
     z-index: -1;
     @media only screen and (min-width: $bp-large) {
       min-width: 165%;
+      transform: translate(-20%, -20%);
     }
   }
 }
@@ -369,8 +383,12 @@
 }
 .section--nine {
   align-items: center;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+  // background: rgb(0, 0, 0);
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(0, 0, 0, 1) 10%,
+  //   rgba(0, 0, 0, 0) 100%
+  // );
   min-height: 100vh;
   .heading-5 {
     max-width: 20ch;
@@ -399,8 +417,8 @@
     min-height: 50vh;
 
     @media only screen and (min-width: $bp-large) {
-      padding-left: 22rem;
       justify-content: center;
+      padding-left: 22rem;
     }
   }
   .background--image-map {
@@ -525,10 +543,10 @@
     .image {
       img {
         height: 100%;
+        margin: 0 auto;
         object-fit: cover;
         position: relative;
         width: 50%;
-        margin: 0 auto;
         z-index: 8;
         @media only screen and (min-width: $bp-large) {
           width: 100%;
@@ -618,9 +636,9 @@
   .slick-dots {
     border-bottom: 3px solid $color-primary;
     display: flex;
+    display: none;
     justify-content: space-between;
     margin: 2rem 1.5rem;
-    display: none;
     li {
       position: relative;
       &::after {
@@ -628,7 +646,7 @@
         background-color: $color-black;
         background-repeat: no-repeat;
         background-size: contain;
-        content: "";
+        content: '';
         height: 2.5rem;
         left: -0.5rem;
         position: absolute;
