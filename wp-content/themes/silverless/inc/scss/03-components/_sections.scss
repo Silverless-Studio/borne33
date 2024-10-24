@@ -164,9 +164,16 @@
       0 0 10px $color-supporting-1,
       0 0 20px $color-supporting-1,
       0 0 20px $color-supporting-1;
+    @media only screen and (min-width: $bp-large) {
+      text-align: right;
+    }
     .heading-2 {
       font-size: 6rem;
       margin-bottom: 10rem;
+      @media only screen and (min-width: $bp-large) {
+        font-size: 8rem;
+        margin-bottom: 0;
+      }
     }
   }
   .heading-4 {
@@ -207,6 +214,7 @@
   text-align: center;
   @media only screen and (min-width: $bp-large) {
     text-align: left;
+    margin-bottom: 50vh;
   }
 }
 .image--text {
@@ -365,6 +373,9 @@
         display: grid;
         grid-template-rows: 2fr 1fr;
         justify-items: center;
+        @media only screen and (min-width: $bp-large) {
+          grid-template-rows: 1fr 1fr;
+        }
         img {
           max-height: 24rem;
         }
@@ -447,6 +458,11 @@
     @media only screen and (min-width: $bp-large) {
       justify-content: center;
       padding-left: 22rem;
+    }
+    p {
+      @media only screen and (min-width: $bp-large) {
+        max-width: 60ch;
+      }
     }
   }
   .background--image-map {

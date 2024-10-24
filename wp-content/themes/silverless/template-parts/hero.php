@@ -22,7 +22,7 @@ if ($image) {
             <div class="logo">
                 <?php get_template_part('inc/img/logo-main'); ?>
             </div>
-            <h2 class="heading-4 heading-alt font--color-primary"><?php echo esc_html(get_field('bottom_tagline')); ?>
+            <h2 class="heading-4 heading-alt"><?php echo esc_html(get_field('bottom_tagline')); ?>
             </h2>
             <div class="hero--text-buttons">
                 <?php
